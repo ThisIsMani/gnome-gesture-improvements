@@ -49,6 +49,10 @@
       <default>true</default>
       <description>Enable Window manipulation gesture</description>
     </key>
+    <key name='enable-volume-gesture' type='b'>
+      <default>false</default>
+      <description>Enable volume gesture</description>
+    </key>
     <key name="pinch-3-finger-gesture" enum="org.gnome.shell.extensions.gestureImprovements.pinch-gestures">
       <default>'NONE'</default>
       <description>Gesture for 3 finger pinch</description>

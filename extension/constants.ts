@@ -34,6 +34,8 @@ export const ExtSettings = {
 	ALLOW_MINIMIZE_WINDOW: false,
 	FOLLOW_NATURAL_SCROLL: true,
 	DEFAULT_OVERVIEW_GESTURE_DIRECTION: true,
+	ALLOW_VOLUME_GESTURE: false,
+	ALLOW_APP_GESTURE: false,
 };
 
 export const RELOAD_DELAY = 150; // reload extension delay in ms

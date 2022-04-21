@@ -94,6 +94,7 @@ const AppGestureSettingsRow = registerClass(
 		private _reverseButton: Gtk.Switch;
 
 		/**
+		 * @param app
 		 * @param appGestureSettings value of current settings for app
 		 * @param model list of choices of keybings for setting
 		 */
@@ -165,7 +166,7 @@ const AppKeybindingGesturePrefsGroup = registerClass(
 		constructor(prefsWindow: Adw.PreferencesWindow, settings: GioSettings) {
 			super({
 				title: 'Enable application specific gestures',
-				description: 'Window switching gesture needs to be disabled',
+				description: 'Hold to start window switching gesture',
 			});
 
 			this._prefsWindow = prefsWindow;

@@ -39,6 +39,7 @@ export class ForwardBackGestureExtension implements ISubExtension {
 	private _animationState = AnimationState.WAITING;
 	private _appForwardBackKeyBinds: AppForwardBackKeyBinds;
 	private _windowTracker: Shell.WindowTracker;
+	private _focusWindow?: Meta.Window | null;
 
 	constructor(appForwardBackKeyBinds: AppForwardBackKeyBinds) {
 		this._appForwardBackKeyBinds = appForwardBackKeyBinds;
@@ -75,6 +76,8 @@ export class ForwardBackGestureExtension implements ISubExtension {
 
 
 	_gestureBegin(tracker: SwipeTrackerT): void {
+		this._focusWindow = global.display.get_focus_window() as Meta.Window | null;
+		if (!this._focusWindow)	return;
 		this._animationState = AnimationState.WAITING;
 		tracker.confirmSwipe(
 			global.screen_width,

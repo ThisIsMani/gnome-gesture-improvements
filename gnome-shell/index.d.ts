@@ -43,6 +43,43 @@ declare namespace imports {
 		declare const extensionUtils: ExtensionUtilsMeta;
 	}
 	namespace ui {
+		namespace status {
+			namespace volume {
+				declare class StreamSlider {
+					constructor(control: volume.getMixerControl);
+					getMaxLevel(): number;
+				}
+
+				declare class VolumeSink {
+					get_port(): {
+						human_port: string;
+					}
+
+					push_volume(): void;
+
+					volume: number;
+					id: number;
+				}
+				declare class VolumeControl {
+					get_vol_max_norm(): number;
+					get_default_sink(): VolumeSink;
+
+					get_default_source(): {
+						volume: number;
+						id: number;
+					}
+
+					lookup_stream_id(id: number): VolumeSink;
+					lookup_output_id(id: number): {
+						description: string;
+					}
+
+					connect(event: string, callback: (controller, id: number) => void): number;
+					disconnect(id: number): void;
+				}
+				function getMixerControl(): volume.VolumeControl;
+			}
+		}
 		namespace main {
 			const actionMode: Shell.ActionMode;
 			function notify(message: string): void;
@@ -50,6 +87,20 @@ declare namespace imports {
 
 			const panel: {
 				addToStatusArea(role: string, indicator: Clutter.Actor, position?: number, box?: string): void,
+				statusArea: {
+					aggregateMenu: {
+						_volume: {
+							_volumeMenu: {
+								getIcon(): string;
+								getLevel(): number;
+								getMaxLevel(): number;
+								_output: {
+									item: string;
+								}
+							}
+						}
+					}
+				}
 			} & Clutter.Actor;
 
 			const overview: {
@@ -94,6 +145,7 @@ declare namespace imports {
 
 			const osdWindowManager: {
 				hideAll(): void;
+				show(monitor: number, icon: typeof Gio.IconPrototype, label: string | null, level: number): void;
 			};
 		}
 

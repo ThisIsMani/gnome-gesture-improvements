@@ -25,6 +25,7 @@ export type BooleanSettingsKeys =
     'follow-natural-scroll' |
     'enable-alttab-gesture' |
     'enable-forward-back-gesture' |
+    'enable-volume-gesture' |
     'enable-window-manipulation-gesture' |
     'default-overview-gesture-direction'
     ;

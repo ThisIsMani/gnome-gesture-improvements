@@ -12,6 +12,7 @@ import { ShowDesktopExtension } from './src/pinchGestures/showDesktop';
 import { SnapWindowExtension } from './src/snapWindow';
 import * as DBusUtils from './src/utils/dbus';
 import * as VKeyboard from './src/utils/keyboard';
+import {VolumeUpDownGesture} from './src/volume';
 
 const ExtensionUtils = imports.misc.extensionUtils;
 
@@ -77,9 +78,12 @@ class Extension {
 
 		if (this.settings.get_boolean('enable-alttab-gesture'))
 			this._extensions.push(new AltTabGestureExtension());
-		else if (this.settings.get_boolean('enable-forward-back-gesture')) {
+		if (this.settings.get_boolean('enable-forward-back-gesture')) {
 			const appForwardBackKeyBinds = this.settings.get_value('forward-back-application-keyboard-shortcuts').deepUnpack();
 			this._extensions.push(new ForwardBackGestureExtension(appForwardBackKeyBinds));
+		}
+		if (this.settings.get_boolean('enable-volume-gesture')) {
+			this._extensions.push(new VolumeUpDownGesture());
 		}
 
 		this._extensions.push(
@@ -123,6 +127,8 @@ class Extension {
 			ExtSettings.ALLOW_MINIMIZE_WINDOW = this.settings.get_boolean('allow-minimize-window');
 			ExtSettings.FOLLOW_NATURAL_SCROLL = this.settings.get_boolean('follow-natural-scroll');
 			ExtSettings.DEFAULT_OVERVIEW_GESTURE_DIRECTION = this.settings.get_boolean('default-overview-gesture-direction');
+			ExtSettings.ALLOW_VOLUME_GESTURE = this.settings.get_boolean('enable-volume-gesture');
+			ExtSettings.ALLOW_APP_GESTURE = this.settings.get_boolean('enable-forward-back-gesture');
 
 			TouchpadConstants.SWIPE_MULTIPLIER = Constants.TouchpadConstants.DEFAULT_SWIPE_MULTIPLIER * this.settings.get_double('touchpad-speed-scale');
 			TouchpadConstants.PINCH_MULTIPLIER = Constants.TouchpadConstants.DEFAULT_PINCH_MULTIPLIER * this.settings.get_double('touchpad-pinch-speed');

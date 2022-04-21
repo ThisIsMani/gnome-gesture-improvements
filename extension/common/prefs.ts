@@ -82,6 +82,7 @@ function bindPrefsSettings(builder: GtkBuilder, settings: Gio.Settings) {
 	bind_boolean_value('enable-alttab-gesture', settings, builder);
 	bind_boolean_value('enable-window-manipulation-gesture', settings, builder);
 	bind_boolean_value('allow-minimize-window', settings, builder);
+	bind_boolean_value('enable-volume-gesture', settings, builder);
 
 	bind_combo_box('pinch-3-finger-gesture', settings, builder);
 	bind_combo_box('pinch-4-finger-gesture', settings, builder);
@@ -129,9 +130,9 @@ export function buildPrefsWidget(
 		'active',
 		GObject.BindingFlags.INVERT_BOOLEAN | GObject.BindingFlags.BIDIRECTIONAL,
 	);
-	if (builder.get_object<Gtk.Switch>('enable-alttab-gesture').active) {
-		app_gesture_page.set_sensitive(false);
-	}
+	// if (builder.get_object<Gtk.Switch>('enable-alttab-gesture').active) {
+	// 	app_gesture_page.set_sensitive(false);
+	// }
 
 	prefsWindow.add(app_gesture_page);
 

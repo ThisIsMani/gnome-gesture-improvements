@@ -20,8 +20,7 @@ function getIndexForProgress(progress: number, nelement: number): number {
 // index -> index + AltTabConstants.DUMMY_WIN_COUNT
 function getAvgProgressForIndex(index: number, nelement: number): number {
 	index = index + dummyWinCount;
-	const progress = (index + 0.5) / (nelement + 2 * dummyWinCount);
-	return progress;
+	return (index + 0.5) / (nelement + 2 * dummyWinCount);
 }
 
 // declare enum
@@ -60,7 +59,7 @@ export class AltTabGestureExtension implements ISubExtension {
 	}
 
 	_checkAllowedGesture(): boolean {
-		return this._extState <= AltTabExtState.DEFAULT && Main.actionMode === Shell.ActionMode.NORMAL;
+		return this._extState <= AltTabExtState.DEFAULT && Main.actionMode === Shell.ActionMode.NORMAL && (!ExtSettings.ALLOW_APP_GESTURE || this._touchpadSwipeTracker.hadHoldGesture());
 	}
 
 	apply(): void {
