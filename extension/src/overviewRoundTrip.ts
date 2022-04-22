@@ -63,6 +63,7 @@ export class OverviewRoundTripGestureExtension implements ISubExtension {
 			Shell.ActionMode.NORMAL | Shell.ActionMode.OVERVIEW,
 			Clutter.Orientation.VERTICAL,
 			ExtSettings.DEFAULT_OVERVIEW_GESTURE_DIRECTION,
+			// this._checkAllowedGesture.bind(this),
 		);
 
 		this._swipeTracker.orientation = Clutter.Orientation.VERTICAL;
@@ -81,6 +82,10 @@ export class OverviewRoundTripGestureExtension implements ISubExtension {
 		this._hiddenEventId = Main.overview.connect('hidden', () => this._extensionState = ExtensionState.DEFAULT);
 
 	}
+
+	// _checkAllowedGesture(): boolean {
+	// 	return !this._swipeTracker?.hadHoldGesture();
+	// }
 
 	destroy(): void {
 		if (this._swipeTracker) {

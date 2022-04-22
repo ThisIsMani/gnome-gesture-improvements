@@ -5,6 +5,7 @@
     <value value='1' nick='SHOW_DESKTOP' />
     <value value='2' nick='CLOSE_WINDOW' />
     <value value='3' nick='CLOSE_DOCUMENT' />
+    <value value='4' nick='POP_LAUNCHER' />
   </enum>
   <schema id="org.gnome.shell.extensions.gestureImprovements" path="/org/gnome/shell/extensions/gestureImprovements/">
     <!-- See also: https://docs.gtk.org/glib/gvariant-format-strings.html -->
@@ -52,6 +53,10 @@
     <key name='enable-volume-gesture' type='b'>
       <default>false</default>
       <description>Enable volume gesture</description>
+    </key>
+    <key name='enable-ddterm-gesture' type='b'>
+      <default>false</default>
+      <description>Enable DDTerm gesture</description>
     </key>
     <key name="pinch-3-finger-gesture" enum="org.gnome.shell.extensions.gestureImprovements.pinch-gestures">
       <default>'NONE'</default>

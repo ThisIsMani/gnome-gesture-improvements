@@ -7,6 +7,7 @@ export enum PinchGestureType {
     SHOW_DESKTOP = 1,
     CLOSE_WINDOW = 2,
     CLOSE_DOCUMENT = 3,
+    POP_LAUNCHER = 4,
 }
 
 export enum ForwardBackKeyBinds {
@@ -26,6 +27,7 @@ export type BooleanSettingsKeys =
     'enable-alttab-gesture' |
     'enable-forward-back-gesture' |
     'enable-volume-gesture' |
+    'enable-ddterm-gesture' |
     'enable-window-manipulation-gesture' |
     'default-overview-gesture-direction'
     ;

@@ -83,6 +83,7 @@ function bindPrefsSettings(builder: GtkBuilder, settings: Gio.Settings) {
 	bind_boolean_value('enable-window-manipulation-gesture', settings, builder);
 	bind_boolean_value('allow-minimize-window', settings, builder);
 	bind_boolean_value('enable-volume-gesture', settings, builder);
+	bind_boolean_value('enable-ddterm-gesture', settings, builder);
 
 	bind_combo_box('pinch-3-finger-gesture', settings, builder);
 	bind_combo_box('pinch-4-finger-gesture', settings, builder);

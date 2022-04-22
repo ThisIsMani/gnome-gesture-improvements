@@ -78,7 +78,7 @@ export class VolumeUpDownGesture implements ISubExtension {
 	}
 
 	_showVolumeOsd(currentPercentage: number): void {
-		if (this._oldPercentage <= 0 || this._oldPercentage !== currentPercentage) {
+		if (this._oldPercentage <= 0 || currentPercentage === 100 || this._oldPercentage !== currentPercentage) {
 			const monitor = -1;
 			const gicon = new Gio.ThemedIcon({name: this._volumeMenu.getIcon()});
 			const label = this._volumeSink.get_port().human_port;

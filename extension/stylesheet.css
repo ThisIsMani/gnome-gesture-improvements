@@ -17,7 +17,7 @@
 
 .gie-arrow-icon {
     color: #396bd7;
-    margin: 10px 10px;  /* (50+2 - 32)/2 */
+    margin: 10px 10px; /* (50+2 - 32)/2 */
     icon-size: 32px,
 }
 
@@ -30,4 +30,16 @@
     background-color: rgba(255, 128, 128, 0.5);
     border: 1px solid rgba(255, 128, 128);
     border-radius: 16px;
+}
+
+
+.gie-pop-launcher-preview {
+    background-color: rgba(60, 60, 60, 0.5);
+    border: 2px solid #396bd7;
+    border-radius: 10px;
+}
+
+.gie-ddterm-preview {
+    background-color: rgba(60, 60, 60, 0.5);
+    border-bottom: 2px solid #396bd7;
 }

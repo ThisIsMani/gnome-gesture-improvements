@@ -1,18 +1,20 @@
 import GLib from '@gi-types/glib2';
-import { imports } from 'gnome-shell';
-import { AllSettingsKeys, GioSettings, PinchGestureType } from './common/settings';
+import {imports} from 'gnome-shell';
+import {AllSettingsKeys, GioSettings, PinchGestureType} from './common/settings';
 import * as Constants from './constants';
-import { AltTabConstants, ExtSettings, TouchpadConstants } from './constants';
-import { AltTabGestureExtension } from './src/altTab';
-import { ForwardBackGestureExtension } from './src/forwardBack';
-import { GestureExtension } from './src/gestures';
-import { OverviewRoundTripGestureExtension } from './src/overviewRoundTrip';
-import { CloseWindowExtension } from './src/pinchGestures/closeWindow';
-import { ShowDesktopExtension } from './src/pinchGestures/showDesktop';
-import { SnapWindowExtension } from './src/snapWindow';
+import {AltTabConstants, ExtSettings, TouchpadConstants} from './constants';
+import {AltTabGestureExtension} from './src/altTab';
+import {ForwardBackGestureExtension} from './src/forwardBack';
+import {GestureExtension} from './src/gestures';
+import {OverviewRoundTripGestureExtension} from './src/overviewRoundTrip';
+import {ShowDesktopExtension} from './src/pinchGestures/showDesktop';
+import {SnapWindowExtension} from './src/snapWindow';
 import * as DBusUtils from './src/utils/dbus';
 import * as VKeyboard from './src/utils/keyboard';
 import {VolumeUpDownGesture} from './src/volume';
+import {PopLauncherExtension} from './src/pinchGestures/popLauncher';
+import {CloseWindowExtension} from './src/pinchGestures/closeWindow';
+import {DropDownTerminal} from './src/ddTerm';
 
 const ExtensionUtils = imports.misc.extensionUtils;
 
@@ -82,9 +84,11 @@ class Extension {
 			const appForwardBackKeyBinds = this.settings.get_value('forward-back-application-keyboard-shortcuts').deepUnpack();
 			this._extensions.push(new ForwardBackGestureExtension(appForwardBackKeyBinds));
 		}
-		if (this.settings.get_boolean('enable-volume-gesture')) {
+
+		if (this.settings.get_boolean('enable-ddterm-gesture'))
+			this._extensions.push(new DropDownTerminal());
+		if (this.settings.get_boolean('enable-volume-gesture'))
 			this._extensions.push(new VolumeUpDownGesture());
-		}
 
 		this._extensions.push(
 			new OverviewRoundTripGestureExtension(),
@@ -110,6 +114,11 @@ class Extension {
 		if (closeDocumentFingers?.length)
 			this._extensions.push(new CloseWindowExtension(closeDocumentFingers, PinchGestureType.CLOSE_DOCUMENT));
 
+		// pinch to invoke pop launcher
+		const popLauncherFingers = pinchToFingersMap.get(PinchGestureType.POP_LAUNCHER);
+		if (popLauncherFingers?.length)
+			this._extensions.push(new PopLauncherExtension(popLauncherFingers));
+
 		this._extensions.forEach(extension => extension.apply?.());
 	}
 
@@ -128,6 +137,7 @@ class Extension {
 			ExtSettings.FOLLOW_NATURAL_SCROLL = this.settings.get_boolean('follow-natural-scroll');
 			ExtSettings.DEFAULT_OVERVIEW_GESTURE_DIRECTION = this.settings.get_boolean('default-overview-gesture-direction');
 			ExtSettings.ALLOW_VOLUME_GESTURE = this.settings.get_boolean('enable-volume-gesture');
+			ExtSettings.ALLOW_DDTERM_GESTURE = this.settings.get_boolean('enable-ddterm-gesture');
 			ExtSettings.ALLOW_APP_GESTURE = this.settings.get_boolean('enable-forward-back-gesture');
 
 			TouchpadConstants.SWIPE_MULTIPLIER = Constants.TouchpadConstants.DEFAULT_SWIPE_MULTIPLIER * this.settings.get_double('touchpad-speed-scale');

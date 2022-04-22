@@ -36,6 +36,7 @@ export const ExtSettings = {
 	DEFAULT_OVERVIEW_GESTURE_DIRECTION: true,
 	ALLOW_VOLUME_GESTURE: false,
 	ALLOW_APP_GESTURE: false,
+	ALLOW_DDTERM_GESTURE: false,
 };
 
 export const RELOAD_DELAY = 150; // reload extension delay in ms

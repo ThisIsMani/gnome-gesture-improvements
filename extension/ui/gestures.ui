@@ -9,6 +9,7 @@
       <item translatable="yes">Show Desktop</item>
       <item translatable="yes">Close Window</item>
       <item translatable="yes">Invoke Ctrl+W shortcut</item>
+      <item translatable="yes">Invoke Pop Launcher</item>
     </items>
   </object>
 
@@ -97,6 +98,20 @@
             <property name="subtitle">Enable volume control gestures</property>
             <child>
               <object class="GtkSwitch" id="enable-volume-gesture">
+                <property name="valign">center</property>
+                <property name="active">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <!-- DDTerm -->
+        <child>
+          <object class="AdwActionRow">
+            <property name="title" translatable="yes">Drop Down Terminal</property>
+            <property name="subtitle">Enable gesture to open ddterm</property>
+            <child>
+              <object class="GtkSwitch" id="enable-ddterm-gesture">
                 <property name="valign">center</property>
                 <property name="active">True</property>
               </object>
