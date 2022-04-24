@@ -7,7 +7,7 @@
     <items>
       <item translatable="yes">None</item>
       <item translatable="yes">Show Desktop</item>
-      <item translatable="yes">Close Window</item>
+      <item translatable="yes">Window Manipulation</item>
       <item translatable="yes">Invoke Ctrl+W shortcut</item>
       <item translatable="yes">Invoke Pop Launcher</item>
     </items>

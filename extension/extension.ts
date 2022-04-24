@@ -13,7 +13,7 @@ import * as DBusUtils from './src/utils/dbus';
 import * as VKeyboard from './src/utils/keyboard';
 import {VolumeUpDownGesture} from './src/volume';
 import {PopLauncherExtension} from './src/pinchGestures/popLauncher';
-import {CloseWindowExtension} from './src/pinchGestures/closeWindow';
+import {CloseWindowExtension} from './src/pinchGestures/windowManipulation';
 import {DropDownTerminal} from './src/ddTerm';
 
 const ExtensionUtils = imports.misc.extensionUtils;

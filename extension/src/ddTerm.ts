@@ -89,7 +89,7 @@ export class DropDownTerminal implements ISubExtension {
 	private _animatePreview(gestureCompleted: boolean, duration: number, callback?: () => void) {
 		easeActor(this._preview, {
 			opacity: gestureCompleted ? 255 : 0,
-			scaleY: gestureCompleted && !this._isTermOpen ? 1 : 0,
+			scaleY: gestureCompleted !== this._isTermOpen ? 1 : 0,
 			duration,
 			mode: Clutter.AnimationMode.EASE_OUT_QUAD,
 			onStopped: () => {
@@ -111,7 +111,6 @@ export class DropDownTerminal implements ISubExtension {
 		this._touchpadSwipeTracker.destroy();
 		this._connectHandlers = [];
 		this._preview.destroy();
-
 	}
 
 }

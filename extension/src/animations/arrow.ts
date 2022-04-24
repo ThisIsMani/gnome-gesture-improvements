@@ -3,9 +3,9 @@ import Gio from '@gi-types/gio2';
 import Clutter from '@gi-types/clutter8';
 import St from '@gi-types/st1';
 
-import { imports } from 'gnome-shell';
-import { registerClass } from '../../common/utils/gobject';
-import { easeActor } from '../utils/environment';
+import {imports} from 'gnome-shell';
+import {registerClass} from '../../common/utils/gobject';
+import {easeActor} from '../utils/environment';
 
 const ExtMe = imports.misc.extensionUtils.getCurrentExtension();
 const Util = imports.misc.util;
@@ -16,7 +16,7 @@ const Circle = registerClass(
 	class GIE_Circle extends St.Widget {
 		constructor(style_class: string) {
 			style_class = `gie-circle ${style_class}`;
-			super({ style_class });
+			super({style_class});
 			this.set_pivot_point(0.5, 0.5);
 		}
 	},
@@ -67,6 +67,9 @@ export const ArrowIconAnimation = registerClass(
 			this._arrow_icon.opacity = 0;
 			this._outer_circle.opacity = 0;
 
+			this._arrow_icon.set_style('color: #396bd7;');
+			this._inner_circle.set_style('background-color: #ffffff;border-color: #ffffff;');
+
 			this._inner_circle.translation_x = this._transition.translate.from;
 			this._inner_circle.scale_x = this._transition.inner_scale.from;
 			this._inner_circle.scale_y = this._inner_circle.scale_x;
@@ -80,6 +83,21 @@ export const ArrowIconAnimation = registerClass(
 
 		gestureUpdate(progress: number) {
 			if (this._transition === undefined) return;
+
+			if (progress > 0.9) {
+				this._arrow_icon.set_style('color: #ffffff;');
+				this._inner_circle.set_style('background-color: #396bd7;border-color: #396bd7;');
+			} else {
+				this._arrow_icon.set_style('color: #396bd7;');
+				this._inner_circle.set_style('background-color: #ffffff;border-color: #ffffff;');
+			}
+
+			// if (progress > 0.9) {
+			// 	const tempProgress = 10 * (progress - 0.9);
+			// 	const color = [Util.lerp(255, 57, tempProgress), Util.lerp(255, 107, tempProgress), Util.lerp(255, 215, tempProgress)];
+			// 	this._inner_circle.set_style(`border-color: rgb(${color.join(',')});background-color: rgb(${color.join(',')});`);
+			// 	this._arrow_icon.set_style(`color: rgb(${Util.lerp(57, 255, tempProgress)}, ${Util.lerp(107, 255, tempProgress)}, ${Util.lerp(215, 255, tempProgress)});`);
+			// }
 
 			this._inner_circle.opacity = Util.lerp(this._transition.opacity.from, this._transition.opacity.end, progress);
 			this._arrow_icon.opacity = Util.lerp(this._transition.opacity.from, this._transition.opacity.end, progress);
@@ -97,9 +115,14 @@ export const ArrowIconAnimation = registerClass(
 		gestureEnd(duration: number, progress: number, callback: () => void) {
 			if (this._transition === undefined) return;
 
-			const opacity = Util.lerp(this._transition.opacity.from, this._transition.opacity.end, progress);
-			const translation_x = Util.lerp(this._transition.translate.from, this._transition.translate.end, progress);
-			const scale_inner = Util.lerp(this._transition.inner_scale.from, this._transition.inner_scale.end, progress);
+			if (progress === 1) {
+				this._arrow_icon.set_style('color: #ffffff;');
+				this._inner_circle.set_style('background-color: #396bd7;border-color: #396bd7;');
+			}
+
+			const opacity = progress === 0 ? this._transition.opacity.from : this._transition.opacity.end;
+			const translation_x = progress === 0 ? this._transition.translate.from : this._transition.translate.end;
+			const scale_inner = progress === 0 ? this._transition.inner_scale.from : this._transition.inner_scale.end;
 			easeActor(this._inner_circle, {
 				opacity,
 				translation_x,
@@ -128,7 +151,7 @@ export const ArrowIconAnimation = registerClass(
 				},
 			});
 
-			const scale_outer = Util.lerp(this._transition.outer_scale.from, this._transition.outer_scale.end, progress);
+			const scale_outer = progress === 0 ? this._transition.outer_scale.from : this._transition.outer_scale.end;
 			easeActor(this._outer_circle, {
 				opacity,
 				translation_x,
