@@ -1,12 +1,14 @@
-import Clutter from '@gi-types/clutter8';
-import Shell from '@gi-types/shell0';
-import {imports} from 'gnome-shell';
-import {ExtSettings} from '../constants';
-import {TouchpadSwipeGesture} from './swipeTracker';
+import Clutter from '@gi-types/clutter';
+import Shell from '@gi-types/shell';
 import Gio from '@gi-types/gio2';
+import { imports } from 'gnome-shell';
+import { ExtSettings } from '../constants';
+import { TouchpadSwipeGesture } from './swipeTracker';
+
 import VolumeControl = imports.ui.status.volume.VolumeControl;
 import StreamSlider = imports.ui.status.volume.StreamSlider;
 import VolumeSink = imports.ui.status.volume.VolumeSink;
+
 const Main = imports.ui.main;
 const Volume = imports.ui.status.volume;
 
@@ -32,7 +34,7 @@ export class VolumeUpDownGesture implements ISubExtension {
 
 		this._touchpadSwipeTracker = new TouchpadSwipeGesture(
 			(ExtSettings.DEFAULT_SESSION_WORKSPACE_GESTURE ? [3] : [4]),
-			Shell.ActionMode.ALL,
+			Shell.ActionMode.NORMAL,
 			Clutter.Orientation.VERTICAL,
 			false,
 		);

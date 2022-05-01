@@ -25,3 +25,24 @@ declare interface ExtensionMeta {
 	'settings-schema'?: string,
 	'gettext-domain'?: string
 }
+
+// gjs constants
+declare const TextDecoder = import('util').TextDecoder;
+declare const TextEncoder = import('util').TextEncoder;
+
+// gnome-shell modules
+declare module '@gi-types/clutter' {
+	export * from '@gi-types/clutter10';
+}
+
+declare module '@gi-types/meta' {
+	export * from '@gi-types/meta10';
+}
+
+declare module '@gi-types/st' {
+	export * from '@gi-types/st1';
+}
+
+declare module '@gi-types/shell' {
+	export * from '@gi-types/shell0';
+}

@@ -1,7 +1,7 @@
-import Clutter from '@gi-types/clutter8';
-import Meta from '@gi-types/meta8';
-import Shell from '@gi-types/shell0';
-import St from '@gi-types/st1';
+import Clutter from '@gi-types/clutter';
+import Meta from '@gi-types/meta';
+import Shell from '@gi-types/shell';
+import St from '@gi-types/st';
 
 import { global, imports } from 'gnome-shell';
 
@@ -29,7 +29,7 @@ enum EndAction {
 
 declare type Type_TouchpadPinchGesture = typeof TouchpadPinchGesture.prototype;
 
-export class CloseWindowExtension implements ISubExtension {
+export class WindowManupulationGesture implements ISubExtension {
 	private _closeType: PinchGestureType.CLOSE_DOCUMENT | PinchGestureType.CLOSE_WINDOW;
 	private _keyboard: IVirtualKeyboard;
 	private _pinchTracker: Type_TouchpadPinchGesture;
@@ -74,7 +74,7 @@ export class CloseWindowExtension implements ISubExtension {
 
 	gestureBegin(tracker: Type_TouchpadPinchGesture) {
 		this._focusWindow = global.display.get_focus_window() as Meta.Window | null;
-		if (!this._focusWindow) return;
+		if (!this._focusWindow)	return;
 
 		this._maximizedBox = this.getMaximizedBox(this._focusWindow);
 		this._isAlredyMaximized = this._focusWindow?.get_maximized() === Meta.MaximizeFlags.BOTH;

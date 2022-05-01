@@ -1,20 +1,20 @@
 import GLib from '@gi-types/glib2';
-import {imports} from 'gnome-shell';
-import {AllSettingsKeys, GioSettings, PinchGestureType} from './common/settings';
+import { imports } from 'gnome-shell';
+import { AllSettingsKeys, GioSettings, PinchGestureType } from './common/settings';
 import * as Constants from './constants';
-import {AltTabConstants, ExtSettings, TouchpadConstants} from './constants';
-import {AltTabGestureExtension} from './src/altTab';
-import {ForwardBackGestureExtension} from './src/forwardBack';
-import {GestureExtension} from './src/gestures';
-import {OverviewRoundTripGestureExtension} from './src/overviewRoundTrip';
-import {ShowDesktopExtension} from './src/pinchGestures/showDesktop';
-import {SnapWindowExtension} from './src/snapWindow';
+import { AltTabConstants, ExtSettings, TouchpadConstants } from './constants';
+import { AltTabGestureExtension } from './src/altTab';
+import { ForwardBackGestureExtension } from './src/forwardBack';
+import { GestureExtension } from './src/gestures';
+import { OverviewRoundTripGestureExtension } from './src/overviewRoundTrip';
 import * as DBusUtils from './src/utils/dbus';
 import * as VKeyboard from './src/utils/keyboard';
-import {VolumeUpDownGesture} from './src/volume';
-import {PopLauncherExtension} from './src/pinchGestures/popLauncher';
-import {CloseWindowExtension} from './src/pinchGestures/windowManipulation';
-import {DropDownTerminal} from './src/ddTerm';
+import { ShowDesktopExtension } from './src/pinchGestures/showDesktop';
+import { SnapWindowExtension } from './src/snapWindow';
+import { VolumeUpDownGesture } from './src/volume';
+import { PopLauncherExtension } from './src/pinchGestures/popLauncher';
+import { WindowManupulationGesture } from './src/pinchGestures/windowManipulation';
+import { DropDownTerminal } from './src/ddTerm';
 
 const ExtensionUtils = imports.misc.extensionUtils;
 
@@ -80,6 +80,7 @@ class Extension {
 
 		if (this.settings.get_boolean('enable-alttab-gesture'))
 			this._extensions.push(new AltTabGestureExtension());
+
 		if (this.settings.get_boolean('enable-forward-back-gesture')) {
 			const appForwardBackKeyBinds = this.settings.get_value('forward-back-application-keyboard-shortcuts').deepUnpack();
 			this._extensions.push(new ForwardBackGestureExtension(appForwardBackKeyBinds));
@@ -87,6 +88,7 @@ class Extension {
 
 		if (this.settings.get_boolean('enable-ddterm-gesture'))
 			this._extensions.push(new DropDownTerminal());
+
 		if (this.settings.get_boolean('enable-volume-gesture'))
 			this._extensions.push(new VolumeUpDownGesture());
 
@@ -107,12 +109,12 @@ class Extension {
 		// pinch to close window
 		const closeWindowFingers = pinchToFingersMap.get(PinchGestureType.CLOSE_WINDOW);
 		if (closeWindowFingers?.length)
-			this._extensions.push(new CloseWindowExtension(closeWindowFingers, PinchGestureType.CLOSE_WINDOW));
+			this._extensions.push(new WindowManupulationGesture(closeWindowFingers, PinchGestureType.CLOSE_WINDOW));
 
 		// pinch to close document
 		const closeDocumentFingers = pinchToFingersMap.get(PinchGestureType.CLOSE_DOCUMENT);
 		if (closeDocumentFingers?.length)
-			this._extensions.push(new CloseWindowExtension(closeDocumentFingers, PinchGestureType.CLOSE_DOCUMENT));
+			this._extensions.push(new WindowManupulationGesture(closeDocumentFingers, PinchGestureType.CLOSE_DOCUMENT));
 
 		// pinch to invoke pop launcher
 		const popLauncherFingers = pinchToFingersMap.get(PinchGestureType.POP_LAUNCHER);
@@ -143,11 +145,12 @@ class Extension {
 			TouchpadConstants.SWIPE_MULTIPLIER = Constants.TouchpadConstants.DEFAULT_SWIPE_MULTIPLIER * this.settings.get_double('touchpad-speed-scale');
 			TouchpadConstants.PINCH_MULTIPLIER = Constants.TouchpadConstants.DEFAULT_PINCH_MULTIPLIER * this.settings.get_double('touchpad-pinch-speed');
 			AltTabConstants.DELAY_DURATION = this.settings.get_int('alttab-delay');
+			TouchpadConstants.HOLD_SWIPE_DELAY_DURATION = this.settings.get_int('hold-swipe-delay-duration');
 		}
 	}
 
 	private _getPinchGestureTypeAndFingers(): Map<PinchGestureType, number[]> {
-		if (!this.settings)	return new Map();
+		if (!this.settings) return new Map();
 
 		const pinch3FingerGesture = this.settings.get_enum('pinch-3-finger-gesture');
 		const pinch4FingerGesture = this.settings.get_enum('pinch-4-finger-gesture');

@@ -94,3 +94,4 @@ const ExampleApp = registerClass(
 
 const app = new ExampleApp();
 app.run([]);
+log('App quit');

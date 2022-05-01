@@ -10,6 +10,7 @@ export const TouchpadConstants = {
 	DRAG_THRESHOLD_DISTANCE: 16,
 	TOUCHPAD_BASE_HEIGHT: 300,
 	TOUCHPAD_BASE_WIDTH: 400,
+	HOLD_SWIPE_DELAY_DURATION: 100,
 };
 
 export const AltTabConstants = {

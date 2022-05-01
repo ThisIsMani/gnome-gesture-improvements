@@ -1,7 +1,7 @@
-import Clutter from '@gi-types/clutter8';
+import Clutter from '@gi-types/clutter';
 import GObject from '@gi-types/gobject2';
-import Meta from '@gi-types/meta8';
-import Shell from '@gi-types/shell0';
+import Meta from '@gi-types/meta';
+import Shell from '@gi-types/shell';
 import { CustomEventType, global, imports } from 'gnome-shell';
 import { registerClass } from '../../common/utils/gobject';
 import { TouchpadConstants } from '../../constants';
@@ -142,7 +142,7 @@ export const TouchpadPinchGesture = registerClass({
 
 		if (gesturePhase === Clutter.TouchpadGesturePhase.BEGIN && this._checkAllowedGesture !== undefined) {
 			try {
-				if (this._checkAllowedGesture(event) !== true) {
+				if (!this._checkAllowedGesture(event)) {
 					this._state = TouchpadState.IGNORED;
 					return Clutter.EVENT_PROPAGATE;
 				}
@@ -182,6 +182,8 @@ export const TouchpadPinchGesture = registerClass({
 	}
 
 	/**
+	 * @param _distance
+	 * @param snapPoints
 	 * @param currentProgress must be in increasing order
 	 */
 	public confirmPinch(_distance: number, snapPoints: number[], currentProgress: number) {
@@ -211,12 +213,12 @@ export const TouchpadPinchGesture = registerClass({
 	}
 
 	private _emitBegin() {
+		if (this._ackState === GestureACKState.ACKED)
+			return;
 		this._historyTracker.reset();
-		if (this._ackState === GestureACKState.NONE) {
-			this._ackState = GestureACKState.PENDING_ACK;
-			this._progress_scale = 1.0;
-			this.emit('begin');
-		}
+		this._ackState = GestureACKState.PENDING_ACK;
+		this._progress_scale = 1.0;
+		this.emit('begin');
 	}
 
 	private _emitUpdate(time: number, pinch_scale: number) {
@@ -251,15 +253,6 @@ export const TouchpadPinchGesture = registerClass({
 		this._reset();
 		this._ackState = GestureACKState.NONE;
 		this.emit('end', duration, endProgress);
-	}
-
-	private _findEndPoints() {
-		const current = this._progress_scale;
-		return {
-			current,
-			next: Math.clamp(Math.ceil(current), ...this._getBounds()),
-			previous: Math.clamp(Math.floor(current), ...this._getBounds()),
-		};
 	}
 
 	private _findClosestPoint(pos: number) {

@@ -1,12 +1,12 @@
-import Clutter from '@gi-types/clutter8';
-import Shell from '@gi-types/shell0';
-import St from '@gi-types/st1';
+import Clutter from '@gi-types/clutter';
+import Shell from '@gi-types/shell';
+import St from '@gi-types/st';
 
-import {global, imports} from 'gnome-shell';
+import { global, imports } from 'gnome-shell';
 
-import {TouchpadPinchGesture} from '../trackers/pinchTracker';
-import {easeActor} from '../utils/environment';
-import {getVirtualKeyboard, IVirtualKeyboard} from '../utils/keyboard';
+import { TouchpadPinchGesture } from '../trackers/pinchTracker';
+import { easeActor } from '../utils/environment';
+import { getVirtualKeyboard, IVirtualKeyboard } from '../utils/keyboard';
 
 const Main = imports.ui.main;
 const Util = imports.misc.util;

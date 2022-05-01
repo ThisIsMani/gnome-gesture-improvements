@@ -1,7 +1,7 @@
-import Clutter from '@gi-types/clutter8';
-import Meta from '@gi-types/meta8';
-import Shell from '@gi-types/shell0';
-import St from '@gi-types/st1';
+import Clutter from '@gi-types/clutter';
+import Meta from '@gi-types/meta';
+import Shell from '@gi-types/shell';
+import St from '@gi-types/st';
 import { global, imports } from 'gnome-shell';
 import { registerClass } from '../common/utils/gobject';
 import { ExtSettings } from '../constants';
@@ -52,9 +52,9 @@ const TilePreview = registerClass(
 			super({
 				reactive: false,
 				style_class: 'tile-preview',
-				style: 'border-radius: 8px',
 				visible: false,
 			});
+			this.add_style_class_name('gie-tile-window-preview');
 			this.connect('destroy', this._onDestroy.bind(this));
 
 			this._adjustment = new St.Adjustment({
@@ -75,11 +75,11 @@ const TilePreview = registerClass(
 
 			this._window = window;
 			this._fullscreenBox = global.display.get_monitor_geometry(window.get_monitor());
-			this._maximizeBox = this.getMaximizedBox(window);
-			this._normalBox = this.getNormalBox(window);
+			this._maximizeBox = TilePreview.getMaximizedBox(window);
+			this._normalBox = TilePreview.getNormalBox(window);
 			this._leftSnapBox = this._maximizeBox.copy();
 			this._rightSnapBox = this._maximizeBox.copy();
-			this._minimizeBox = this.getMinimizedBox(this._window, this._maximizeBox);
+			this._minimizeBox = TilePreview.getMinimizedBox(this._window, this._maximizeBox);
 
 			this._leftSnapBox.width /= 2;
 			this._rightSnapBox.width /= 2;
@@ -231,7 +231,7 @@ const TilePreview = registerClass(
 			return this._adjustment;
 		}
 
-		private getMinimizedBox(window: Meta.Window, monitorWorkArea: Meta.Rectangle) {
+		private static getMinimizedBox(window: Meta.Window, monitorWorkArea: Meta.Rectangle) {
 			const [has_icon, icon_geometry] = window.get_icon_geometry();
 			if (has_icon)
 				return icon_geometry;
@@ -242,7 +242,7 @@ const TilePreview = registerClass(
 			return rect;
 		}
 
-		private getNormalBox(window: Meta.Window) {
+		private static getNormalBox(window: Meta.Window) {
 			const normalBox = window.get_frame_rect();
 			if (window.get_maximized() !== Meta.MaximizeFlags.BOTH)
 				return normalBox;
@@ -258,7 +258,7 @@ const TilePreview = registerClass(
 			return normalBox;
 		}
 
-		private getMaximizedBox(window: Meta.Window) {
+		private static getMaximizedBox(window: Meta.Window) {
 			const monitor = window.get_monitor();
 			const maximizedBox = Main.layoutManager.getWorkAreaForMonitor(monitor);
 			if (!window.is_fullscreen())

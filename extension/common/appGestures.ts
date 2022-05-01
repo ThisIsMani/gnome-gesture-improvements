@@ -5,6 +5,7 @@ import GObject from '@gi-types/gobject2';
 import Adw from '@gi-types/adw1';
 import { ForwardBackKeyBinds, GioSettings } from './settings';
 import { registerClass } from './utils/gobject';
+import { printStack } from './utils/logging';
 
 /** return icon image for give app */
 function getAppIconImage(app: Gio.AppInfoPrototype) {
@@ -17,7 +18,15 @@ function getAppIconImage(app: Gio.AppInfoPrototype) {
 
 /** Returns marked escaped text or empty string if text is nullable */
 function markup_escape_text(text?: string | null) {
-	return text ? GLib.markup_escape_text(text, text.length) : '';
+	text = text ?? '';
+	try {
+		return GLib.markup_escape_text(text, -1);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	} catch (e: any) {
+		// probably errors in different language or app name
+		printStack(`Error: '${e?.message ?? e}' while escaping app name for app(${text}))`);
+		return text;
+	}
 }
 
 /** Dialog window used for selecting application from given list of apps
@@ -40,11 +49,12 @@ const AppChooserDialog = registerClass(
 				modal: true,
 				transientFor: parent,
 				destroyWithParent: false,
+				title: 'Select application',
 			});
 
 			this.set_default_size(
-				0.5 * parent.defaultWidth,
-				0.6 * parent.defaultHeight,
+				0.7 * parent.defaultWidth,
+				0.7 * parent.defaultHeight,
 			);
 
 			this._group = new Adw.PreferencesGroup();
@@ -166,7 +176,7 @@ const AppKeybindingGesturePrefsGroup = registerClass(
 		constructor(prefsWindow: Adw.PreferencesWindow, settings: GioSettings) {
 			super({
 				title: 'Enable application specific gestures',
-				description: 'Hold to start window switching gesture',
+				description: 'Hold and then swipe to activate the gesture',
 			});
 
 			this._prefsWindow = prefsWindow;

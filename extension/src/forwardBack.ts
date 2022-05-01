@@ -1,6 +1,6 @@
-import Clutter from '@gi-types/clutter8';
-import Shell from '@gi-types/shell0';
-import Meta from '@gi-types/meta8';
+import Clutter from '@gi-types/clutter';
+import Shell from '@gi-types/shell';
+import Meta from '@gi-types/meta';
 
 import { imports, global } from 'gnome-shell';
 
@@ -77,7 +77,8 @@ export class ForwardBackGestureExtension implements ISubExtension {
 
 	_gestureBegin(tracker: SwipeTrackerT): void {
 		this._focusWindow = global.display.get_focus_window() as Meta.Window | null;
-		if (!this._focusWindow)	return;
+		if (!this._focusWindow)
+			return;
 		this._animationState = AnimationState.WAITING;
 		tracker.confirmSwipe(
 			global.screen_width,
@@ -154,7 +155,7 @@ export class ForwardBackGestureExtension implements ISubExtension {
 	}
 
 	_getWorkArea() {
-		const window = global.display.get_focus_window() as Meta.Window | null;
+		const window = this._focusWindow;
 		if (window)
 			return window.get_frame_rect();
 		return Main.layoutManager.getWorkAreaForMonitor(Main.layoutManager.currentMonitor.index);

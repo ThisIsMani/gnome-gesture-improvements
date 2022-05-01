@@ -1,4 +1,4 @@
-import Clutter from '@gi-types/clutter8';
+import Clutter from '@gi-types/clutter';
 import GLib from '@gi-types/glib2';
 
 const DELAY_BETWEEN_KEY_PRESS = 10; // ms
@@ -13,6 +13,8 @@ class VirtualKeyboard {
 	}
 
 	sendKeys(keys: number[]) {
+		// log(`sending keys: ${keys}`);
+
 		// keyEvents are stored in revere order so first event can be just popped
 		const keyEvents: [number, Clutter.KeyState][] = [];
 		keys.forEach(key => keyEvents.push([key, Clutter.KeyState.RELEASED]));

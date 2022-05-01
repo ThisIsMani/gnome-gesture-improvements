@@ -1,13 +1,13 @@
-import Clutter from '@gi-types/clutter8';
-import Shell from '@gi-types/shell0';
-import St from '@gi-types/st1';
+import Clutter from '@gi-types/clutter';
+import Shell from '@gi-types/shell';
+import St from '@gi-types/st';
+import Meta from '@gi-types/meta';
 
-import {imports, global} from 'gnome-shell';
+import { imports, global } from 'gnome-shell';
 
-import {getVirtualKeyboard, IVirtualKeyboard} from './utils/keyboard';
-import {TouchpadSwipeGesture} from './swipeTracker';
-import {easeActor} from './utils/environment';
-import Meta from '@gi-types/meta8';
+import { getVirtualKeyboard, IVirtualKeyboard } from './utils/keyboard';
+import { TouchpadSwipeGesture } from './swipeTracker';
+import { easeActor } from './utils/environment';
 
 const Main = imports.ui.main;
 const Util = imports.misc.util;
@@ -41,7 +41,7 @@ export class DropDownTerminal implements ISubExtension {
 
 		this._touchpadSwipeTracker = new TouchpadSwipeGesture(
 			[4],
-			Shell.ActionMode.ALL,
+			Shell.ActionMode.NORMAL,
 			Clutter.Orientation.VERTICAL,
 			false,
 			this._checkAllowedGesture.bind(this),
@@ -49,7 +49,7 @@ export class DropDownTerminal implements ISubExtension {
 	}
 
 	_checkAllowedGesture(): boolean {
-		return Main.actionMode === Shell.ActionMode.NORMAL && !this._touchpadSwipeTracker.hadHoldGesture();
+		return Main.actionMode === Shell.ActionMode.NORMAL && !this._touchpadSwipeTracker.isItHoldAndSwipeGesture();
 	}
 
 	apply() {
