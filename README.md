@@ -26,20 +26,26 @@ gnome-extensions enable gestureImprovements@gestures
 On X11, you also need to install [gnome-x11-gesture-daemon](https://github.com/harshadgavali/gnome-x11-gesture-daemon)
 
 ## Gestures (including built-in ones)
-| Swipe Gesture                           | Modes    | Fingers | Direction       |
-| :-------------------------------------- | :------- | :------ | :-------------- |
-| Switch windows                          | Desktop  | 3       | Horizontal      |
-| Switch workspaces                       | Overview | 2/3     | Horizontal      |
-| Switch app pages                        | AppGrid  | 2/3     | Horizontal      |
-| Switch workspaces                       | *        | 4       | Horizontal      |
-| Desktop/Overview/AppGrid navigation     | *        | 4       | Vertical        |
-| Unmaximize/maximize/fullscreen a window | Desktop  | 3       | Vertical        |
-| Minimize a window                       | Desktop  | 3       | Vertical        |
-| Snap/half-tile a window                 | Desktop  | 3       | Explained below |
+| Swipe Gesture                                    | Modes    | Fingers | Direction       |
+|:-------------------------------------------------|:---------|:--------|:----------------|
+| Switch windows                                   | Desktop  | 3       | Horizontal      |
+| Switch workspaces                                | Overview | 2/3     | Horizontal      |
+| Switch app pages                                 | AppGrid  | 2/3     | Horizontal      |
+| Forward Back gesture                             | Desktop  | 3/4     | Horizontal      |
+| Switch workspaces                                | *        | 4       | Horizontal      |
+| Desktop/Overview/AppGrid navigation              | *        | 4       | Vertical        |
+| Unmaximize/maximize/fullscreen a window          | Desktop  | 3       | Vertical        |
+| Minimize a window                                | Desktop  | 3       | Vertical        |
+| Volume control                                   | Desktop  | 3/4     | Vertical        |
+| Snap/half-tile a window                          | Desktop  | 3       | Explained below |
+| Drop Down Terminal (add F12 shortcut for ddterm) | Desktop  | 4       | Vertical        |
 
-| Pinch Gesture | Modes   | Fingers |
-| :------------ | :------ | :------ |
-| Show Desktop  | Desktop | 3/4     |
+| Pinch Gesture        | Modes   | Fingers |
+|:---------------------|:--------|:--------|
+| Pop Launcher         | Desktop | 3/4     |
+| Window Manipulation  | Desktop | 3/4     |
+| Close tab (Ctrl + W) | Desktop | 3/4     |
+| Show Desktop         | Desktop | 3/4     |
 
 | Application Gestures (Configurable) |
 | :--- |
