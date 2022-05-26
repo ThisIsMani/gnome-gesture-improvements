@@ -34,7 +34,7 @@ export class VolumeUpDownGesture implements ISubExtension {
 
 		this._touchpadSwipeTracker = new TouchpadSwipeGesture(
 			(ExtSettings.DEFAULT_SESSION_WORKSPACE_GESTURE ? [3] : [4]),
-			Shell.ActionMode.NORMAL,
+			Shell.ActionMode.ALL,
 			Clutter.Orientation.VERTICAL,
 			false,
 		);
