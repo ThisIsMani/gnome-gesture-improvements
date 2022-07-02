@@ -142,7 +142,7 @@ export const TouchpadPinchGesture = registerClass({
 
 		if (gesturePhase === Clutter.TouchpadGesturePhase.BEGIN && this._checkAllowedGesture !== undefined) {
 			try {
-				if (!this._checkAllowedGesture(event)) {
+				if (this._checkAllowedGesture(event) !== true) {
 					this._state = TouchpadState.IGNORED;
 					return Clutter.EVENT_PROPAGATE;
 				}
@@ -253,6 +253,15 @@ export const TouchpadPinchGesture = registerClass({
 		this._reset();
 		this._ackState = GestureACKState.NONE;
 		this.emit('end', duration, endProgress);
+	}
+
+	private _findEndPoints() {
+		const current = this._progress_scale;
+		return {
+			current,
+			next: Math.clamp(Math.ceil(current), ...this._getBounds()),
+			previous: Math.clamp(Math.floor(current), ...this._getBounds()),
+		};
 	}
 
 	private _findClosestPoint(pos: number) {

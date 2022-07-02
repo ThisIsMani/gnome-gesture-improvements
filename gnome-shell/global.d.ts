@@ -26,7 +26,7 @@ declare interface ExtensionMeta {
 	'gettext-domain'?: string
 }
 
-// gjs constants
+// gjs constants 
 declare const TextDecoder = import('util').TextDecoder;
 declare const TextEncoder = import('util').TextEncoder;
 

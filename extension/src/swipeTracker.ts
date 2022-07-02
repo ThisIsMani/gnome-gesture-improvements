@@ -43,12 +43,12 @@ export const TouchpadSwipeGesture = registerClass({
 	},
 }, class TouchpadSwipeGesture extends GObject.Object {
 	private _nfingers: number[];
-	private readonly _allowedModes: Shell.ActionMode;
+	private _allowedModes: Shell.ActionMode;
 	orientation: Clutter.Orientation;
-	private readonly _checkAllowedGesture?: (event: CustomEventType) => boolean;
+	private _checkAllowedGesture?: (event: CustomEventType) => boolean;
 	private _cumulativeX = 0;
 	private _cumulativeY = 0;
-	private readonly _followNaturalScroll: boolean;
+	private _followNaturalScroll: boolean;
 	_stageCaptureEvent = 0;
 	SWIPE_MULTIPLIER: number;
 	TOUCHPAD_BASE_HEIGHT = TouchpadConstants.TOUCHPAD_BASE_HEIGHT;
@@ -82,7 +82,7 @@ export const TouchpadSwipeGesture = registerClass({
 			DBusUtils.subscribe(this._handleEvent.bind(this));
 		}
 
-		this.SWIPE_MULTIPLIER = TouchpadConstants.SWIPE_MULTIPLIER * (gestureSpeed);
+		this.SWIPE_MULTIPLIER = TouchpadConstants.SWIPE_MULTIPLIER * (typeof (gestureSpeed) !== 'number' ? 1.0 : gestureSpeed);
 	}
 
 	private _resetState() {
@@ -143,7 +143,7 @@ export const TouchpadSwipeGesture = registerClass({
 
 		if (gesturePhase === Clutter.TouchpadGesturePhase.BEGIN && this._checkAllowedGesture !== undefined) {
 			try {
-				if (!this._checkAllowedGesture(event)) {
+				if (this._checkAllowedGesture(event) !== true) {
 					this._state = TouchpadState.IGNORED;
 					return Clutter.EVENT_PROPAGATE;
 				}
@@ -224,7 +224,7 @@ export const TouchpadSwipeGesture = registerClass({
 	isItHoldAndSwipeGesture() {
 		if (this._holdGestureCancelTime === 0)
 			return false;
-
+		
 		return (
 			(this._holdGestureCancelTime - this._holdGestureBeginTime >= TouchpadConstants.HOLD_SWIPE_DELAY_DURATION) &&	// ms
 			(this._swipeGestureBeginTime - this._holdGestureCancelTime <= Math.max(100, TouchpadConstants.HOLD_SWIPE_DELAY_DURATION))		// ms

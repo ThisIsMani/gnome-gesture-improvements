@@ -34,10 +34,11 @@ export const ExtSettings = {
 	DEFAULT_OVERVIEW_GESTURE: false,
 	ALLOW_MINIMIZE_WINDOW: false,
 	FOLLOW_NATURAL_SCROLL: true,
+	APP_GESTURES: false,
 	DEFAULT_OVERVIEW_GESTURE_DIRECTION: true,
 	ALLOW_VOLUME_GESTURE: false,
-	ALLOW_APP_GESTURE: false,
 	ALLOW_DDTERM_GESTURE: false,
 };
 
 export const RELOAD_DELAY = 150; // reload extension delay in ms
+export const WIGET_SHOWING_DURATION = 100; // animation duration for showing widget

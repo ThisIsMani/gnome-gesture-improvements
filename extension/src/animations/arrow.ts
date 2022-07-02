@@ -6,6 +6,7 @@ import St from '@gi-types/st';
 import { imports } from 'gnome-shell';
 import { registerClass } from '../../common/utils/gobject';
 import { easeActor } from '../utils/environment';
+import { WIGET_SHOWING_DURATION } from '../../constants';
 
 const ExtMe = imports.misc.extensionUtils.getCurrentExtension();
 const Util = imports.misc.util;
@@ -24,10 +25,10 @@ const Circle = registerClass(
 
 export const ArrowIconAnimation = registerClass(
 	class GIE_ArrowIcon extends St.Widget {
-		private readonly _inner_circle: typeof Circle.prototype;
-		private readonly _outer_circle: typeof Circle.prototype;
-		private readonly _arrow_icon: St.Icon;
-		private _transition?: { opacity: { from: number, end: number }, inner_scale: { from: number; end: number }, translate: { from: number; end: number }, outer_scale: { from: number; end: number; } };
+		private _inner_circle: typeof Circle.prototype;
+		private _outer_circle: typeof Circle.prototype;
+		private _arrow_icon: St.Icon;
+		private _transition?: { opacity: { from: number, end: number }, inner_circle: { from: number; end: number }, arrow: { from: number; end: number }, outer_circle: { from: number; end: number; } };
 
 		constructor() {
 			super();
@@ -49,15 +50,15 @@ export const ArrowIconAnimation = registerClass(
 					from: 0,
 					end: 255,
 				},
-				inner_scale: {
+				inner_circle: {
 					from: 0,
 					end: 1,
 				},
-				translate: {
+				arrow: {
 					from: this._inner_circle.width * (from_left ? -1 : 1),
 					end: 0,
 				},
-				outer_scale: {
+				outer_circle: {
 					from: 0,
 					end: 2,
 				},
@@ -70,14 +71,24 @@ export const ArrowIconAnimation = registerClass(
 			this._arrow_icon.set_style('color: #396bd7;');
 			this._inner_circle.set_style('background-color: #ffffff;border-color: #ffffff;');
 
-			this._inner_circle.translation_x = this._transition.translate.from;
-			this._inner_circle.scale_x = this._transition.inner_scale.from;
-			this._inner_circle.scale_y = this._transition.inner_scale.from;
-			this._arrow_icon.translation_x = this._transition.translate.from;
-			this._outer_circle.translation_x = this._transition.translate.from;
-			this._outer_circle.scale_x = this._transition.outer_scale.from;
-			this._outer_circle.scale_y = this._transition.outer_scale.from;
+			this._inner_circle.translation_x = this._transition.arrow.from;
+			this._inner_circle.scale_x = this._transition.inner_circle.from;
+			this._inner_circle.scale_y = this._transition.inner_circle.from;
+			this._arrow_icon.translation_x = this._transition.arrow.from;
+			this._outer_circle.translation_x = this._transition.arrow.from;
+			this._outer_circle.scale_x = this._transition.outer_circle.from;
+			this._outer_circle.scale_y = this._transition.outer_circle.from;
 			this._arrow_icon.opacity = 255;
+			
+			// animating showing widget
+			this.opacity = 0;
+			this.show();
+			easeActor(this as St.Widget, {
+				opacity: 255,
+				mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+				duration: WIGET_SHOWING_DURATION,
+			});
+
 			this._arrow_icon.set_gicon(Gio.Icon.new_for_string(`${ExtMe.dir.get_uri()}/assets/${icon_name}`));
 		}
 
@@ -104,16 +115,16 @@ export const ArrowIconAnimation = registerClass(
 			this._arrow_icon.opacity = currentOpacity;
 			this._outer_circle.opacity = currentOpacity;
 
-			const currentInnerScale = Util.lerp(this._transition.inner_scale.from, this._transition.inner_scale.end, progress);
+			const currentInnerScale = Util.lerp(this._transition.inner_circle.from, this._transition.inner_circle.end, progress);
 			this._inner_circle.scale_x = currentInnerScale;
 			this._inner_circle.scale_y = currentInnerScale;
 
-			const currentTranslate = Util.lerp(this._transition.translate.from, this._transition.translate.end, progress);
+			const currentTranslate = Util.lerp(this._transition.arrow.from, this._transition.arrow.end, progress);
 			this._inner_circle.translation_x = currentTranslate;
 			this._arrow_icon.translation_x = currentTranslate;
 			this._outer_circle.translation_x = currentTranslate;
 
-			const currentOuterScale = Util.lerp(this._transition.outer_scale.from, this._transition.outer_scale.end, progress);
+			const currentOuterScale = Util.lerp(this._transition.outer_circle.from, this._transition.outer_circle.end, progress);
 			this._outer_circle.scale_x = currentOuterScale;
 			this._outer_circle.scale_y = currentOuterScale;
 		}
@@ -121,16 +132,20 @@ export const ArrowIconAnimation = registerClass(
 		gestureEnd(duration: number, progress: number, callback: () => void) {
 			if (this._transition === undefined) return;
 
+			easeActor(this as St.Widget, {
+				opacity: 0,
+				mode: Clutter.AnimationMode.EASE_OUT_QUAD,
+				duration,
+			});
+
 			if (progress === 1) {
 				this._arrow_icon.set_style('color: #ffffff;');
 				this._inner_circle.set_style('background-color: #396bd7;border-color: #396bd7;');
 			}
 
-			const opacity = progress === 0 ? this._transition.opacity.from : this._transition.opacity.end;
-			const translation_x = progress === 0 ? this._transition.translate.from : this._transition.translate.end;
-			const scale_inner = progress === 0 ? this._transition.inner_scale.from : this._transition.inner_scale.end;
+			const translation_x = progress === 0 ? this._transition.arrow.from : this._transition.arrow.end;
+			const scale_inner = progress === 0 ? this._transition.inner_circle.from : this._transition.inner_circle.end;
 			easeActor(this._inner_circle, {
-				opacity,
 				translation_x,
 				scale_x: scale_inner,
 				scale_y: scale_inner,
@@ -138,9 +153,8 @@ export const ArrowIconAnimation = registerClass(
 				mode: Clutter.AnimationMode.EASE_OUT_QUAD,
 			});
 
-			const tranlationOnStop = this._transition.translate.from;
+			const tranlationOnStop = this._transition.arrow.from;
 			easeActor(this._arrow_icon, {
-				opacity,
 				duration,
 				translation_x,
 				mode: Clutter.AnimationMode.EASE_OUT_EXPO,
@@ -157,9 +171,8 @@ export const ArrowIconAnimation = registerClass(
 				},
 			});
 
-			const scale_outer = progress === 0 ? this._transition.outer_scale.from : this._transition.outer_scale.end;
+			const scale_outer = Util.lerp(this._transition.outer_circle.from, this._transition.outer_circle.end, progress);
 			easeActor(this._outer_circle, {
-				opacity,
 				translation_x,
 				scale_x: scale_outer,
 				scale_y: scale_outer,

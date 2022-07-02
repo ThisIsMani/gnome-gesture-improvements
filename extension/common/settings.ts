@@ -10,6 +10,13 @@ export enum PinchGestureType {
     POP_LAUNCHER = 4,
 }
 
+// define enum
+export enum OverviewNavigationState {
+    CYCLIC = 0,
+    GNOME = 1,
+    WINDOW_PICKER_ONLY = 2,
+}
+
 export enum ForwardBackKeyBinds {
     Default = 0,
     'Forward/Backward' = 1,
@@ -43,7 +50,8 @@ export type DoubleSettingsKeys =
 
 export type EnumSettingsKeys =
     'pinch-3-finger-gesture' |
-    'pinch-4-finger-gesture'
+    'pinch-4-finger-gesture' |
+    'overview-navigation-states'
     ;
 
 export type MiscSettingsKeys = 
@@ -76,7 +84,8 @@ type Enum_Functions<K extends EnumSettingsKeys, T> = {
 }
 
 type SettingsEnumFunctions =
-    Enum_Functions<'pinch-3-finger-gesture' | 'pinch-4-finger-gesture', PinchGestureType>
+    Enum_Functions<'pinch-3-finger-gesture' | 'pinch-4-finger-gesture', PinchGestureType> &
+    Enum_Functions<'overview-navigation-states', OverviewNavigationState>
     ;
 
 type Misc_Functions<K extends MiscSettingsKeys, T extends string> = {

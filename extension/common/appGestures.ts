@@ -23,6 +23,7 @@ function markup_escape_text(text?: string | null) {
 		return GLib.markup_escape_text(text, -1);
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (e: any) {
+		// TODO: see what exactly is error and fix it
 		// probably errors in different language or app name
 		printStack(`Error: '${e?.message ?? e}' while escaping app name for app(${text}))`);
 		return text;

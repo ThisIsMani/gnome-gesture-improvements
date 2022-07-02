@@ -62,7 +62,7 @@ export class AltTabGestureExtension implements ISubExtension {
 		return (
 			this._extState <= AltTabExtState.DEFAULT &&
 			Main.actionMode === Shell.ActionMode.NORMAL &&
-			(!ExtSettings.ALLOW_APP_GESTURE || this._touchpadSwipeTracker.isItHoldAndSwipeGesture())
+			(!ExtSettings.APP_GESTURES || this._touchpadSwipeTracker.isItHoldAndSwipeGesture())
 		);
 	}
 

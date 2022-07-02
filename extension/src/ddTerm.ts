@@ -56,21 +56,22 @@ export class DropDownTerminal implements ISubExtension {
 		let isTermOpen = this._focusWindow?.get_gtk_application_id() === 'com.github.amezin.ddterm';
 		this._actor = isTermOpen ? this._focusWindow.get_compositor_private() : null;
 		this._currentAction = isTermOpen ? ACTION.CLOSING : ACTION.OPENING;
-		if (!isTermOpen) {
-			this._toggleDDTerm();
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			global.display.connect('window-created', (d, metaWin) => {
-				if (metaWin.get_gtk_application_id() === 'com.github.amezin.ddterm') {
-					this._focusWindow = metaWin;
-					this._actor = metaWin.get_compositor_private();
-					isTermOpen = true;
-				}
-			});
-		}
-		this._actor?.set_pivot_point(0.5, 0);
-		this._actor?.set_scale(1, isTermOpen ? 1 : 0);
 		this._progress = isTermOpen ? 1 : 0;
-		this._actor?.set_opacity(isTermOpen ? 255 : CLOSE_OPACITY);
+		if (!isTermOpen) {
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			const createConnection = global.display.connect('window-created', (d, metaWin) => {
+				this._focusWindow = metaWin;
+				this._actor = metaWin.get_compositor_private();
+				this._actor?.map();
+				this._actor?.set_pivot_point(0.5, 0);
+				this._actor?.set_scale(1, 0);
+				this._actor?.set_opacity(0);
+				isTermOpen = true;
+				global.display.disconnect(createConnection);
+			});
+			this._toggleDDTerm();
+		}
+
 	}
 
 	_gestureUpdate(_gesture: never, _time: never, delta: number, distance: number): void {

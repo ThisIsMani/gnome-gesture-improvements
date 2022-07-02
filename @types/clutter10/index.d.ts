@@ -4,15 +4,15 @@
  * Generated from 10.0
  */
 
-import * as GObject from '@gi-types/gobject2';
-import * as cairo from '@gi-types/cairo1';
-import * as Atk from '@gi-types/atk1';
-import * as Pango from '@gi-types/pango1';
-import * as GLib from '@gi-types/glib2';
-import * as Graphene from '@gi-types/graphene1';
-import * as Gio from '@gi-types/gio2';
-import * as Json from '@gi-types/json1';
-import * as Cogl from '@gi-types/cogl10';
+import * as GObject from "@gi-types/gobject2";
+import * as cairo from "@gi-types/cairo1";
+import * as Atk from "@gi-types/atk1";
+import * as Pango from "@gi-types/pango1";
+import * as GLib from "@gi-types/glib2";
+import * as Graphene from "@gi-types/graphene1";
+import * as Gio from "@gi-types/gio2";
+import * as Json from "@gi-types/json1";
+import * as Cogl from "@gi-types/cogl10";
 
 export const BUTTON_MIDDLE: number;
 export const BUTTON_PRIMARY: number;
@@ -2626,16 +2626,16 @@ export enum GridPosition {
 }
 
 export class ImageError extends GLib.Error {
-	static $gtype: GObject.GType<ImageError>;
+    static $gtype: GObject.GType<ImageError>;
 
-	constructor(options: { message: string; code: number });
-	constructor(copy: ImageError);
+    constructor(options: { message: string; code: number });
+    constructor(copy: ImageError);
 
-	// Fields
-	static DATA: number;
+    // Fields
+    static DATA: number;
 
-	// Members
-	static quark(): GLib.Quark;
+    // Members
+    static quark(): GLib.Quark;
 }
 
 export namespace InputAxis {
@@ -2914,18 +2914,18 @@ export enum ScalingFilter {
 }
 
 export class ScriptError extends GLib.Error {
-	static $gtype: GObject.GType<ScriptError>;
+    static $gtype: GObject.GType<ScriptError>;
 
-	constructor(options: { message: string; code: number });
-	constructor(copy: ScriptError);
+    constructor(options: { message: string; code: number });
+    constructor(copy: ScriptError);
 
-	// Fields
-	static TYPE_FUNCTION: number;
-	static PROPERTY: number;
-	static VALUE: number;
+    // Fields
+    static TYPE_FUNCTION: number;
+    static PROPERTY: number;
+    static VALUE: number;
 
-	// Members
-	static quark(): GLib.Quark;
+    // Members
+    static quark(): GLib.Quark;
 }
 
 export namespace ScrollDirection {
@@ -3390,23 +3390,23 @@ export enum VirtualDeviceType {
     POINTER = 2,
     TOUCHSCREEN = 4,
 }
-export namespace Action {
+export module Action {
     export interface ConstructorProperties extends ActorMeta.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class Action extends ActorMeta {
-	static $gtype: GObject.GType<Action>;
+    static $gtype: GObject.GType<Action>;
 
-	constructor(properties?: Partial<Action.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Action.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Action.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Action.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	get_phase(): EventPhase;
-	vfunc_handle_event(event: Event): boolean;
+    get_phase(): EventPhase;
+    vfunc_handle_event(event: Event): boolean;
 }
-export namespace Actor {
+export module Actor {
     export interface ConstructorProperties<A extends LayoutManager = LayoutManager, B extends Content = Content>
         extends GObject.InitiallyUnowned.ConstructorProperties {
         [key: string]: any;
@@ -3535,656 +3535,654 @@ export namespace Actor {
     }
 }
 export class Actor<A extends LayoutManager = LayoutManager, B extends Content = Content>
-	extends GObject.InitiallyUnowned
-	implements Atk.ImplementorIface, Animatable, Container<Actor>, Scriptable
+    extends GObject.InitiallyUnowned
+    implements Atk.ImplementorIface, Animatable, Container<Actor>, Scriptable
 {
-	static $gtype: GObject.GType<Actor>;
+    static $gtype: GObject.GType<Actor>;
 
-	constructor(properties?: Partial<Actor.ConstructorProperties<A, B>>, ...args: any[]);
-	_init(properties?: Partial<Actor.ConstructorProperties<A, B>>, ...args: any[]): void;
+    constructor(properties?: Partial<Actor.ConstructorProperties<A, B>>, ...args: any[]);
+    _init(properties?: Partial<Actor.ConstructorProperties<A, B>>, ...args: any[]): void;
 
-	// Properties
-	set actions(val: Action);
-	get allocation(): ActorBox;
-	get background_color(): Color;
-	set background_color(val: Color);
-	get backgroundColor(): Color;
-	set backgroundColor(val: Color);
-	get background_color_set(): boolean;
-	get backgroundColorSet(): boolean;
-	get child_transform(): Graphene.Matrix;
-	set child_transform(val: Graphene.Matrix);
-	get childTransform(): Graphene.Matrix;
-	set childTransform(val: Graphene.Matrix);
-	get child_transform_set(): boolean;
-	get childTransformSet(): boolean;
-	get clip_rect(): Graphene.Rect;
-	set clip_rect(val: Graphene.Rect);
-	get clipRect(): Graphene.Rect;
-	set clipRect(val: Graphene.Rect);
-	get clip_to_allocation(): boolean;
-	set clip_to_allocation(val: boolean);
-	get clipToAllocation(): boolean;
-	set clipToAllocation(val: boolean);
-	set constraints(val: Constraint);
-	get content(): B;
-	set content(val: B);
-	get content_box(): ActorBox;
-	get contentBox(): ActorBox;
-	get content_gravity(): ContentGravity;
-	set content_gravity(val: ContentGravity);
-	get contentGravity(): ContentGravity;
-	set contentGravity(val: ContentGravity);
-	get content_repeat(): ContentRepeat;
-	set content_repeat(val: ContentRepeat);
-	get contentRepeat(): ContentRepeat;
-	set contentRepeat(val: ContentRepeat);
-	set effect(val: Effect);
-	get first_child(): Actor;
-	get firstChild(): Actor;
-	get fixed_position_set(): boolean;
-	set fixed_position_set(val: boolean);
-	get fixedPositionSet(): boolean;
-	set fixedPositionSet(val: boolean);
-	get fixed_x(): number;
-	set fixed_x(val: number);
-	get fixedX(): number;
-	set fixedX(val: number);
-	get fixed_y(): number;
-	set fixed_y(val: number);
-	get fixedY(): number;
-	set fixedY(val: number);
-	get has_clip(): boolean;
-	get hasClip(): boolean;
-	get has_pointer(): boolean;
-	get hasPointer(): boolean;
-	get height(): number;
-	set height(val: number);
-	get last_child(): Actor;
-	get lastChild(): Actor;
-	get layout_manager(): A;
-	set layout_manager(val: A);
-	get layoutManager(): A;
-	set layoutManager(val: A);
-	get magnification_filter(): ScalingFilter;
-	set magnification_filter(val: ScalingFilter);
-	get magnificationFilter(): ScalingFilter;
-	set magnificationFilter(val: ScalingFilter);
-	get mapped(): boolean;
-	get margin_bottom(): number;
-	set margin_bottom(val: number);
-	get marginBottom(): number;
-	set marginBottom(val: number);
-	get margin_left(): number;
-	set margin_left(val: number);
-	get marginLeft(): number;
-	set marginLeft(val: number);
-	get margin_right(): number;
-	set margin_right(val: number);
-	get marginRight(): number;
-	set marginRight(val: number);
-	get margin_top(): number;
-	set margin_top(val: number);
-	get marginTop(): number;
-	set marginTop(val: number);
-	get min_height(): number;
-	set min_height(val: number);
-	get minHeight(): number;
-	set minHeight(val: number);
-	get min_height_set(): boolean;
-	set min_height_set(val: boolean);
-	get minHeightSet(): boolean;
-	set minHeightSet(val: boolean);
-	get min_width(): number;
-	set min_width(val: number);
-	get minWidth(): number;
-	set minWidth(val: number);
-	get min_width_set(): boolean;
-	set min_width_set(val: boolean);
-	get minWidthSet(): boolean;
-	set minWidthSet(val: boolean);
-	get minification_filter(): ScalingFilter;
-	set minification_filter(val: ScalingFilter);
-	get minificationFilter(): ScalingFilter;
-	set minificationFilter(val: ScalingFilter);
-	get name(): string;
-	set name(val: string);
-	get natural_height(): number;
-	set natural_height(val: number);
-	get naturalHeight(): number;
-	set naturalHeight(val: number);
-	get natural_height_set(): boolean;
-	set natural_height_set(val: boolean);
-	get naturalHeightSet(): boolean;
-	set naturalHeightSet(val: boolean);
-	get natural_width(): number;
-	set natural_width(val: number);
-	get naturalWidth(): number;
-	set naturalWidth(val: number);
-	get natural_width_set(): boolean;
-	set natural_width_set(val: boolean);
-	get naturalWidthSet(): boolean;
-	set naturalWidthSet(val: boolean);
-	get offscreen_redirect(): OffscreenRedirect;
-	set offscreen_redirect(val: OffscreenRedirect);
-	get offscreenRedirect(): OffscreenRedirect;
-	set offscreenRedirect(val: OffscreenRedirect);
-	get opacity(): number;
-	set opacity(val: number);
-	get pivot_point(): Graphene.Point;
-	set pivot_point(val: Graphene.Point);
-	get pivotPoint(): Graphene.Point;
-	set pivotPoint(val: Graphene.Point);
-	get pivot_point_z(): number;
-	set pivot_point_z(val: number);
-	get pivotPointZ(): number;
-	set pivotPointZ(val: number);
-	get position(): Graphene.Point;
-	set position(val: Graphene.Point);
-	get reactive(): boolean;
-	set reactive(val: boolean);
-	get realized(): boolean;
-	get request_mode(): RequestMode;
-	set request_mode(val: RequestMode);
-	get requestMode(): RequestMode;
-	set requestMode(val: RequestMode);
-	get rotation_angle_x(): number;
-	set rotation_angle_x(val: number);
-	get rotationAngleX(): number;
-	set rotationAngleX(val: number);
-	get rotation_angle_y(): number;
-	set rotation_angle_y(val: number);
-	get rotationAngleY(): number;
-	set rotationAngleY(val: number);
-	get rotation_angle_z(): number;
-	set rotation_angle_z(val: number);
-	get rotationAngleZ(): number;
-	set rotationAngleZ(val: number);
-	get scale_x(): number;
-	set scale_x(val: number);
-	get scaleX(): number;
-	set scaleX(val: number);
-	get scale_y(): number;
-	set scale_y(val: number);
-	get scaleY(): number;
-	set scaleY(val: number);
-	get scale_z(): number;
-	set scale_z(val: number);
-	get scaleZ(): number;
-	set scaleZ(val: number);
-	get show_on_set_parent(): boolean;
-	set show_on_set_parent(val: boolean);
-	get showOnSetParent(): boolean;
-	set showOnSetParent(val: boolean);
-	get size(): Graphene.Size;
-	set size(val: Graphene.Size);
-	get text_direction(): TextDirection;
-	set text_direction(val: TextDirection);
-	get textDirection(): TextDirection;
-	set textDirection(val: TextDirection);
-	get transform(): Graphene.Matrix;
-	set transform(val: Graphene.Matrix);
-	get transform_set(): boolean;
-	get transformSet(): boolean;
-	get translation_x(): number;
-	set translation_x(val: number);
-	get translationX(): number;
-	set translationX(val: number);
-	get translation_y(): number;
-	set translation_y(val: number);
-	get translationY(): number;
-	set translationY(val: number);
-	get translation_z(): number;
-	set translation_z(val: number);
-	get translationZ(): number;
-	set translationZ(val: number);
-	get visible(): boolean;
-	set visible(val: boolean);
-	get width(): number;
-	set width(val: number);
-	get x(): number;
-	set x(val: number);
-	get x_align(): ActorAlign;
-	set x_align(val: ActorAlign);
-	get xAlign(): ActorAlign;
-	set xAlign(val: ActorAlign);
-	get x_expand(): boolean;
-	set x_expand(val: boolean);
-	get xExpand(): boolean;
-	set xExpand(val: boolean);
-	get y(): number;
-	set y(val: number);
-	get y_align(): ActorAlign;
-	set y_align(val: ActorAlign);
-	get yAlign(): ActorAlign;
-	set yAlign(val: ActorAlign);
-	get y_expand(): boolean;
-	set y_expand(val: boolean);
-	get yExpand(): boolean;
-	set yExpand(val: boolean);
-	get z_position(): number;
-	set z_position(val: number);
-	get zPosition(): number;
-	set zPosition(val: number);
+    // Properties
+    set actions(val: Action);
+    get allocation(): ActorBox;
+    get background_color(): Color;
+    set background_color(val: Color);
+    get backgroundColor(): Color;
+    set backgroundColor(val: Color);
+    get background_color_set(): boolean;
+    get backgroundColorSet(): boolean;
+    get child_transform(): Graphene.Matrix;
+    set child_transform(val: Graphene.Matrix);
+    get childTransform(): Graphene.Matrix;
+    set childTransform(val: Graphene.Matrix);
+    get child_transform_set(): boolean;
+    get childTransformSet(): boolean;
+    get clip_rect(): Graphene.Rect;
+    set clip_rect(val: Graphene.Rect);
+    get clipRect(): Graphene.Rect;
+    set clipRect(val: Graphene.Rect);
+    get clip_to_allocation(): boolean;
+    set clip_to_allocation(val: boolean);
+    get clipToAllocation(): boolean;
+    set clipToAllocation(val: boolean);
+    set constraints(val: Constraint);
+    get content(): B;
+    set content(val: B);
+    get content_box(): ActorBox;
+    get contentBox(): ActorBox;
+    get content_gravity(): ContentGravity;
+    set content_gravity(val: ContentGravity);
+    get contentGravity(): ContentGravity;
+    set contentGravity(val: ContentGravity);
+    get content_repeat(): ContentRepeat;
+    set content_repeat(val: ContentRepeat);
+    get contentRepeat(): ContentRepeat;
+    set contentRepeat(val: ContentRepeat);
+    set effect(val: Effect);
+    get first_child(): Actor;
+    get firstChild(): Actor;
+    get fixed_position_set(): boolean;
+    set fixed_position_set(val: boolean);
+    get fixedPositionSet(): boolean;
+    set fixedPositionSet(val: boolean);
+    get fixed_x(): number;
+    set fixed_x(val: number);
+    get fixedX(): number;
+    set fixedX(val: number);
+    get fixed_y(): number;
+    set fixed_y(val: number);
+    get fixedY(): number;
+    set fixedY(val: number);
+    get has_clip(): boolean;
+    get hasClip(): boolean;
+    get has_pointer(): boolean;
+    get hasPointer(): boolean;
+    get height(): number;
+    set height(val: number);
+    get last_child(): Actor;
+    get lastChild(): Actor;
+    get layout_manager(): A;
+    set layout_manager(val: A);
+    get layoutManager(): A;
+    set layoutManager(val: A);
+    get magnification_filter(): ScalingFilter;
+    set magnification_filter(val: ScalingFilter);
+    get magnificationFilter(): ScalingFilter;
+    set magnificationFilter(val: ScalingFilter);
+    get mapped(): boolean;
+    get margin_bottom(): number;
+    set margin_bottom(val: number);
+    get marginBottom(): number;
+    set marginBottom(val: number);
+    get margin_left(): number;
+    set margin_left(val: number);
+    get marginLeft(): number;
+    set marginLeft(val: number);
+    get margin_right(): number;
+    set margin_right(val: number);
+    get marginRight(): number;
+    set marginRight(val: number);
+    get margin_top(): number;
+    set margin_top(val: number);
+    get marginTop(): number;
+    set marginTop(val: number);
+    get min_height(): number;
+    set min_height(val: number);
+    get minHeight(): number;
+    set minHeight(val: number);
+    get min_height_set(): boolean;
+    set min_height_set(val: boolean);
+    get minHeightSet(): boolean;
+    set minHeightSet(val: boolean);
+    get min_width(): number;
+    set min_width(val: number);
+    get minWidth(): number;
+    set minWidth(val: number);
+    get min_width_set(): boolean;
+    set min_width_set(val: boolean);
+    get minWidthSet(): boolean;
+    set minWidthSet(val: boolean);
+    get minification_filter(): ScalingFilter;
+    set minification_filter(val: ScalingFilter);
+    get minificationFilter(): ScalingFilter;
+    set minificationFilter(val: ScalingFilter);
+    get name(): string;
+    set name(val: string);
+    get natural_height(): number;
+    set natural_height(val: number);
+    get naturalHeight(): number;
+    set naturalHeight(val: number);
+    get natural_height_set(): boolean;
+    set natural_height_set(val: boolean);
+    get naturalHeightSet(): boolean;
+    set naturalHeightSet(val: boolean);
+    get natural_width(): number;
+    set natural_width(val: number);
+    get naturalWidth(): number;
+    set naturalWidth(val: number);
+    get natural_width_set(): boolean;
+    set natural_width_set(val: boolean);
+    get naturalWidthSet(): boolean;
+    set naturalWidthSet(val: boolean);
+    get offscreen_redirect(): OffscreenRedirect;
+    set offscreen_redirect(val: OffscreenRedirect);
+    get offscreenRedirect(): OffscreenRedirect;
+    set offscreenRedirect(val: OffscreenRedirect);
+    get opacity(): number;
+    set opacity(val: number);
+    get pivot_point(): Graphene.Point;
+    set pivot_point(val: Graphene.Point);
+    get pivotPoint(): Graphene.Point;
+    set pivotPoint(val: Graphene.Point);
+    get pivot_point_z(): number;
+    set pivot_point_z(val: number);
+    get pivotPointZ(): number;
+    set pivotPointZ(val: number);
+    get position(): Graphene.Point;
+    set position(val: Graphene.Point);
+    get reactive(): boolean;
+    set reactive(val: boolean);
+    get realized(): boolean;
+    get request_mode(): RequestMode;
+    set request_mode(val: RequestMode);
+    get requestMode(): RequestMode;
+    set requestMode(val: RequestMode);
+    get rotation_angle_x(): number;
+    set rotation_angle_x(val: number);
+    get rotationAngleX(): number;
+    set rotationAngleX(val: number);
+    get rotation_angle_y(): number;
+    set rotation_angle_y(val: number);
+    get rotationAngleY(): number;
+    set rotationAngleY(val: number);
+    get rotation_angle_z(): number;
+    set rotation_angle_z(val: number);
+    get rotationAngleZ(): number;
+    set rotationAngleZ(val: number);
+    get scale_x(): number;
+    set scale_x(val: number);
+    get scaleX(): number;
+    set scaleX(val: number);
+    get scale_y(): number;
+    set scale_y(val: number);
+    get scaleY(): number;
+    set scaleY(val: number);
+    get scale_z(): number;
+    set scale_z(val: number);
+    get scaleZ(): number;
+    set scaleZ(val: number);
+    get show_on_set_parent(): boolean;
+    set show_on_set_parent(val: boolean);
+    get showOnSetParent(): boolean;
+    set showOnSetParent(val: boolean);
+    get size(): Graphene.Size;
+    set size(val: Graphene.Size);
+    get text_direction(): TextDirection;
+    set text_direction(val: TextDirection);
+    get textDirection(): TextDirection;
+    set textDirection(val: TextDirection);
+    get transform(): Graphene.Matrix;
+    set transform(val: Graphene.Matrix);
+    get transform_set(): boolean;
+    get transformSet(): boolean;
+    get translation_x(): number;
+    set translation_x(val: number);
+    get translationX(): number;
+    set translationX(val: number);
+    get translation_y(): number;
+    set translation_y(val: number);
+    get translationY(): number;
+    set translationY(val: number);
+    get translation_z(): number;
+    set translation_z(val: number);
+    get translationZ(): number;
+    set translationZ(val: number);
+    get visible(): boolean;
+    set visible(val: boolean);
+    get width(): number;
+    set width(val: number);
+    get x(): number;
+    set x(val: number);
+    get x_align(): ActorAlign;
+    set x_align(val: ActorAlign);
+    get xAlign(): ActorAlign;
+    set xAlign(val: ActorAlign);
+    get x_expand(): boolean;
+    set x_expand(val: boolean);
+    get xExpand(): boolean;
+    set xExpand(val: boolean);
+    get y(): number;
+    set y(val: number);
+    get y_align(): ActorAlign;
+    set y_align(val: ActorAlign);
+    get yAlign(): ActorAlign;
+    set yAlign(val: ActorAlign);
+    get y_expand(): boolean;
+    set y_expand(val: boolean);
+    get yExpand(): boolean;
+    set yExpand(val: boolean);
+    get z_position(): number;
+    set z_position(val: number);
+    get zPosition(): number;
+    set zPosition(val: number);
 
-	// Fields
-	flags: number;
+    // Fields
+    flags: number;
 
 	// Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'button-press-event', callback: (_source: this, event: ButtonEvent) => boolean): number;
-	connect_after(signal: 'button-press-event', callback: (_source: this, event: ButtonEvent) => boolean): number;
-	emit(signal: 'button-press-event', event: ButtonEvent): void;
-	connect(signal: 'button-release-event', callback: (_source: this, event: ButtonEvent) => boolean): number;
-	connect_after(signal: 'button-release-event', callback: (_source: this, event: ButtonEvent) => boolean): number;
-	emit(signal: 'button-release-event', event: ButtonEvent): void;
-	connect(signal: 'captured-event', callback: (_source: this, event: Event) => boolean): number;
-	connect_after(signal: 'captured-event', callback: (_source: this, event: Event) => boolean): number;
-	emit(signal: 'captured-event', event: Event): void;
-	connect(signal: 'destroy', callback: (_source: this) => void): number;
-	connect_after(signal: 'destroy', callback: (_source: this) => void): number;
-	emit(signal: 'destroy'): void;
-	connect(signal: 'enter-event', callback: (_source: this, event: CrossingEvent) => boolean): number;
-	connect_after(signal: 'enter-event', callback: (_source: this, event: CrossingEvent) => boolean): number;
-	emit(signal: 'enter-event', event: CrossingEvent): void;
-	connect(signal: 'event', callback: (_source: this, event: Event) => boolean): number;
-	connect_after(signal: 'event', callback: (_source: this, event: Event) => boolean): number;
-	emit(signal: 'event', event: Event): void;
-	connect(signal: 'hide', callback: (_source: this) => void): number;
-	connect_after(signal: 'hide', callback: (_source: this) => void): number;
-	emit(signal: 'hide'): void;
-	connect(signal: 'key-focus-in', callback: (_source: this) => void): number;
-	connect_after(signal: 'key-focus-in', callback: (_source: this) => void): number;
-	emit(signal: 'key-focus-in'): void;
-	connect(signal: 'key-focus-out', callback: (_source: this) => void): number;
-	connect_after(signal: 'key-focus-out', callback: (_source: this) => void): number;
-	emit(signal: 'key-focus-out'): void;
-	connect(signal: 'key-press-event', callback: (_source: this, event: KeyEvent) => boolean): number;
-	connect_after(signal: 'key-press-event', callback: (_source: this, event: KeyEvent) => boolean): number;
-	emit(signal: 'key-press-event', event: KeyEvent): void;
-	connect(signal: 'key-release-event', callback: (_source: this, event: KeyEvent) => boolean): number;
-	connect_after(signal: 'key-release-event', callback: (_source: this, event: KeyEvent) => boolean): number;
-	emit(signal: 'key-release-event', event: KeyEvent): void;
-	connect(signal: 'leave-event', callback: (_source: this, event: CrossingEvent) => boolean): number;
-	connect_after(signal: 'leave-event', callback: (_source: this, event: CrossingEvent) => boolean): number;
-	emit(signal: 'leave-event', event: CrossingEvent): void;
-	connect(signal: 'motion-event', callback: (_source: this, event: MotionEvent) => boolean): number;
-	connect_after(signal: 'motion-event', callback: (_source: this, event: MotionEvent) => boolean): number;
-	emit(signal: 'motion-event', event: MotionEvent): void;
-	connect(signal: 'parent-set', callback: (_source: this, old_parent: Actor | null) => void): number;
-	connect_after(signal: 'parent-set', callback: (_source: this, old_parent: Actor | null) => void): number;
-	emit(signal: 'parent-set', old_parent: Actor | null): void;
-	connect(signal: 'pick', callback: (_source: this, pick_context: PickContext) => void): number;
-	connect_after(signal: 'pick', callback: (_source: this, pick_context: PickContext) => void): number;
-	emit(signal: 'pick', pick_context: PickContext): void;
-	connect(signal: 'queue-relayout', callback: (_source: this) => void): number;
-	connect_after(signal: 'queue-relayout', callback: (_source: this) => void): number;
-	emit(signal: 'queue-relayout'): void;
-	connect(signal: 'realize', callback: (_source: this) => void): number;
-	connect_after(signal: 'realize', callback: (_source: this) => void): number;
-	emit(signal: 'realize'): void;
-	connect(signal: 'resource-scale-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'resource-scale-changed', callback: (_source: this) => void): number;
-	emit(signal: 'resource-scale-changed'): void;
-	connect(signal: 'scroll-event', callback: (_source: this, event: ScrollEvent) => boolean): number;
-	connect_after(signal: 'scroll-event', callback: (_source: this, event: ScrollEvent) => boolean): number;
-	emit(signal: 'scroll-event', event: ScrollEvent): void;
-	connect(signal: 'show', callback: (_source: this) => void): number;
-	connect_after(signal: 'show', callback: (_source: this) => void): number;
-	emit(signal: 'show'): void;
-	connect(signal: 'stage-views-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'stage-views-changed', callback: (_source: this) => void): number;
-	emit(signal: 'stage-views-changed'): void;
-	connect(signal: 'touch-event', callback: (_source: this, event: Event) => boolean): number;
-	connect_after(signal: 'touch-event', callback: (_source: this, event: Event) => boolean): number;
-	emit(signal: 'touch-event', event: Event): void;
-	connect(
-        signal: 'transition-stopped',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "button-press-event", callback: (_source: this, event: ButtonEvent) => boolean): number;
+    connect_after(signal: "button-press-event", callback: (_source: this, event: ButtonEvent) => boolean): number;
+    emit(signal: "button-press-event", event: ButtonEvent): void;
+    connect(signal: "button-release-event", callback: (_source: this, event: ButtonEvent) => boolean): number;
+    connect_after(signal: "button-release-event", callback: (_source: this, event: ButtonEvent) => boolean): number;
+    emit(signal: "button-release-event", event: ButtonEvent): void;
+    connect(signal: "captured-event", callback: (_source: this, event: Event) => boolean): number;
+    connect_after(signal: "captured-event", callback: (_source: this, event: Event) => boolean): number;
+    emit(signal: "captured-event", event: Event): void;
+    connect(signal: "destroy", callback: (_source: this) => void): number;
+    connect_after(signal: "destroy", callback: (_source: this) => void): number;
+    emit(signal: "destroy"): void;
+    connect(signal: "enter-event", callback: (_source: this, event: CrossingEvent) => boolean): number;
+    connect_after(signal: "enter-event", callback: (_source: this, event: CrossingEvent) => boolean): number;
+    emit(signal: "enter-event", event: CrossingEvent): void;
+    connect(signal: "event", callback: (_source: this, event: Event) => boolean): number;
+    connect_after(signal: "event", callback: (_source: this, event: Event) => boolean): number;
+    emit(signal: "event", event: Event): void;
+    connect(signal: "hide", callback: (_source: this) => void): number;
+    connect_after(signal: "hide", callback: (_source: this) => void): number;
+    emit(signal: "hide"): void;
+    connect(signal: "key-focus-in", callback: (_source: this) => void): number;
+    connect_after(signal: "key-focus-in", callback: (_source: this) => void): number;
+    emit(signal: "key-focus-in"): void;
+    connect(signal: "key-focus-out", callback: (_source: this) => void): number;
+    connect_after(signal: "key-focus-out", callback: (_source: this) => void): number;
+    emit(signal: "key-focus-out"): void;
+    connect(signal: "key-press-event", callback: (_source: this, event: KeyEvent) => boolean): number;
+    connect_after(signal: "key-press-event", callback: (_source: this, event: KeyEvent) => boolean): number;
+    emit(signal: "key-press-event", event: KeyEvent): void;
+    connect(signal: "key-release-event", callback: (_source: this, event: KeyEvent) => boolean): number;
+    connect_after(signal: "key-release-event", callback: (_source: this, event: KeyEvent) => boolean): number;
+    emit(signal: "key-release-event", event: KeyEvent): void;
+    connect(signal: "leave-event", callback: (_source: this, event: CrossingEvent) => boolean): number;
+    connect_after(signal: "leave-event", callback: (_source: this, event: CrossingEvent) => boolean): number;
+    emit(signal: "leave-event", event: CrossingEvent): void;
+    connect(signal: "motion-event", callback: (_source: this, event: MotionEvent) => boolean): number;
+    connect_after(signal: "motion-event", callback: (_source: this, event: MotionEvent) => boolean): number;
+    emit(signal: "motion-event", event: MotionEvent): void;
+    connect(signal: "parent-set", callback: (_source: this, old_parent: Actor | null) => void): number;
+    connect_after(signal: "parent-set", callback: (_source: this, old_parent: Actor | null) => void): number;
+    emit(signal: "parent-set", old_parent: Actor | null): void;
+    connect(signal: "pick", callback: (_source: this, pick_context: PickContext) => void): number;
+    connect_after(signal: "pick", callback: (_source: this, pick_context: PickContext) => void): number;
+    emit(signal: "pick", pick_context: PickContext): void;
+    connect(signal: "queue-relayout", callback: (_source: this) => void): number;
+    connect_after(signal: "queue-relayout", callback: (_source: this) => void): number;
+    emit(signal: "queue-relayout"): void;
+    connect(signal: "realize", callback: (_source: this) => void): number;
+    connect_after(signal: "realize", callback: (_source: this) => void): number;
+    emit(signal: "realize"): void;
+    connect(signal: "resource-scale-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "resource-scale-changed", callback: (_source: this) => void): number;
+    emit(signal: "resource-scale-changed"): void;
+    connect(signal: "scroll-event", callback: (_source: this, event: ScrollEvent) => boolean): number;
+    connect_after(signal: "scroll-event", callback: (_source: this, event: ScrollEvent) => boolean): number;
+    emit(signal: "scroll-event", event: ScrollEvent): void;
+    connect(signal: "show", callback: (_source: this) => void): number;
+    connect_after(signal: "show", callback: (_source: this) => void): number;
+    emit(signal: "show"): void;
+    connect(signal: "stage-views-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "stage-views-changed", callback: (_source: this) => void): number;
+    emit(signal: "stage-views-changed"): void;
+    connect(signal: "touch-event", callback: (_source: this, event: Event) => boolean): number;
+    connect_after(signal: "touch-event", callback: (_source: this, event: Event) => boolean): number;
+    emit(signal: "touch-event", event: Event): void;
+    connect(
+        signal: "transition-stopped",
         callback: (_source: this, name: string, is_finished: boolean) => void
     ): number;
-
-	connect_after(
-        signal: 'transition-stopped',
+    connect_after(
+        signal: "transition-stopped",
         callback: (_source: this, name: string, is_finished: boolean) => void
     ): number;
+    emit(signal: "transition-stopped", name: string, is_finished: boolean): void;
+    connect(signal: "transitions-completed", callback: (_source: this) => void): number;
+    connect_after(signal: "transitions-completed", callback: (_source: this) => void): number;
+    emit(signal: "transitions-completed"): void;
+    connect(signal: "unrealize", callback: (_source: this) => void): number;
+    connect_after(signal: "unrealize", callback: (_source: this) => void): number;
+    emit(signal: "unrealize"): void;
 
-	emit(signal: 'transition-stopped', name: string, is_finished: boolean): void;
-	connect(signal: 'transitions-completed', callback: (_source: this) => void): number;
-	connect_after(signal: 'transitions-completed', callback: (_source: this) => void): number;
-	emit(signal: 'transitions-completed'): void;
-	connect(signal: 'unrealize', callback: (_source: this) => void): number;
-	connect_after(signal: 'unrealize', callback: (_source: this) => void): number;
-	emit(signal: 'unrealize'): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): Actor;
 
-	static ['new'](): Actor;
+    // Members
 
-	// Members
+    add_action(action: Action): void;
+    add_action_full(name: string, phase: EventPhase, action: Action): void;
+    add_action_with_name(name: string, action: Action): void;
+    add_child(child: Actor): void;
+    add_constraint(constraint: Constraint): void;
+    add_constraint_with_name(name: string, constraint: Constraint): void;
+    add_effect(effect: Effect): void;
+    add_effect_with_name(name: string, effect: Effect): void;
+    add_transition(name: string, transition: Transition): void;
+    allocate(box: ActorBox): void;
+    allocate_align_fill(box: ActorBox, x_align: number, y_align: number, x_fill: boolean, y_fill: boolean): void;
+    allocate_available_size(x: number, y: number, available_width: number, available_height: number): void;
+    allocate_preferred_size(x: number, y: number): void;
+    apply_relative_transform_to_point(ancestor: Actor | null, point: Graphene.Point3D): Graphene.Point3D;
+    apply_transform_to_point(point: Graphene.Point3D): Graphene.Point3D;
+    bind_model(model: Gio.ListModel | null, create_child_func: ActorCreateChildFunc): void;
+    clear_actions(): void;
+    clear_constraints(): void;
+    clear_effects(): void;
+    contains(descendant: Actor): boolean;
+    continue_paint(paint_context: PaintContext): void;
+    continue_pick(pick_context: PickContext): void;
+    create_pango_context(): Pango.Context;
+    create_pango_layout(text?: string | null): Pango.Layout;
+    destroy(): void;
+    destroy_all_children(): void;
+    event(event: Event, capture: boolean): boolean;
+    get_abs_allocation_vertices(): Graphene.Point3D[];
+    get_accessible(): Atk.Object;
+    get_action(name: string): Action | null;
+    get_actions(): Action[];
+    get_allocation_box(): ActorBox;
+    get_background_color(): Color;
+    get_child_at_index(index_: number): Actor | null;
+    get_child_transform(): Graphene.Matrix;
+    get_children(): Actor[];
+    get_clip(): [number | null, number | null, number | null, number | null];
+    get_clip_to_allocation(): boolean;
+    get_constraint(name: string): Constraint | null;
+    get_constraints(): Constraint[];
+    get_content(): B | null;
+    get_content_box(): ActorBox;
+    get_content_gravity(): ContentGravity;
+    get_content_repeat(): ContentRepeat;
+    get_content_scaling_filters(): [ScalingFilter | null, ScalingFilter | null];
+    get_default_paint_volume(): PaintVolume | null;
+    get_easing_delay(): number;
+    get_easing_duration(): number;
+    get_easing_mode(): AnimationMode;
+    get_effect(name: string): Effect | null;
+    get_effects(): Effect[];
+    get_first_child(): Actor | null;
+    get_fixed_position(): [boolean, number | null, number | null];
+    get_fixed_position_set(): boolean;
+    get_flags(): ActorFlags;
+    get_height(): number;
+    get_last_child(): Actor | null;
+    get_layout_manager(): A | null;
+    get_margin(): Margin;
+    get_margin_bottom(): number;
+    get_margin_left(): number;
+    get_margin_right(): number;
+    get_margin_top(): number;
+    get_n_children(): number;
+    get_name(): string | null;
+    get_next_sibling(): Actor | null;
+    get_offscreen_redirect(): OffscreenRedirect;
+    get_opacity(): number;
+    get_opacity_override(): number;
+    get_paint_box(): [boolean, ActorBox];
+    get_paint_opacity(): number;
+    get_paint_visibility(): boolean;
+    get_paint_volume(): PaintVolume | null;
+    get_pango_context(): Pango.Context;
+    get_parent(): Actor | null;
+    get_pivot_point(): [number | null, number | null];
+    get_pivot_point_z(): number;
+    get_position(): [number | null, number | null];
+    get_preferred_height(for_width: number): [number | null, number | null];
+    get_preferred_size(): [number | null, number | null, number | null, number | null];
+    get_preferred_width(for_height: number): [number | null, number | null];
+    get_previous_sibling(): Actor | null;
+    get_reactive(): boolean;
+    get_request_mode(): RequestMode;
+    get_resource_scale(): number;
+    get_rotation_angle(axis: RotateAxis): number;
+    get_scale(): [number | null, number | null];
+    get_scale_z(): number;
+    get_size(): [number | null, number | null];
+    get_stage(): Stage;
+    get_text_direction(): TextDirection;
+    get_transform(): Graphene.Matrix;
+    get_transformed_extents(): Graphene.Rect;
+    get_transformed_paint_volume(relative_to_ancestor: Actor): PaintVolume | null;
+    get_transformed_position(): [number | null, number | null];
+    get_transformed_size(): [number | null, number | null];
+    get_transition(name: string): Transition | null;
+    get_translation(): [number | null, number | null, number | null];
+    get_width(): number;
+    get_x(): number;
+    get_x_align(): ActorAlign;
+    get_x_expand(): boolean;
+    get_y(): number;
+    get_y_align(): ActorAlign;
+    get_y_expand(): boolean;
+    get_z_position(): number;
+    grab_key_focus(): void;
+    has_accessible(): boolean;
+    has_actions(): boolean;
+    has_allocation(): boolean;
+    has_constraints(): boolean;
+    has_damage(): boolean;
+    has_effects(): boolean;
+    has_key_focus(): boolean;
+    has_mapped_clones(): boolean;
+    has_overlaps(): boolean;
+    hide(): void;
+    inhibit_culling(): void;
+    insert_child_above(child: Actor, sibling?: Actor | null): void;
+    insert_child_at_index(child: Actor, index_: number): void;
+    insert_child_below(child: Actor, sibling?: Actor | null): void;
+    invalidate_paint_volume(): void;
+    invalidate_transform(): void;
+    is_effectively_on_stage_view(view: StageView): boolean;
+    is_in_clone_paint(): boolean;
+    is_mapped(): boolean;
+    is_realized(): boolean;
+    is_rotated(): boolean;
+    is_scaled(): boolean;
+    is_visible(): boolean;
+    map(): void;
+    move_by(dx: number, dy: number): void;
+    needs_expand(orientation: Orientation): boolean;
+    paint(paint_context: PaintContext): void;
+    peek_stage_views(): StageView[];
+    pick(pick_context: PickContext): void;
+    pick_box(pick_context: PickContext, box: ActorBox): void;
+    queue_redraw(): void;
+    queue_redraw_with_clip(clip?: cairo.RectangleInt | null): void;
+    queue_relayout(): void;
+    realize(): void;
+    remove_action(action: Action): void;
+    remove_action_by_name(name: string): void;
+    remove_all_children(): void;
+    remove_all_transitions(): void;
+    remove_child(child: Actor): void;
+    remove_clip(): void;
+    remove_constraint(constraint: Constraint): void;
+    remove_constraint_by_name(name: string): void;
+    remove_effect(effect: Effect): void;
+    remove_effect_by_name(name: string): void;
+    remove_transition(name: string): void;
+    replace_child(old_child: Actor, new_child: Actor): void;
+    restore_easing_state(): void;
+    save_easing_state(): void;
+    set_allocation(box: ActorBox): void;
+    set_background_color(color?: Color | null): void;
+    set_child_above_sibling(child: Actor, sibling?: Actor | null): void;
+    set_child_at_index(child: Actor, index_: number): void;
+    set_child_below_sibling(child: Actor, sibling?: Actor | null): void;
+    set_child_transform(transform?: Graphene.Matrix | null): void;
+    set_clip(xoff: number, yoff: number, width: number, height: number): void;
+    set_clip_to_allocation(clip_set: boolean): void;
+    set_content(content?: B | null): void;
+    set_content_gravity(gravity: ContentGravity): void;
+    set_content_repeat(repeat: ContentRepeat): void;
+    set_content_scaling_filters(min_filter: ScalingFilter, mag_filter: ScalingFilter): void;
+    set_easing_delay(msecs: number): void;
+    set_easing_duration(msecs: number): void;
+    set_easing_mode(mode: AnimationMode): void;
+    set_fixed_position_set(is_set: boolean): void;
+    set_flags(flags: ActorFlags): void;
+    set_height(height: number): void;
+    set_layout_manager(manager?: A | null): void;
+    set_margin(margin: Margin): void;
+    set_margin_bottom(margin: number): void;
+    set_margin_left(margin: number): void;
+    set_margin_right(margin: number): void;
+    set_margin_top(margin: number): void;
+    set_name(name?: string | null): void;
+    set_offscreen_redirect(redirect: OffscreenRedirect): void;
+    set_opacity(opacity: number): void;
+    set_opacity_override(opacity: number): void;
+    set_pivot_point(pivot_x: number, pivot_y: number): void;
+    set_pivot_point_z(pivot_z: number): void;
+    set_position(x: number, y: number): void;
+    set_reactive(reactive: boolean): void;
+    set_request_mode(mode: RequestMode): void;
+    set_rotation_angle(axis: RotateAxis, angle: number): void;
+    set_scale(scale_x: number, scale_y: number): void;
+    set_scale_z(scale_z: number): void;
+    set_size(width: number, height: number): void;
+    set_text_direction(text_dir: TextDirection): void;
+    set_transform(transform?: Graphene.Matrix | null): void;
+    set_translation(translate_x: number, translate_y: number, translate_z: number): void;
+    set_width(width: number): void;
+    set_x(x: number): void;
+    set_x_align(x_align: ActorAlign): void;
+    set_x_expand(expand: boolean): void;
+    set_y(y: number): void;
+    set_y_align(y_align: ActorAlign): void;
+    set_y_expand(expand: boolean): void;
+    set_z_position(z_position: number): void;
+    should_pick(pick_context: PickContext): boolean;
+    show(): void;
+    transform_stage_point(x: number, y: number): [boolean, number | null, number | null];
+    uninhibit_culling(): void;
+    unmap(): void;
+    unrealize(): void;
+    unset_flags(flags: ActorFlags): void;
+    vfunc_allocate(box: ActorBox): void;
+    vfunc_apply_transform(matrix: Graphene.Matrix): void;
+    vfunc_button_press_event(event: ButtonEvent): boolean;
+    vfunc_button_release_event(event: ButtonEvent): boolean;
+    vfunc_calculate_resource_scale(phase: number): number;
+    vfunc_captured_event(event: Event): boolean;
+    vfunc_destroy(): void;
+    vfunc_enter_event(event: CrossingEvent): boolean;
+    vfunc_event(event: Event): boolean;
+    vfunc_get_accessible(): Atk.Object;
+    vfunc_get_paint_volume(volume: PaintVolume): boolean;
+    vfunc_get_preferred_height(for_width: number): [number | null, number | null];
+    vfunc_get_preferred_width(for_height: number): [number | null, number | null];
+    vfunc_has_accessible(): boolean;
+    vfunc_has_overlaps(): boolean;
+    vfunc_hide(): void;
+    vfunc_hide_all(): void;
+    vfunc_key_focus_in(): void;
+    vfunc_key_focus_out(): void;
+    vfunc_key_press_event(event: KeyEvent): boolean;
+    vfunc_key_release_event(event: KeyEvent): boolean;
+    vfunc_leave_event(event: CrossingEvent): boolean;
+    vfunc_map(): void;
+    vfunc_motion_event(event: MotionEvent): boolean;
+    vfunc_paint(paint_context: PaintContext): void;
+    vfunc_paint_node(root: PaintNode): void;
+    vfunc_parent_set(old_parent: Actor): void;
+    vfunc_pick(pick_context: PickContext): void;
+    vfunc_queue_relayout(): void;
+    vfunc_realize(): void;
+    vfunc_resource_scale_changed(): void;
+    vfunc_scroll_event(event: ScrollEvent): boolean;
+    vfunc_show(): void;
+    vfunc_touch_event(event: TouchEvent): boolean;
+    vfunc_unmap(): void;
+    vfunc_unrealize(): void;
 
-	add_action(action: Action): void;
-	add_action_full(name: string, phase: EventPhase, action: Action): void;
-	add_action_with_name(name: string, action: Action): void;
-	add_child(child: Actor): void;
-	add_constraint(constraint: Constraint): void;
-	add_constraint_with_name(name: string, constraint: Constraint): void;
-	add_effect(effect: Effect): void;
-	add_effect_with_name(name: string, effect: Effect): void;
-	add_transition(name: string, transition: Transition): void;
-	allocate(box: ActorBox): void;
-	allocate_align_fill(box: ActorBox, x_align: number, y_align: number, x_fill: boolean, y_fill: boolean): void;
-	allocate_available_size(x: number, y: number, available_width: number, available_height: number): void;
-	allocate_preferred_size(x: number, y: number): void;
-	apply_relative_transform_to_point(ancestor: Actor | null, point: Graphene.Point3D): Graphene.Point3D;
-	apply_transform_to_point(point: Graphene.Point3D): Graphene.Point3D;
-	bind_model(model: Gio.ListModel | null, create_child_func: ActorCreateChildFunc): void;
-	clear_actions(): void;
-	clear_constraints(): void;
-	clear_effects(): void;
-	contains(descendant: Actor): boolean;
-	continue_paint(paint_context: PaintContext): void;
-	continue_pick(pick_context: PickContext): void;
-	create_pango_context(): Pango.Context;
-	create_pango_layout(text?: string | null): Pango.Layout;
-	destroy(): void;
-	destroy_all_children(): void;
-	event(event: Event, capture: boolean): boolean;
-	get_abs_allocation_vertices(): Graphene.Point3D[];
-	get_accessible(): Atk.Object;
-	get_action(name: string): Action | null;
-	get_actions(): Action[];
-	get_allocation_box(): ActorBox;
-	get_background_color(): Color;
-	get_child_at_index(index_: number): Actor | null;
-	get_child_transform(): Graphene.Matrix;
-	get_children(): Actor[];
-	get_clip(): [number | null, number | null, number | null, number | null];
-	get_clip_to_allocation(): boolean;
-	get_constraint(name: string): Constraint | null;
-	get_constraints(): Constraint[];
-	get_content(): B | null;
-	get_content_box(): ActorBox;
-	get_content_gravity(): ContentGravity;
-	get_content_repeat(): ContentRepeat;
-	get_content_scaling_filters(): [ScalingFilter | null, ScalingFilter | null];
-	get_default_paint_volume(): PaintVolume | null;
-	get_easing_delay(): number;
-	get_easing_duration(): number;
-	get_easing_mode(): AnimationMode;
-	get_effect(name: string): Effect | null;
-	get_effects(): Effect[];
-	get_first_child(): Actor | null;
-	get_fixed_position(): [boolean, number | null, number | null];
-	get_fixed_position_set(): boolean;
-	get_flags(): ActorFlags;
-	get_height(): number;
-	get_last_child(): Actor | null;
-	get_layout_manager(): A | null;
-	get_margin(): Margin;
-	get_margin_bottom(): number;
-	get_margin_left(): number;
-	get_margin_right(): number;
-	get_margin_top(): number;
-	get_n_children(): number;
-	get_name(): string | null;
-	get_next_sibling(): Actor | null;
-	get_offscreen_redirect(): OffscreenRedirect;
-	get_opacity(): number;
-	get_opacity_override(): number;
-	get_paint_box(): [boolean, ActorBox];
-	get_paint_opacity(): number;
-	get_paint_visibility(): boolean;
-	get_paint_volume(): PaintVolume | null;
-	get_pango_context(): Pango.Context;
-	get_parent(): Actor | null;
-	get_pivot_point(): [number | null, number | null];
-	get_pivot_point_z(): number;
-	get_position(): [number | null, number | null];
-	get_preferred_height(for_width: number): [number | null, number | null];
-	get_preferred_size(): [number | null, number | null, number | null, number | null];
-	get_preferred_width(for_height: number): [number | null, number | null];
-	get_previous_sibling(): Actor | null;
-	get_reactive(): boolean;
-	get_request_mode(): RequestMode;
-	get_resource_scale(): number;
-	get_rotation_angle(axis: RotateAxis): number;
-	get_scale(): [number | null, number | null];
-	get_scale_z(): number;
-	get_size(): [number | null, number | null];
-	get_stage(): Stage;
-	get_text_direction(): TextDirection;
-	get_transform(): Graphene.Matrix;
-	get_transformed_extents(): Graphene.Rect;
-	get_transformed_paint_volume(relative_to_ancestor: Actor): PaintVolume | null;
-	get_transformed_position(): [number | null, number | null];
-	get_transformed_size(): [number | null, number | null];
-	get_transition(name: string): Transition | null;
-	get_translation(): [number | null, number | null, number | null];
-	get_width(): number;
-	get_x(): number;
-	get_x_align(): ActorAlign;
-	get_x_expand(): boolean;
-	get_y(): number;
-	get_y_align(): ActorAlign;
-	get_y_expand(): boolean;
-	get_z_position(): number;
-	grab_key_focus(): void;
-	has_accessible(): boolean;
-	has_actions(): boolean;
-	has_allocation(): boolean;
-	has_constraints(): boolean;
-	has_damage(): boolean;
-	has_effects(): boolean;
-	has_key_focus(): boolean;
-	has_mapped_clones(): boolean;
-	has_overlaps(): boolean;
-	hide(): void;
-	inhibit_culling(): void;
-	insert_child_above(child: Actor, sibling?: Actor | null): void;
-	insert_child_at_index(child: Actor, index_: number): void;
-	insert_child_below(child: Actor, sibling?: Actor | null): void;
-	invalidate_paint_volume(): void;
-	invalidate_transform(): void;
-	is_effectively_on_stage_view(view: StageView): boolean;
-	is_in_clone_paint(): boolean;
-	is_mapped(): boolean;
-	is_realized(): boolean;
-	is_rotated(): boolean;
-	is_scaled(): boolean;
-	is_visible(): boolean;
-	map(): void;
-	move_by(dx: number, dy: number): void;
-	needs_expand(orientation: Orientation): boolean;
-	paint(paint_context: PaintContext): void;
-	peek_stage_views(): StageView[];
-	pick(pick_context: PickContext): void;
-	pick_box(pick_context: PickContext, box: ActorBox): void;
-	queue_redraw(): void;
-	queue_redraw_with_clip(clip?: cairo.RectangleInt | null): void;
-	queue_relayout(): void;
-	realize(): void;
-	remove_action(action: Action): void;
-	remove_action_by_name(name: string): void;
-	remove_all_children(): void;
-	remove_all_transitions(): void;
-	remove_child(child: Actor): void;
-	remove_clip(): void;
-	remove_constraint(constraint: Constraint): void;
-	remove_constraint_by_name(name: string): void;
-	remove_effect(effect: Effect): void;
-	remove_effect_by_name(name: string): void;
-	remove_transition(name: string): void;
-	replace_child(old_child: Actor, new_child: Actor): void;
-	restore_easing_state(): void;
-	save_easing_state(): void;
-	set_allocation(box: ActorBox): void;
-	set_background_color(color?: Color | null): void;
-	set_child_above_sibling(child: Actor, sibling?: Actor | null): void;
-	set_child_at_index(child: Actor, index_: number): void;
-	set_child_below_sibling(child: Actor, sibling?: Actor | null): void;
-	set_child_transform(transform?: Graphene.Matrix | null): void;
-	set_clip(xoff: number, yoff: number, width: number, height: number): void;
-	set_clip_to_allocation(clip_set: boolean): void;
-	set_content(content?: B | null): void;
-	set_content_gravity(gravity: ContentGravity): void;
-	set_content_repeat(repeat: ContentRepeat): void;
-	set_content_scaling_filters(min_filter: ScalingFilter, mag_filter: ScalingFilter): void;
-	set_easing_delay(msecs: number): void;
-	set_easing_duration(msecs: number): void;
-	set_easing_mode(mode: AnimationMode): void;
-	set_fixed_position_set(is_set: boolean): void;
-	set_flags(flags: ActorFlags): void;
-	set_height(height: number): void;
-	set_layout_manager(manager?: A | null): void;
-	set_margin(margin: Margin): void;
-	set_margin_bottom(margin: number): void;
-	set_margin_left(margin: number): void;
-	set_margin_right(margin: number): void;
-	set_margin_top(margin: number): void;
-	set_name(name?: string | null): void;
-	set_offscreen_redirect(redirect: OffscreenRedirect): void;
-	set_opacity(opacity: number): void;
-	set_opacity_override(opacity: number): void;
-	set_pivot_point(pivot_x: number, pivot_y: number): void;
-	set_pivot_point_z(pivot_z: number): void;
-	set_position(x: number, y: number): void;
-	set_reactive(reactive: boolean): void;
-	set_request_mode(mode: RequestMode): void;
-	set_rotation_angle(axis: RotateAxis, angle: number): void;
-	set_scale(scale_x: number, scale_y: number): void;
-	set_scale_z(scale_z: number): void;
-	set_size(width: number, height: number): void;
-	set_text_direction(text_dir: TextDirection): void;
-	set_transform(transform?: Graphene.Matrix | null): void;
-	set_translation(translate_x: number, translate_y: number, translate_z: number): void;
-	set_width(width: number): void;
-	set_x(x: number): void;
-	set_x_align(x_align: ActorAlign): void;
-	set_x_expand(expand: boolean): void;
-	set_y(y: number): void;
-	set_y_align(y_align: ActorAlign): void;
-	set_y_expand(expand: boolean): void;
-	set_z_position(z_position: number): void;
-	should_pick(pick_context: PickContext): boolean;
-	show(): void;
-	transform_stage_point(x: number, y: number): [boolean, number | null, number | null];
-	uninhibit_culling(): void;
-	unmap(): void;
-	unrealize(): void;
-	unset_flags(flags: ActorFlags): void;
-	vfunc_allocate(box: ActorBox): void;
-	vfunc_apply_transform(matrix: Graphene.Matrix): void;
-	vfunc_button_press_event(event: ButtonEvent): boolean;
-	vfunc_button_release_event(event: ButtonEvent): boolean;
-	vfunc_calculate_resource_scale(phase: number): number;
-	vfunc_captured_event(event: Event): boolean;
-	vfunc_destroy(): void;
-	vfunc_enter_event(event: CrossingEvent): boolean;
-	vfunc_event(event: Event): boolean;
-	vfunc_get_accessible(): Atk.Object;
-	vfunc_get_paint_volume(volume: PaintVolume): boolean;
-	vfunc_get_preferred_height(for_width: number): [number | null, number | null];
-	vfunc_get_preferred_width(for_height: number): [number | null, number | null];
-	vfunc_has_accessible(): boolean;
-	vfunc_has_overlaps(): boolean;
-	vfunc_hide(): void;
-	vfunc_hide_all(): void;
-	vfunc_key_focus_in(): void;
-	vfunc_key_focus_out(): void;
-	vfunc_key_press_event(event: KeyEvent): boolean;
-	vfunc_key_release_event(event: KeyEvent): boolean;
-	vfunc_leave_event(event: CrossingEvent): boolean;
-	vfunc_map(): void;
-	vfunc_motion_event(event: MotionEvent): boolean;
-	vfunc_paint(paint_context: PaintContext): void;
-	vfunc_paint_node(root: PaintNode): void;
-	vfunc_parent_set(old_parent: Actor): void;
-	vfunc_pick(pick_context: PickContext): void;
-	vfunc_queue_relayout(): void;
-	vfunc_realize(): void;
-	vfunc_resource_scale_changed(): void;
-	vfunc_scroll_event(event: ScrollEvent): boolean;
-	vfunc_show(): void;
-	vfunc_touch_event(event: TouchEvent): boolean;
-	vfunc_unmap(): void;
-	vfunc_unrealize(): void;
+    // Implemented Members
 
-	// Implemented Members
-
-	find_property(property_name: string): GObject.ParamSpec;
-	get_actor(): Actor;
-	get_initial_state(property_name: string, value: GObject.Value | any): void;
-	interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	set_final_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_find_property(property_name: string): GObject.ParamSpec;
-	vfunc_get_actor(): Actor;
-	vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
-	add_actor(actor: Actor): void;
-	// Conflicted with Clutter.Container.add_actor
-	add_actor(...args: never[]): any;
-	child_get_property(child: Actor, property: string, value: GObject.Value | any): void;
-	// Conflicted with Clutter.Container.child_get_property
-	child_get_property(...args: never[]): any;
-	child_notify(child: Actor, pspec: GObject.ParamSpec): void;
-	// Conflicted with Clutter.Container.child_notify
-	child_notify(...args: never[]): any;
-	child_set_property(child: Actor, property: string, value: GObject.Value | any): void;
-	// Conflicted with Clutter.Container.child_set_property
-	child_set_property(...args: never[]): any;
-	create_child_meta(actor: Actor): void;
-	// Conflicted with Clutter.Container.create_child_meta
-	create_child_meta(...args: never[]): any;
-	destroy_child_meta(actor: Actor): void;
-	// Conflicted with Clutter.Container.destroy_child_meta
-	destroy_child_meta(...args: never[]): any;
-	find_child_by_name(child_name: string): Actor;
-	// Conflicted with Clutter.Container.find_child_by_name
-	find_child_by_name(...args: never[]): any;
-	get_child_meta(actor: Actor): ChildMeta;
-	// Conflicted with Clutter.Container.get_child_meta
-	get_child_meta(...args: never[]): any;
-	remove_actor(actor: Actor): void;
-	// Conflicted with Clutter.Container.remove_actor
-	remove_actor(...args: never[]): any;
-	vfunc_actor_added(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_actor_added
-	vfunc_actor_added(...args: never[]): any;
-	vfunc_actor_removed(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_actor_removed
-	vfunc_actor_removed(...args: never[]): any;
-	vfunc_add(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_add
-	vfunc_add(...args: never[]): any;
-	vfunc_child_notify(child: Actor, pspec: GObject.ParamSpec): void;
-	// Conflicted with Clutter.Container.vfunc_child_notify
-	vfunc_child_notify(...args: never[]): any;
-	vfunc_create_child_meta(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_create_child_meta
-	vfunc_create_child_meta(...args: never[]): any;
-	vfunc_destroy_child_meta(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_destroy_child_meta
-	vfunc_destroy_child_meta(...args: never[]): any;
-	vfunc_get_child_meta(actor: Actor): ChildMeta;
-	// Conflicted with Clutter.Container.vfunc_get_child_meta
-	vfunc_get_child_meta(...args: never[]): any;
-	vfunc_remove(actor: Actor): void;
-	// Conflicted with Clutter.Container.vfunc_remove
-	vfunc_remove(...args: never[]): any;
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    find_property(property_name: string): GObject.ParamSpec;
+    get_actor(): Actor;
+    get_initial_state(property_name: string, value: GObject.Value | any): void;
+    interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    set_final_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_find_property(property_name: string): GObject.ParamSpec;
+    vfunc_get_actor(): Actor;
+    vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
+    add_actor(actor: Actor): void;
+    // Conflicted with Clutter.Container.add_actor
+    add_actor(...args: never[]): any;
+    child_get_property(child: Actor, property: string, value: GObject.Value | any): void;
+    // Conflicted with Clutter.Container.child_get_property
+    child_get_property(...args: never[]): any;
+    child_notify(child: Actor, pspec: GObject.ParamSpec): void;
+    // Conflicted with Clutter.Container.child_notify
+    child_notify(...args: never[]): any;
+    child_set_property(child: Actor, property: string, value: GObject.Value | any): void;
+    // Conflicted with Clutter.Container.child_set_property
+    child_set_property(...args: never[]): any;
+    create_child_meta(actor: Actor): void;
+    // Conflicted with Clutter.Container.create_child_meta
+    create_child_meta(...args: never[]): any;
+    destroy_child_meta(actor: Actor): void;
+    // Conflicted with Clutter.Container.destroy_child_meta
+    destroy_child_meta(...args: never[]): any;
+    find_child_by_name(child_name: string): Actor;
+    // Conflicted with Clutter.Container.find_child_by_name
+    find_child_by_name(...args: never[]): any;
+    get_child_meta(actor: Actor): ChildMeta;
+    // Conflicted with Clutter.Container.get_child_meta
+    get_child_meta(...args: never[]): any;
+    remove_actor(actor: Actor): void;
+    // Conflicted with Clutter.Container.remove_actor
+    remove_actor(...args: never[]): any;
+    vfunc_actor_added(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_actor_added
+    vfunc_actor_added(...args: never[]): any;
+    vfunc_actor_removed(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_actor_removed
+    vfunc_actor_removed(...args: never[]): any;
+    vfunc_add(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_add
+    vfunc_add(...args: never[]): any;
+    vfunc_child_notify(child: Actor, pspec: GObject.ParamSpec): void;
+    // Conflicted with Clutter.Container.vfunc_child_notify
+    vfunc_child_notify(...args: never[]): any;
+    vfunc_create_child_meta(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_create_child_meta
+    vfunc_create_child_meta(...args: never[]): any;
+    vfunc_destroy_child_meta(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_destroy_child_meta
+    vfunc_destroy_child_meta(...args: never[]): any;
+    vfunc_get_child_meta(actor: Actor): ChildMeta;
+    // Conflicted with Clutter.Container.vfunc_get_child_meta
+    vfunc_get_child_meta(...args: never[]): any;
+    vfunc_remove(actor: Actor): void;
+    // Conflicted with Clutter.Container.vfunc_remove
+    vfunc_remove(...args: never[]): any;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace ActorMeta {
+export module ActorMeta {
     export interface ConstructorProperties extends GObject.InitiallyUnowned.ConstructorProperties {
         [key: string]: any;
         actor: Actor;
@@ -4193,44 +4191,44 @@ export namespace ActorMeta {
     }
 }
 export abstract class ActorMeta extends GObject.InitiallyUnowned {
-	static $gtype: GObject.GType<ActorMeta>;
+    static $gtype: GObject.GType<ActorMeta>;
 
-	constructor(properties?: Partial<ActorMeta.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ActorMeta.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ActorMeta.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ActorMeta.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get actor(): Actor;
-	get enabled(): boolean;
-	set enabled(val: boolean);
-	get name(): string;
-	set name(val: string);
+    // Properties
+    get actor(): Actor;
+    get enabled(): boolean;
+    set enabled(val: boolean);
+    get name(): string;
+    set name(val: string);
 
-	// Members
+    // Members
 
-	get_actor(): Actor;
-	get_enabled(): boolean;
-	get_name(): string;
-	set_enabled(is_enabled: boolean): void;
-	set_name(name: string): void;
-	vfunc_set_actor(actor?: Actor | null): void;
-	vfunc_set_enabled(is_enabled: boolean): void;
+    get_actor(): Actor;
+    get_enabled(): boolean;
+    get_name(): string;
+    set_enabled(is_enabled: boolean): void;
+    set_name(name: string): void;
+    vfunc_set_actor(actor?: Actor | null): void;
+    vfunc_set_enabled(is_enabled: boolean): void;
 }
-export namespace ActorNode {
+export module ActorNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ActorNode extends PaintNode {
-	static $gtype: GObject.GType<ActorNode>;
+    static $gtype: GObject.GType<ActorNode>;
 
-	constructor(properties?: Partial<ActorNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ActorNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ActorNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ActorNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](actor: Actor, opacity: number): ActorNode;
+    static ["new"](actor: Actor, opacity: number): ActorNode;
 }
-export namespace AlignConstraint {
+export module AlignConstraint {
     export interface ConstructorProperties extends Constraint.ConstructorProperties {
         [key: string]: any;
         align_axis: AlignAxis;
@@ -4242,76 +4240,76 @@ export namespace AlignConstraint {
     }
 }
 export class AlignConstraint extends Constraint {
-	static $gtype: GObject.GType<AlignConstraint>;
+    static $gtype: GObject.GType<AlignConstraint>;
 
-	constructor(properties?: Partial<AlignConstraint.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<AlignConstraint.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<AlignConstraint.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<AlignConstraint.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get align_axis(): AlignAxis;
-	set align_axis(val: AlignAxis);
-	get alignAxis(): AlignAxis;
-	set alignAxis(val: AlignAxis);
-	get factor(): number;
-	set factor(val: number);
-	get pivot_point(): Graphene.Point;
-	set pivot_point(val: Graphene.Point);
-	get pivotPoint(): Graphene.Point;
-	set pivotPoint(val: Graphene.Point);
-	get source(): Actor;
-	set source(val: Actor);
+    // Properties
+    get align_axis(): AlignAxis;
+    set align_axis(val: AlignAxis);
+    get alignAxis(): AlignAxis;
+    set alignAxis(val: AlignAxis);
+    get factor(): number;
+    set factor(val: number);
+    get pivot_point(): Graphene.Point;
+    set pivot_point(val: Graphene.Point);
+    get pivotPoint(): Graphene.Point;
+    set pivotPoint(val: Graphene.Point);
+    get source(): Actor;
+    set source(val: Actor);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](source: Actor | null, axis: AlignAxis, factor: number): AlignConstraint;
+    static ["new"](source: Actor | null, axis: AlignAxis, factor: number): AlignConstraint;
 
-	// Members
+    // Members
 
-	get_align_axis(): AlignAxis;
-	get_factor(): number;
-	get_pivot_point(): Graphene.Point;
-	get_source(): Actor;
-	set_align_axis(axis: AlignAxis): void;
-	set_factor(factor: number): void;
-	set_pivot_point(pivot_point: Graphene.Point): void;
-	set_source(source?: Actor | null): void;
+    get_align_axis(): AlignAxis;
+    get_factor(): number;
+    get_pivot_point(): Graphene.Point;
+    get_source(): Actor;
+    set_align_axis(axis: AlignAxis): void;
+    set_factor(factor: number): void;
+    set_pivot_point(pivot_point: Graphene.Point): void;
+    set_source(source?: Actor | null): void;
 }
-export namespace Backend {
+export module Backend {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class Backend extends GObject.Object {
-	static $gtype: GObject.GType<Backend>;
+    static $gtype: GObject.GType<Backend>;
 
-	constructor(properties?: Partial<Backend.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Backend.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Backend.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Backend.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'font-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'font-changed', callback: (_source: this) => void): number;
-	emit(signal: 'font-changed'): void;
-	connect(signal: 'resolution-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'resolution-changed', callback: (_source: this) => void): number;
-	emit(signal: 'resolution-changed'): void;
-	connect(signal: 'settings-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'settings-changed', callback: (_source: this) => void): number;
-	emit(signal: 'settings-changed'): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "font-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "font-changed", callback: (_source: this) => void): number;
+    emit(signal: "font-changed"): void;
+    connect(signal: "resolution-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "resolution-changed", callback: (_source: this) => void): number;
+    emit(signal: "resolution-changed"): void;
+    connect(signal: "settings-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "settings-changed", callback: (_source: this) => void): number;
+    emit(signal: "settings-changed"): void;
 
-	// Members
+    // Members
 
-	get_default_seat(): Seat;
-	get_font_options(): cairo.FontOptions;
-	get_input_method(): InputMethod;
-	get_resolution(): number;
-	set_font_options(options: cairo.FontOptions): void;
-	set_input_method(method: InputMethod): void;
+    get_default_seat(): Seat;
+    get_font_options(): cairo.FontOptions;
+    get_input_method(): InputMethod;
+    get_resolution(): number;
+    set_font_options(options: cairo.FontOptions): void;
+    set_input_method(method: InputMethod): void;
 }
-export namespace BinLayout {
+export module BinLayout {
     export interface ConstructorProperties extends LayoutManager.ConstructorProperties {
         [key: string]: any;
         x_align: BinAlignment;
@@ -4321,26 +4319,26 @@ export namespace BinLayout {
     }
 }
 export class BinLayout extends LayoutManager {
-	static $gtype: GObject.GType<BinLayout>;
+    static $gtype: GObject.GType<BinLayout>;
 
-	constructor(properties?: Partial<BinLayout.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BinLayout.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BinLayout.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BinLayout.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get x_align(): BinAlignment;
-	set x_align(val: BinAlignment);
-	get xAlign(): BinAlignment;
-	set xAlign(val: BinAlignment);
-	get y_align(): BinAlignment;
-	set y_align(val: BinAlignment);
-	get yAlign(): BinAlignment;
-	set yAlign(val: BinAlignment);
+    // Properties
+    get x_align(): BinAlignment;
+    set x_align(val: BinAlignment);
+    get xAlign(): BinAlignment;
+    set xAlign(val: BinAlignment);
+    get y_align(): BinAlignment;
+    set y_align(val: BinAlignment);
+    get yAlign(): BinAlignment;
+    set yAlign(val: BinAlignment);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](x_align: BinAlignment, y_align: BinAlignment): BinLayout;
+    static ["new"](x_align: BinAlignment, y_align: BinAlignment): BinLayout;
 }
-export namespace BindConstraint {
+export module BindConstraint {
     export interface ConstructorProperties extends Constraint.ConstructorProperties {
         [key: string]: any;
         coordinate: BindCoordinate;
@@ -4349,117 +4347,117 @@ export namespace BindConstraint {
     }
 }
 export class BindConstraint extends Constraint {
-	static $gtype: GObject.GType<BindConstraint>;
+    static $gtype: GObject.GType<BindConstraint>;
 
-	constructor(properties?: Partial<BindConstraint.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BindConstraint.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BindConstraint.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BindConstraint.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get coordinate(): BindCoordinate;
-	set coordinate(val: BindCoordinate);
-	get offset(): number;
-	set offset(val: number);
-	get source(): Actor;
-	set source(val: Actor);
+    // Properties
+    get coordinate(): BindCoordinate;
+    set coordinate(val: BindCoordinate);
+    get offset(): number;
+    set offset(val: number);
+    get source(): Actor;
+    set source(val: Actor);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](source: Actor | null, coordinate: BindCoordinate, offset: number): BindConstraint;
+    static ["new"](source: Actor | null, coordinate: BindCoordinate, offset: number): BindConstraint;
 
-	// Members
+    // Members
 
-	get_coordinate(): BindCoordinate;
-	get_offset(): number;
-	get_source(): Actor;
-	set_coordinate(coordinate: BindCoordinate): void;
-	set_offset(offset: number): void;
-	set_source(source?: Actor | null): void;
+    get_coordinate(): BindCoordinate;
+    get_offset(): number;
+    get_source(): Actor;
+    set_coordinate(coordinate: BindCoordinate): void;
+    set_offset(offset: number): void;
+    set_source(source?: Actor | null): void;
 }
-export namespace BindingPool {
+export module BindingPool {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         name: string;
     }
 }
 export class BindingPool extends GObject.Object {
-	static $gtype: GObject.GType<BindingPool>;
+    static $gtype: GObject.GType<BindingPool>;
 
-	constructor(properties?: Partial<BindingPool.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BindingPool.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BindingPool.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BindingPool.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get name(): string;
+    // Properties
+    get name(): string;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](name: string): BindingPool;
+    static ["new"](name: string): BindingPool;
 
-	// Members
+    // Members
 
-	activate(key_val: number, modifiers: ModifierType, gobject: GObject.Object): boolean;
-	block_action(action_name: string): void;
-	find_action(key_val: number, modifiers: ModifierType): string;
-	install_action(action_name: string, key_val: number, modifiers: ModifierType, callback: BindingActionFunc): void;
-	install_closure(action_name: string, key_val: number, modifiers: ModifierType, closure: GObject.Closure): void;
-	override_action(key_val: number, modifiers: ModifierType, callback: GObject.Callback): void;
-	override_closure(key_val: number, modifiers: ModifierType, closure: GObject.Closure): void;
-	remove_action(key_val: number, modifiers: ModifierType): void;
-	unblock_action(action_name: string): void;
-	static find(name: string): BindingPool;
-	static get_for_class(klass?: any | null): BindingPool;
+    activate(key_val: number, modifiers: ModifierType, gobject: GObject.Object): boolean;
+    block_action(action_name: string): void;
+    find_action(key_val: number, modifiers: ModifierType): string;
+    install_action(action_name: string, key_val: number, modifiers: ModifierType, callback: BindingActionFunc): void;
+    install_closure(action_name: string, key_val: number, modifiers: ModifierType, closure: GObject.Closure): void;
+    override_action(key_val: number, modifiers: ModifierType, callback: GObject.Callback): void;
+    override_closure(key_val: number, modifiers: ModifierType, closure: GObject.Closure): void;
+    remove_action(key_val: number, modifiers: ModifierType): void;
+    unblock_action(action_name: string): void;
+    static find(name: string): BindingPool;
+    static get_for_class(klass?: any | null): BindingPool;
 }
-export namespace BlitNode {
+export module BlitNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class BlitNode extends PaintNode {
-	static $gtype: GObject.GType<BlitNode>;
+    static $gtype: GObject.GType<BlitNode>;
 
-	constructor(properties?: Partial<BlitNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BlitNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BlitNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BlitNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](src: Cogl.Framebuffer): BlitNode;
+    static ["new"](src: Cogl.Framebuffer): BlitNode;
 
-	// Members
+    // Members
 
-	add_blit_rectangle(src_x: number, src_y: number, dst_x: number, dst_y: number, width: number, height: number): void;
+    add_blit_rectangle(src_x: number, src_y: number, dst_x: number, dst_y: number, width: number, height: number): void;
 }
-export namespace BlurEffect {
+export module BlurEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class BlurEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<BlurEffect>;
+    static $gtype: GObject.GType<BlurEffect>;
 
-	constructor(properties?: Partial<BlurEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BlurEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BlurEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BlurEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): BlurEffect;
+    static ["new"](): BlurEffect;
 }
-export namespace BlurNode {
+export module BlurNode {
     export interface ConstructorProperties extends LayerNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class BlurNode extends LayerNode {
-	static $gtype: GObject.GType<BlurNode>;
+    static $gtype: GObject.GType<BlurNode>;
 
-	constructor(properties?: Partial<BlurNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BlurNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BlurNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BlurNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](width: number, height: number, sigma: number): BlurNode;
-	// Conflicted with Clutter.LayerNode.new
-	static ['new'](...args: never[]): any;
+    static ["new"](width: number, height: number, sigma: number): BlurNode;
+    // Conflicted with Clutter.LayerNode.new
+    static ["new"](...args: never[]): any;
 }
-export namespace BoxLayout {
+export module BoxLayout {
     export interface ConstructorProperties extends LayoutManager.ConstructorProperties {
         [key: string]: any;
         homogeneous: boolean;
@@ -4470,39 +4468,39 @@ export namespace BoxLayout {
     }
 }
 export class BoxLayout extends LayoutManager {
-	static $gtype: GObject.GType<BoxLayout>;
+    static $gtype: GObject.GType<BoxLayout>;
 
-	constructor(properties?: Partial<BoxLayout.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BoxLayout.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BoxLayout.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BoxLayout.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get homogeneous(): boolean;
-	set homogeneous(val: boolean);
-	get orientation(): Orientation;
-	set orientation(val: Orientation);
-	get pack_start(): boolean;
-	set pack_start(val: boolean);
-	get packStart(): boolean;
-	set packStart(val: boolean);
-	get spacing(): number;
-	set spacing(val: number);
+    // Properties
+    get homogeneous(): boolean;
+    set homogeneous(val: boolean);
+    get orientation(): Orientation;
+    set orientation(val: Orientation);
+    get pack_start(): boolean;
+    set pack_start(val: boolean);
+    get packStart(): boolean;
+    set packStart(val: boolean);
+    get spacing(): number;
+    set spacing(val: number);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): BoxLayout;
+    static ["new"](): BoxLayout;
 
-	// Members
+    // Members
 
-	get_homogeneous(): boolean;
-	get_orientation(): Orientation;
-	get_pack_start(): boolean;
-	get_spacing(): number;
-	set_homogeneous(homogeneous: boolean): void;
-	set_orientation(orientation: Orientation): void;
-	set_pack_start(pack_start: boolean): void;
-	set_spacing(spacing: number): void;
+    get_homogeneous(): boolean;
+    get_orientation(): Orientation;
+    get_pack_start(): boolean;
+    get_spacing(): number;
+    set_homogeneous(homogeneous: boolean): void;
+    set_orientation(orientation: Orientation): void;
+    set_pack_start(pack_start: boolean): void;
+    set_spacing(spacing: number): void;
 }
-export namespace BrightnessContrastEffect {
+export module BrightnessContrastEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
         brightness: Color;
@@ -4510,31 +4508,31 @@ export namespace BrightnessContrastEffect {
     }
 }
 export class BrightnessContrastEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<BrightnessContrastEffect>;
+    static $gtype: GObject.GType<BrightnessContrastEffect>;
 
-	constructor(properties?: Partial<BrightnessContrastEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<BrightnessContrastEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<BrightnessContrastEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<BrightnessContrastEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get brightness(): Color;
-	set brightness(val: Color);
-	get contrast(): Color;
-	set contrast(val: Color);
+    // Properties
+    get brightness(): Color;
+    set brightness(val: Color);
+    get contrast(): Color;
+    set contrast(val: Color);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): BrightnessContrastEffect;
+    static ["new"](): BrightnessContrastEffect;
 
-	// Members
+    // Members
 
-	get_brightness(): [number | null, number | null, number | null];
-	get_contrast(): [number | null, number | null, number | null];
-	set_brightness(brightness: number): void;
-	set_brightness_full(red: number, green: number, blue: number): void;
-	set_contrast(contrast: number): void;
-	set_contrast_full(red: number, green: number, blue: number): void;
+    get_brightness(): [number | null, number | null, number | null];
+    get_contrast(): [number | null, number | null, number | null];
+    set_brightness(brightness: number): void;
+    set_brightness_full(red: number, green: number, blue: number): void;
+    set_contrast(contrast: number): void;
+    set_contrast_full(red: number, green: number, blue: number): void;
 }
-export namespace Canvas {
+export module Canvas {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         height: number;
@@ -4544,59 +4542,57 @@ export namespace Canvas {
     }
 }
 export class Canvas extends GObject.Object implements Content {
-	static $gtype: GObject.GType<Canvas>;
+    static $gtype: GObject.GType<Canvas>;
 
-	constructor(properties?: Partial<Canvas.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Canvas.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Canvas.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Canvas.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get height(): number;
-	set height(val: number);
-	get scale_factor(): number;
-	set scale_factor(val: number);
-	get scaleFactor(): number;
-	set scaleFactor(val: number);
-	get width(): number;
-	set width(val: number);
+    // Properties
+    get height(): number;
+    set height(val: number);
+    get scale_factor(): number;
+    set scale_factor(val: number);
+    get scaleFactor(): number;
+    set scaleFactor(val: number);
+    get width(): number;
+    set width(val: number);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(
-        signal: 'draw',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(
+        signal: "draw",
         callback: (_source: this, cr: cairo.Context, width: number, height: number) => boolean
     ): number;
-
-	connect_after(
-        signal: 'draw',
+    connect_after(
+        signal: "draw",
         callback: (_source: this, cr: cairo.Context, width: number, height: number) => boolean
     ): number;
+    emit(signal: "draw", cr: cairo.Context, width: number, height: number): void;
 
-	emit(signal: 'draw', cr: cairo.Context, width: number, height: number): void;
+    // Members
 
-	// Members
+    get_scale_factor(): number;
+    set_scale_factor(scale: number): void;
+    set_size(width: number, height: number): boolean;
+    vfunc_draw(cr: cairo.Context, width: number, height: number): boolean;
+    static new(): Content;
 
-	get_scale_factor(): number;
-	set_scale_factor(scale: number): void;
-	set_size(width: number, height: number): boolean;
-	vfunc_draw(cr: cairo.Context, width: number, height: number): boolean;
-	static new(): Content;
+    // Implemented Members
 
-	// Implemented Members
-
-	get_preferred_size(): [boolean, number | null, number | null];
-	invalidate(): void;
-	invalidate_size(): void;
-	vfunc_attached(actor: Actor): void;
-	vfunc_detached(actor: Actor): void;
-	vfunc_get_preferred_size(): [boolean, number | null, number | null];
-	vfunc_invalidate(): void;
-	vfunc_invalidate_size(): void;
-	vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
+    get_preferred_size(): [boolean, number | null, number | null];
+    invalidate(): void;
+    invalidate_size(): void;
+    vfunc_attached(actor: Actor): void;
+    vfunc_detached(actor: Actor): void;
+    vfunc_get_preferred_size(): [boolean, number | null, number | null];
+    vfunc_invalidate(): void;
+    vfunc_invalidate_size(): void;
+    vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
 }
-export namespace ChildMeta {
+export module ChildMeta {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         actor: Actor;
@@ -4604,21 +4600,21 @@ export namespace ChildMeta {
     }
 }
 export abstract class ChildMeta extends GObject.Object {
-	static $gtype: GObject.GType<ChildMeta>;
+    static $gtype: GObject.GType<ChildMeta>;
 
-	constructor(properties?: Partial<ChildMeta.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ChildMeta.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ChildMeta.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ChildMeta.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get actor(): Actor;
-	get container(): Container;
+    // Properties
+    get actor(): Actor;
+    get container(): Container;
 
-	// Members
+    // Members
 
-	get_actor(): Actor;
-	get_container(): Container;
+    get_actor(): Actor;
+    get_container(): Container;
 }
-export namespace ClickAction {
+export module ClickAction {
     export interface ConstructorProperties extends Action.ConstructorProperties {
         [key: string]: any;
         held: boolean;
@@ -4630,200 +4626,198 @@ export namespace ClickAction {
     }
 }
 export class ClickAction extends Action {
-	static $gtype: GObject.GType<ClickAction>;
+    static $gtype: GObject.GType<ClickAction>;
 
-	constructor(properties?: Partial<ClickAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ClickAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ClickAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ClickAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get held(): boolean;
-	get long_press_duration(): number;
-	set long_press_duration(val: number);
-	get longPressDuration(): number;
-	set longPressDuration(val: number);
-	get long_press_threshold(): number;
-	set long_press_threshold(val: number);
-	get longPressThreshold(): number;
-	set longPressThreshold(val: number);
-	get pressed(): boolean;
+    // Properties
+    get held(): boolean;
+    get long_press_duration(): number;
+    set long_press_duration(val: number);
+    get longPressDuration(): number;
+    set longPressDuration(val: number);
+    get long_press_threshold(): number;
+    set long_press_threshold(val: number);
+    get longPressThreshold(): number;
+    set longPressThreshold(val: number);
+    get pressed(): boolean;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'clicked', callback: (_source: this, actor: Actor) => void): number;
-	connect_after(signal: 'clicked', callback: (_source: this, actor: Actor) => void): number;
-	emit(signal: 'clicked', actor: Actor): void;
-	connect(signal: 'long-press', callback: (_source: this, actor: Actor, state: LongPressState) => boolean): number;
-	connect_after(
-        signal: 'long-press',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "clicked", callback: (_source: this, actor: Actor) => void): number;
+    connect_after(signal: "clicked", callback: (_source: this, actor: Actor) => void): number;
+    emit(signal: "clicked", actor: Actor): void;
+    connect(signal: "long-press", callback: (_source: this, actor: Actor, state: LongPressState) => boolean): number;
+    connect_after(
+        signal: "long-press",
         callback: (_source: this, actor: Actor, state: LongPressState) => boolean
     ): number;
+    emit(signal: "long-press", actor: Actor, state: LongPressState): void;
 
-	emit(signal: 'long-press', actor: Actor, state: LongPressState): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): ClickAction;
 
-	static ['new'](): ClickAction;
+    // Members
 
-	// Members
-
-	get_button(): number;
-	get_coords(): [number, number];
-	get_state(): ModifierType;
-	release(): void;
-	vfunc_clicked(actor: Actor): void;
-	vfunc_long_press(actor: Actor, state: LongPressState): boolean;
+    get_button(): number;
+    get_coords(): [number, number];
+    get_state(): ModifierType;
+    release(): void;
+    vfunc_clicked(actor: Actor): void;
+    vfunc_long_press(actor: Actor, state: LongPressState): boolean;
 }
-export namespace ClipNode {
+export module ClipNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ClipNode extends PaintNode {
-	static $gtype: GObject.GType<ClipNode>;
+    static $gtype: GObject.GType<ClipNode>;
 
-	constructor(properties?: Partial<ClipNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ClipNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ClipNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ClipNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): ClipNode;
+    static ["new"](): ClipNode;
 }
-export namespace Clone {
+export module Clone {
     export interface ConstructorProperties<A extends Actor = Actor> extends Actor.ConstructorProperties {
         [key: string]: any;
         source: A;
     }
 }
 export class Clone<A extends Actor = Actor>
-	extends Actor
-	implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
+    extends Actor
+    implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
 {
-	static $gtype: GObject.GType<Clone>;
+    static $gtype: GObject.GType<Clone>;
 
-	constructor(properties?: Partial<Clone.ConstructorProperties<A>>, ...args: any[]);
-	_init(properties?: Partial<Clone.ConstructorProperties<A>>, ...args: any[]): void;
+    constructor(properties?: Partial<Clone.ConstructorProperties<A>>, ...args: any[]);
+    _init(properties?: Partial<Clone.ConstructorProperties<A>>, ...args: any[]): void;
 
-	// Properties
-	get source(): A;
-	set source(val: A);
+    // Properties
+    get source(): A;
+    set source(val: A);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](source: Actor): Clone;
-	// Conflicted with Clutter.Actor.new
-	static ['new'](...args: never[]): any;
+    static ["new"](source: Actor): Clone;
+    // Conflicted with Clutter.Actor.new
+    static ["new"](...args: never[]): any;
 
-	// Members
+    // Members
 
-	get_source(): A;
-	set_source(source?: A | null): void;
+    get_source(): A;
+    set_source(source?: A | null): void;
 
-	// Implemented Members
+    // Implemented Members
 
-	find_property(property_name: string): GObject.ParamSpec;
-	get_actor(): Actor;
-	get_initial_state(property_name: string, value: GObject.Value | any): void;
-	interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	set_final_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_find_property(property_name: string): GObject.ParamSpec;
-	vfunc_get_actor(): Actor;
-	vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
-	add_actor(actor: A): void;
-	child_get_property(child: A, property: string, value: GObject.Value | any): void;
-	child_notify(child: A, pspec: GObject.ParamSpec): void;
-	child_set_property(child: A, property: string, value: GObject.Value | any): void;
-	create_child_meta(actor: A): void;
-	destroy_child_meta(actor: A): void;
-	find_child_by_name(child_name: string): A;
-	get_child_meta(actor: A): ChildMeta;
-	remove_actor(actor: A): void;
-	vfunc_actor_added(actor: A): void;
-	vfunc_actor_removed(actor: A): void;
-	vfunc_add(actor: A): void;
-	vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
-	vfunc_create_child_meta(actor: A): void;
-	vfunc_destroy_child_meta(actor: A): void;
-	vfunc_get_child_meta(actor: A): ChildMeta;
-	vfunc_remove(actor: A): void;
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    find_property(property_name: string): GObject.ParamSpec;
+    get_actor(): Actor;
+    get_initial_state(property_name: string, value: GObject.Value | any): void;
+    interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    set_final_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_find_property(property_name: string): GObject.ParamSpec;
+    vfunc_get_actor(): Actor;
+    vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
+    add_actor(actor: A): void;
+    child_get_property(child: A, property: string, value: GObject.Value | any): void;
+    child_notify(child: A, pspec: GObject.ParamSpec): void;
+    child_set_property(child: A, property: string, value: GObject.Value | any): void;
+    create_child_meta(actor: A): void;
+    destroy_child_meta(actor: A): void;
+    find_child_by_name(child_name: string): A;
+    get_child_meta(actor: A): ChildMeta;
+    remove_actor(actor: A): void;
+    vfunc_actor_added(actor: A): void;
+    vfunc_actor_removed(actor: A): void;
+    vfunc_add(actor: A): void;
+    vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
+    vfunc_create_child_meta(actor: A): void;
+    vfunc_destroy_child_meta(actor: A): void;
+    vfunc_get_child_meta(actor: A): ChildMeta;
+    vfunc_remove(actor: A): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace ColorNode {
+export module ColorNode {
     export interface ConstructorProperties extends PipelineNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ColorNode extends PipelineNode {
-	static $gtype: GObject.GType<ColorNode>;
+    static $gtype: GObject.GType<ColorNode>;
 
-	constructor(properties?: Partial<ColorNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ColorNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ColorNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ColorNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](color?: Color | null): ColorNode;
-	// Conflicted with Clutter.PipelineNode.new
-	static ['new'](...args: never[]): any;
+    static ["new"](color?: Color | null): ColorNode;
+    // Conflicted with Clutter.PipelineNode.new
+    static ["new"](...args: never[]): any;
 }
-export namespace ColorizeEffect {
+export module ColorizeEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
         tint: Color;
     }
 }
 export class ColorizeEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<ColorizeEffect>;
+    static $gtype: GObject.GType<ColorizeEffect>;
 
-	constructor(properties?: Partial<ColorizeEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ColorizeEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ColorizeEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ColorizeEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get tint(): Color;
-	set tint(val: Color);
+    // Properties
+    get tint(): Color;
+    set tint(val: Color);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](tint: Color): ColorizeEffect;
+    static ["new"](tint: Color): ColorizeEffect;
 
-	// Members
+    // Members
 
-	get_tint(): Color;
-	set_tint(tint: Color): void;
+    get_tint(): Color;
+    set_tint(tint: Color): void;
 }
-export namespace Constraint {
+export module Constraint {
     export interface ConstructorProperties extends ActorMeta.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class Constraint extends ActorMeta {
-	static $gtype: GObject.GType<Constraint>;
+    static $gtype: GObject.GType<Constraint>;
 
-	constructor(properties?: Partial<Constraint.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Constraint.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Constraint.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Constraint.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	update_preferred_size(
+    update_preferred_size(
         actor: Actor,
         direction: Orientation,
         for_size: number,
         minimum_size: number,
         natural_size: number
     ): [number, number];
-
-	vfunc_update_allocation(actor: Actor, allocation: ActorBox): void;
-	vfunc_update_preferred_size(
+    vfunc_update_allocation(actor: Actor, allocation: ActorBox): void;
+    vfunc_update_preferred_size(
         actor: Actor,
         direction: Orientation,
         for_size: number,
@@ -4831,7 +4825,7 @@ export abstract class Constraint extends ActorMeta {
         natural_size: number
     ): [number, number];
 }
-export namespace DeformEffect {
+export module DeformEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
         x_tiles: number;
@@ -4841,92 +4835,92 @@ export namespace DeformEffect {
     }
 }
 export abstract class DeformEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<DeformEffect>;
+    static $gtype: GObject.GType<DeformEffect>;
 
-	constructor(properties?: Partial<DeformEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<DeformEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<DeformEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<DeformEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get x_tiles(): number;
-	set x_tiles(val: number);
-	get xTiles(): number;
-	set xTiles(val: number);
-	get y_tiles(): number;
-	set y_tiles(val: number);
-	get yTiles(): number;
-	set yTiles(val: number);
+    // Properties
+    get x_tiles(): number;
+    set x_tiles(val: number);
+    get xTiles(): number;
+    set xTiles(val: number);
+    get y_tiles(): number;
+    set y_tiles(val: number);
+    get yTiles(): number;
+    set yTiles(val: number);
 
-	// Members
+    // Members
 
-	get_back_material(): Cogl.Handle;
-	get_n_tiles(): [number, number];
-	invalidate(): void;
-	set_back_material(material?: Cogl.Handle | null): void;
-	set_n_tiles(x_tiles: number, y_tiles: number): void;
-	vfunc_deform_vertex(width: number, height: number, vertex: Cogl.TextureVertex): void;
+    get_back_material(): Cogl.Handle;
+    get_n_tiles(): [number, number];
+    invalidate(): void;
+    set_back_material(material?: Cogl.Handle | null): void;
+    set_n_tiles(x_tiles: number, y_tiles: number): void;
+    vfunc_deform_vertex(width: number, height: number, vertex: Cogl.TextureVertex): void;
 }
-export namespace DesaturateEffect {
+export module DesaturateEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
         factor: number;
     }
 }
 export class DesaturateEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<DesaturateEffect>;
+    static $gtype: GObject.GType<DesaturateEffect>;
 
-	constructor(properties?: Partial<DesaturateEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<DesaturateEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<DesaturateEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<DesaturateEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get factor(): number;
-	set factor(val: number);
+    // Properties
+    get factor(): number;
+    set factor(val: number);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](factor: number): DesaturateEffect;
+    static ["new"](factor: number): DesaturateEffect;
 
-	// Members
+    // Members
 
-	get_factor(): number;
-	set_factor(factor: number): void;
+    get_factor(): number;
+    set_factor(factor: number): void;
 }
-export namespace Effect {
+export module Effect {
     export interface ConstructorProperties extends ActorMeta.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class Effect extends ActorMeta {
-	static $gtype: GObject.GType<Effect>;
+    static $gtype: GObject.GType<Effect>;
 
-	constructor(properties?: Partial<Effect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Effect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Effect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Effect.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	queue_repaint(): void;
-	vfunc_modify_paint_volume(volume: PaintVolume): boolean;
-	vfunc_paint(node: PaintNode, paint_context: PaintContext, flags: EffectPaintFlags): void;
-	vfunc_paint_node(node: PaintNode, paint_context: PaintContext, flags: EffectPaintFlags): void;
-	vfunc_pick(pick_context: PickContext): void;
-	vfunc_post_paint(node: PaintNode, paint_context: PaintContext): void;
-	vfunc_pre_paint(node: PaintNode, paint_context: PaintContext): boolean;
+    queue_repaint(): void;
+    vfunc_modify_paint_volume(volume: PaintVolume): boolean;
+    vfunc_paint(node: PaintNode, paint_context: PaintContext, flags: EffectPaintFlags): void;
+    vfunc_paint_node(node: PaintNode, paint_context: PaintContext, flags: EffectPaintFlags): void;
+    vfunc_pick(pick_context: PickContext): void;
+    vfunc_post_paint(node: PaintNode, paint_context: PaintContext): void;
+    vfunc_pre_paint(node: PaintNode, paint_context: PaintContext): boolean;
 }
-export namespace FixedLayout {
+export module FixedLayout {
     export interface ConstructorProperties extends LayoutManager.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class FixedLayout extends LayoutManager {
-	static $gtype: GObject.GType<FixedLayout>;
+    static $gtype: GObject.GType<FixedLayout>;
 
-	constructor(properties?: Partial<FixedLayout.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<FixedLayout.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<FixedLayout.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<FixedLayout.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): FixedLayout;
+    static ["new"](): FixedLayout;
 }
-export namespace FlowLayout {
+export module FlowLayout {
     export interface ConstructorProperties extends LayoutManager.ConstructorProperties {
         [key: string]: any;
         column_spacing: number;
@@ -4948,101 +4942,101 @@ export namespace FlowLayout {
     }
 }
 export class FlowLayout extends LayoutManager {
-	static $gtype: GObject.GType<FlowLayout>;
+    static $gtype: GObject.GType<FlowLayout>;
 
-	constructor(properties?: Partial<FlowLayout.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<FlowLayout.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<FlowLayout.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<FlowLayout.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get column_spacing(): number;
-	set column_spacing(val: number);
-	get columnSpacing(): number;
-	set columnSpacing(val: number);
-	get homogeneous(): boolean;
-	set homogeneous(val: boolean);
-	get max_column_width(): number;
-	set max_column_width(val: number);
-	get maxColumnWidth(): number;
-	set maxColumnWidth(val: number);
-	get max_row_height(): number;
-	set max_row_height(val: number);
-	get maxRowHeight(): number;
-	set maxRowHeight(val: number);
-	get min_column_width(): number;
-	set min_column_width(val: number);
-	get minColumnWidth(): number;
-	set minColumnWidth(val: number);
-	get min_row_height(): number;
-	set min_row_height(val: number);
-	get minRowHeight(): number;
-	set minRowHeight(val: number);
-	get orientation(): FlowOrientation;
-	set orientation(val: FlowOrientation);
-	get row_spacing(): number;
-	set row_spacing(val: number);
-	get rowSpacing(): number;
-	set rowSpacing(val: number);
-	get snap_to_grid(): boolean;
-	set snap_to_grid(val: boolean);
-	get snapToGrid(): boolean;
-	set snapToGrid(val: boolean);
+    // Properties
+    get column_spacing(): number;
+    set column_spacing(val: number);
+    get columnSpacing(): number;
+    set columnSpacing(val: number);
+    get homogeneous(): boolean;
+    set homogeneous(val: boolean);
+    get max_column_width(): number;
+    set max_column_width(val: number);
+    get maxColumnWidth(): number;
+    set maxColumnWidth(val: number);
+    get max_row_height(): number;
+    set max_row_height(val: number);
+    get maxRowHeight(): number;
+    set maxRowHeight(val: number);
+    get min_column_width(): number;
+    set min_column_width(val: number);
+    get minColumnWidth(): number;
+    set minColumnWidth(val: number);
+    get min_row_height(): number;
+    set min_row_height(val: number);
+    get minRowHeight(): number;
+    set minRowHeight(val: number);
+    get orientation(): FlowOrientation;
+    set orientation(val: FlowOrientation);
+    get row_spacing(): number;
+    set row_spacing(val: number);
+    get rowSpacing(): number;
+    set rowSpacing(val: number);
+    get snap_to_grid(): boolean;
+    set snap_to_grid(val: boolean);
+    get snapToGrid(): boolean;
+    set snapToGrid(val: boolean);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](orientation: FlowOrientation): FlowLayout;
+    static ["new"](orientation: FlowOrientation): FlowLayout;
 
-	// Members
+    // Members
 
-	get_column_spacing(): number;
-	get_column_width(): [number, number];
-	get_homogeneous(): boolean;
-	get_orientation(): FlowOrientation;
-	get_row_height(): [number, number];
-	get_row_spacing(): number;
-	get_snap_to_grid(): boolean;
-	set_column_spacing(spacing: number): void;
-	set_column_width(min_width: number, max_width: number): void;
-	set_homogeneous(homogeneous: boolean): void;
-	set_orientation(orientation: FlowOrientation): void;
-	set_row_height(min_height: number, max_height: number): void;
-	set_row_spacing(spacing: number): void;
-	set_snap_to_grid(snap_to_grid: boolean): void;
+    get_column_spacing(): number;
+    get_column_width(): [number, number];
+    get_homogeneous(): boolean;
+    get_orientation(): FlowOrientation;
+    get_row_height(): [number, number];
+    get_row_spacing(): number;
+    get_snap_to_grid(): boolean;
+    set_column_spacing(spacing: number): void;
+    set_column_width(min_width: number, max_width: number): void;
+    set_homogeneous(homogeneous: boolean): void;
+    set_orientation(orientation: FlowOrientation): void;
+    set_row_height(min_height: number, max_height: number): void;
+    set_row_spacing(spacing: number): void;
+    set_snap_to_grid(snap_to_grid: boolean): void;
 }
-export namespace FrameClock {
+export module FrameClock {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class FrameClock extends GObject.Object {
-	static $gtype: GObject.GType<FrameClock>;
+    static $gtype: GObject.GType<FrameClock>;
 
-	constructor(properties?: Partial<FrameClock.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<FrameClock.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<FrameClock.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<FrameClock.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'destroy', callback: (_source: this) => void): number;
-	connect_after(signal: 'destroy', callback: (_source: this) => void): number;
-	emit(signal: 'destroy'): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "destroy", callback: (_source: this) => void): number;
+    connect_after(signal: "destroy", callback: (_source: this) => void): number;
+    emit(signal: "destroy"): void;
 
-	// Members
+    // Members
 
-	add_timeline(timeline: Timeline): void;
-	destroy(): void;
-	get_max_render_time_debug_info(): GLib.String;
-	get_refresh_rate(): number;
-	inhibit(): void;
-	notify_ready(): void;
-	record_flip_time(flip_time_us: number): void;
-	remove_timeline(timeline: Timeline): void;
-	schedule_update(): void;
-	schedule_update_now(): void;
-	uninhibit(): void;
+    add_timeline(timeline: Timeline): void;
+    destroy(): void;
+    get_max_render_time_debug_info(): GLib.String;
+    get_refresh_rate(): number;
+    inhibit(): void;
+    notify_ready(): void;
+    record_flip_time(flip_time_us: number): void;
+    remove_timeline(timeline: Timeline): void;
+    schedule_update(): void;
+    schedule_update_now(): void;
+    uninhibit(): void;
 }
-export namespace GestureAction {
+export module GestureAction {
     export interface ConstructorProperties extends Action.ConstructorProperties {
         [key: string]: any;
         n_touch_points: number;
@@ -5056,71 +5050,71 @@ export namespace GestureAction {
     }
 }
 export class GestureAction extends Action {
-	static $gtype: GObject.GType<GestureAction>;
+    static $gtype: GObject.GType<GestureAction>;
 
-	constructor(properties?: Partial<GestureAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<GestureAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<GestureAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<GestureAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get n_touch_points(): number;
-	set n_touch_points(val: number);
-	get nTouchPoints(): number;
-	set nTouchPoints(val: number);
-	get threshold_trigger_distance_x(): number;
-	get thresholdTriggerDistanceX(): number;
-	get threshold_trigger_distance_y(): number;
-	get thresholdTriggerDistanceY(): number;
-	get threshold_trigger_edge(): GestureTriggerEdge;
-	get thresholdTriggerEdge(): GestureTriggerEdge;
+    // Properties
+    get n_touch_points(): number;
+    set n_touch_points(val: number);
+    get nTouchPoints(): number;
+    set nTouchPoints(val: number);
+    get threshold_trigger_distance_x(): number;
+    get thresholdTriggerDistanceX(): number;
+    get threshold_trigger_distance_y(): number;
+    get thresholdTriggerDistanceY(): number;
+    get threshold_trigger_edge(): GestureTriggerEdge;
+    get thresholdTriggerEdge(): GestureTriggerEdge;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'gesture-begin', callback: (_source: this, actor: Actor) => boolean): number;
-	connect_after(signal: 'gesture-begin', callback: (_source: this, actor: Actor) => boolean): number;
-	emit(signal: 'gesture-begin', actor: Actor): void;
-	connect(signal: 'gesture-cancel', callback: (_source: this, actor: Actor) => void): number;
-	connect_after(signal: 'gesture-cancel', callback: (_source: this, actor: Actor) => void): number;
-	emit(signal: 'gesture-cancel', actor: Actor): void;
-	connect(signal: 'gesture-end', callback: (_source: this, actor: Actor) => void): number;
-	connect_after(signal: 'gesture-end', callback: (_source: this, actor: Actor) => void): number;
-	emit(signal: 'gesture-end', actor: Actor): void;
-	connect(signal: 'gesture-progress', callback: (_source: this, actor: Actor) => boolean): number;
-	connect_after(signal: 'gesture-progress', callback: (_source: this, actor: Actor) => boolean): number;
-	emit(signal: 'gesture-progress', actor: Actor): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "gesture-begin", callback: (_source: this, actor: Actor) => boolean): number;
+    connect_after(signal: "gesture-begin", callback: (_source: this, actor: Actor) => boolean): number;
+    emit(signal: "gesture-begin", actor: Actor): void;
+    connect(signal: "gesture-cancel", callback: (_source: this, actor: Actor) => void): number;
+    connect_after(signal: "gesture-cancel", callback: (_source: this, actor: Actor) => void): number;
+    emit(signal: "gesture-cancel", actor: Actor): void;
+    connect(signal: "gesture-end", callback: (_source: this, actor: Actor) => void): number;
+    connect_after(signal: "gesture-end", callback: (_source: this, actor: Actor) => void): number;
+    emit(signal: "gesture-end", actor: Actor): void;
+    connect(signal: "gesture-progress", callback: (_source: this, actor: Actor) => boolean): number;
+    connect_after(signal: "gesture-progress", callback: (_source: this, actor: Actor) => boolean): number;
+    emit(signal: "gesture-progress", actor: Actor): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): GestureAction;
+    static ["new"](): GestureAction;
 
-	// Members
+    // Members
 
-	cancel(): void;
-	get_device(point: number): InputDevice;
-	get_last_event(point: number): Event;
-	get_motion_coords(point: number): [number | null, number | null];
-	get_motion_delta(point: number): [number, number | null, number | null];
-	get_n_current_points(): number;
-	get_n_touch_points(): number;
-	get_press_coords(point: number): [number | null, number | null];
-	get_release_coords(point: number): [number | null, number | null];
-	get_sequence(point: number): EventSequence;
-	get_threshold_trigger_distance(): [number | null, number | null];
-	get_threshold_trigger_edge(): GestureTriggerEdge;
-	get_threshold_trigger_egde(): GestureTriggerEdge;
-	get_velocity(point: number): [number, number | null, number | null];
-	set_n_touch_points(nb_points: number): void;
-	set_threshold_trigger_distance(x: number, y: number): void;
-	set_threshold_trigger_edge(edge: GestureTriggerEdge): void;
-	vfunc_gesture_begin(actor: Actor): boolean;
-	vfunc_gesture_cancel(actor: Actor): void;
-	vfunc_gesture_end(actor: Actor): void;
-	vfunc_gesture_prepare(actor: Actor): boolean;
-	vfunc_gesture_progress(actor: Actor): boolean;
+    cancel(): void;
+    get_device(point: number): InputDevice;
+    get_last_event(point: number): Event;
+    get_motion_coords(point: number): [number | null, number | null];
+    get_motion_delta(point: number): [number, number | null, number | null];
+    get_n_current_points(): number;
+    get_n_touch_points(): number;
+    get_press_coords(point: number): [number | null, number | null];
+    get_release_coords(point: number): [number | null, number | null];
+    get_sequence(point: number): EventSequence;
+    get_threshold_trigger_distance(): [number | null, number | null];
+    get_threshold_trigger_edge(): GestureTriggerEdge;
+    get_threshold_trigger_egde(): GestureTriggerEdge;
+    get_velocity(point: number): [number, number | null, number | null];
+    set_n_touch_points(nb_points: number): void;
+    set_threshold_trigger_distance(x: number, y: number): void;
+    set_threshold_trigger_edge(edge: GestureTriggerEdge): void;
+    vfunc_gesture_begin(actor: Actor): boolean;
+    vfunc_gesture_cancel(actor: Actor): void;
+    vfunc_gesture_end(actor: Actor): void;
+    vfunc_gesture_prepare(actor: Actor): boolean;
+    vfunc_gesture_progress(actor: Actor): boolean;
 }
-export namespace GridLayout {
+export module GridLayout {
     export interface ConstructorProperties extends LayoutManager.ConstructorProperties {
         [key: string]: any;
         column_homogeneous: boolean;
@@ -5135,108 +5129,105 @@ export namespace GridLayout {
     }
 }
 export class GridLayout extends LayoutManager {
-	static $gtype: GObject.GType<GridLayout>;
+    static $gtype: GObject.GType<GridLayout>;
 
-	constructor(properties?: Partial<GridLayout.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<GridLayout.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<GridLayout.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<GridLayout.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get column_homogeneous(): boolean;
-	set column_homogeneous(val: boolean);
-	get columnHomogeneous(): boolean;
-	set columnHomogeneous(val: boolean);
-	get column_spacing(): number;
-	set column_spacing(val: number);
-	get columnSpacing(): number;
-	set columnSpacing(val: number);
-	get orientation(): Orientation;
-	set orientation(val: Orientation);
-	get row_homogeneous(): boolean;
-	set row_homogeneous(val: boolean);
-	get rowHomogeneous(): boolean;
-	set rowHomogeneous(val: boolean);
-	get row_spacing(): number;
-	set row_spacing(val: number);
-	get rowSpacing(): number;
-	set rowSpacing(val: number);
+    // Properties
+    get column_homogeneous(): boolean;
+    set column_homogeneous(val: boolean);
+    get columnHomogeneous(): boolean;
+    set columnHomogeneous(val: boolean);
+    get column_spacing(): number;
+    set column_spacing(val: number);
+    get columnSpacing(): number;
+    set columnSpacing(val: number);
+    get orientation(): Orientation;
+    set orientation(val: Orientation);
+    get row_homogeneous(): boolean;
+    set row_homogeneous(val: boolean);
+    get rowHomogeneous(): boolean;
+    set rowHomogeneous(val: boolean);
+    get row_spacing(): number;
+    set row_spacing(val: number);
+    get rowSpacing(): number;
+    set rowSpacing(val: number);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): GridLayout;
+    static ["new"](): GridLayout;
 
-	// Members
+    // Members
 
-	attach(child: Actor, left: number, top: number, width: number, height: number): void;
-	attach_next_to(child: Actor, sibling: Actor | null, side: GridPosition, width: number, height: number): void;
-	get_child_at(left: number, top: number): Actor;
-	get_column_homogeneous(): boolean;
-	get_column_spacing(): number;
-	get_orientation(): Orientation;
-	get_row_homogeneous(): boolean;
-	get_row_spacing(): number;
-	insert_column(position: number): void;
-	insert_next_to(sibling: Actor, side: GridPosition): void;
-	insert_row(position: number): void;
-	set_column_homogeneous(homogeneous: boolean): void;
-	set_column_spacing(spacing: number): void;
-	set_orientation(orientation: Orientation): void;
-	set_row_homogeneous(homogeneous: boolean): void;
-	set_row_spacing(spacing: number): void;
+    attach(child: Actor, left: number, top: number, width: number, height: number): void;
+    attach_next_to(child: Actor, sibling: Actor | null, side: GridPosition, width: number, height: number): void;
+    get_child_at(left: number, top: number): Actor;
+    get_column_homogeneous(): boolean;
+    get_column_spacing(): number;
+    get_orientation(): Orientation;
+    get_row_homogeneous(): boolean;
+    get_row_spacing(): number;
+    insert_column(position: number): void;
+    insert_next_to(sibling: Actor, side: GridPosition): void;
+    insert_row(position: number): void;
+    set_column_homogeneous(homogeneous: boolean): void;
+    set_column_spacing(spacing: number): void;
+    set_orientation(orientation: Orientation): void;
+    set_row_homogeneous(homogeneous: boolean): void;
+    set_row_spacing(spacing: number): void;
 }
-export namespace Image {
+export module Image {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class Image extends GObject.Object implements Content {
-	static $gtype: GObject.GType<Image>;
+    static $gtype: GObject.GType<Image>;
 
-	constructor(properties?: Partial<Image.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Image.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Image.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Image.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	get_texture(): Cogl.Texture;
-	set_area(
+    get_texture(): Cogl.Texture;
+    set_area(
         data: Uint8Array | string,
         pixel_format: Cogl.PixelFormat,
         rect: cairo.RectangleInt,
         row_stride: number
     ): boolean;
-
-	set_bytes(
+    set_bytes(
         data: GLib.Bytes | Uint8Array,
         pixel_format: Cogl.PixelFormat,
         width: number,
         height: number,
         row_stride: number
     ): boolean;
-
-	set_data(
+    set_data(
         data: Uint8Array | string,
         pixel_format: Cogl.PixelFormat,
         width: number,
         height: number,
         row_stride: number
     ): boolean;
+    // Conflicted with GObject.Object.set_data
+    set_data(...args: never[]): any;
+    static new(): Content;
 
-	// Conflicted with GObject.Object.set_data
-	set_data(...args: never[]): any;
-	static new(): Content;
+    // Implemented Members
 
-	// Implemented Members
-
-	get_preferred_size(): [boolean, number | null, number | null];
-	invalidate(): void;
-	invalidate_size(): void;
-	vfunc_attached(actor: Actor): void;
-	vfunc_detached(actor: Actor): void;
-	vfunc_get_preferred_size(): [boolean, number | null, number | null];
-	vfunc_invalidate(): void;
-	vfunc_invalidate_size(): void;
-	vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
+    get_preferred_size(): [boolean, number | null, number | null];
+    invalidate(): void;
+    invalidate_size(): void;
+    vfunc_attached(actor: Actor): void;
+    vfunc_detached(actor: Actor): void;
+    vfunc_get_preferred_size(): [boolean, number | null, number | null];
+    vfunc_invalidate(): void;
+    vfunc_invalidate_size(): void;
+    vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
 }
-export namespace InputDevice {
+export module InputDevice {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         backend: Backend;
@@ -5266,63 +5257,63 @@ export namespace InputDevice {
     }
 }
 export class InputDevice extends GObject.Object {
-	static $gtype: GObject.GType<InputDevice>;
+    static $gtype: GObject.GType<InputDevice>;
 
-	constructor(properties?: Partial<InputDevice.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<InputDevice.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<InputDevice.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<InputDevice.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get backend(): Backend;
-	get capabilities(): InputCapabilities;
-	get device_mode(): InputMode;
-	get deviceMode(): InputMode;
-	get device_node(): string;
-	get deviceNode(): string;
-	get device_type(): InputDeviceType;
-	get deviceType(): InputDeviceType;
-	get has_cursor(): boolean;
-	get hasCursor(): boolean;
-	get n_buttons(): number;
-	get nButtons(): number;
-	get n_mode_groups(): number;
-	get nModeGroups(): number;
-	get n_rings(): number;
-	get nRings(): number;
-	get n_strips(): number;
-	get nStrips(): number;
-	get name(): string;
-	get product_id(): string;
-	get productId(): string;
-	get seat(): Seat;
-	get vendor_id(): string;
-	get vendorId(): string;
+    // Properties
+    get backend(): Backend;
+    get capabilities(): InputCapabilities;
+    get device_mode(): InputMode;
+    get deviceMode(): InputMode;
+    get device_node(): string;
+    get deviceNode(): string;
+    get device_type(): InputDeviceType;
+    get deviceType(): InputDeviceType;
+    get has_cursor(): boolean;
+    get hasCursor(): boolean;
+    get n_buttons(): number;
+    get nButtons(): number;
+    get n_mode_groups(): number;
+    get nModeGroups(): number;
+    get n_rings(): number;
+    get nRings(): number;
+    get n_strips(): number;
+    get nStrips(): number;
+    get name(): string;
+    get product_id(): string;
+    get productId(): string;
+    get seat(): Seat;
+    get vendor_id(): string;
+    get vendorId(): string;
 
-	// Members
+    // Members
 
-	get_capabilities(): InputCapabilities;
-	get_device_mode(): InputMode;
-	get_device_name(): string;
-	get_device_node(): string;
-	get_device_type(): InputDeviceType;
-	get_group_n_modes(group: number): number;
-	get_has_cursor(): boolean;
-	get_mode_switch_button_group(button: number): number;
-	get_n_buttons(): number;
-	get_n_mode_groups(): number;
-	get_n_rings(): number;
-	get_n_strips(): number;
-	get_pad_feature_group(feature: InputDevicePadFeature, n_feature: number): number;
-	get_product_id(): string;
-	get_seat(): Seat;
-	get_vendor_id(): string;
-	is_grouped(other_device: InputDevice): boolean;
-	is_mode_switch_button(group: number, button: number): boolean;
-	vfunc_get_group_n_modes(group: number): number;
-	vfunc_get_pad_feature_group(feature: InputDevicePadFeature, n_feature: number): number;
-	vfunc_is_grouped(other_device: InputDevice): boolean;
-	vfunc_is_mode_switch_button(group: number, button: number): boolean;
+    get_capabilities(): InputCapabilities;
+    get_device_mode(): InputMode;
+    get_device_name(): string;
+    get_device_node(): string;
+    get_device_type(): InputDeviceType;
+    get_group_n_modes(group: number): number;
+    get_has_cursor(): boolean;
+    get_mode_switch_button_group(button: number): number;
+    get_n_buttons(): number;
+    get_n_mode_groups(): number;
+    get_n_rings(): number;
+    get_n_strips(): number;
+    get_pad_feature_group(feature: InputDevicePadFeature, n_feature: number): number;
+    get_product_id(): string;
+    get_seat(): Seat;
+    get_vendor_id(): string;
+    is_grouped(other_device: InputDevice): boolean;
+    is_mode_switch_button(group: number, button: number): boolean;
+    vfunc_get_group_n_modes(group: number): number;
+    vfunc_get_pad_feature_group(feature: InputDevicePadFeature, n_feature: number): number;
+    vfunc_is_grouped(other_device: InputDevice): boolean;
+    vfunc_is_mode_switch_button(group: number, button: number): boolean;
 }
-export namespace InputDeviceTool {
+export module InputDeviceTool {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         axes: InputAxisFlags;
@@ -5332,54 +5323,54 @@ export namespace InputDeviceTool {
     }
 }
 export abstract class InputDeviceTool extends GObject.Object {
-	static $gtype: GObject.GType<InputDeviceTool>;
+    static $gtype: GObject.GType<InputDeviceTool>;
 
-	constructor(properties?: Partial<InputDeviceTool.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<InputDeviceTool.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<InputDeviceTool.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<InputDeviceTool.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get axes(): InputAxisFlags;
-	get id(): number;
-	get serial(): number;
-	get type(): InputDeviceToolType;
+    // Properties
+    get axes(): InputAxisFlags;
+    get id(): number;
+    get serial(): number;
+    get type(): InputDeviceToolType;
 
-	// Members
+    // Members
 
-	get_axes(): InputAxisFlags;
-	get_id(): number;
-	get_serial(): number;
-	get_tool_type(): InputDeviceToolType;
+    get_axes(): InputAxisFlags;
+    get_id(): number;
+    get_serial(): number;
+    get_tool_type(): InputDeviceToolType;
 }
-export namespace InputFocus {
+export module InputFocus {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class InputFocus extends GObject.Object {
-	static $gtype: GObject.GType<InputFocus>;
+    static $gtype: GObject.GType<InputFocus>;
 
-	constructor(properties?: Partial<InputFocus.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<InputFocus.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<InputFocus.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<InputFocus.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	filter_event(event: Event): boolean;
-	is_focused(): boolean;
-	reset(): void;
-	set_can_show_preedit(can_show_preedit: boolean): void;
-	set_content_hints(hint: InputContentHintFlags): void;
-	set_content_purpose(purpose: InputContentPurpose): void;
-	set_cursor_location(rect: Graphene.Rect): void;
-	set_input_panel_state(state: InputPanelState): void;
-	set_surrounding(text: string, cursor: number, anchor: number): void;
-	vfunc_commit_text(text: string): void;
-	vfunc_delete_surrounding(offset: number, len: number): void;
-	vfunc_focus_in(input_method: InputMethod): void;
-	vfunc_focus_out(): void;
-	vfunc_request_surrounding(): void;
-	vfunc_set_preedit_text(preedit: string, cursor: number): void;
+    filter_event(event: Event): boolean;
+    is_focused(): boolean;
+    reset(): void;
+    set_can_show_preedit(can_show_preedit: boolean): void;
+    set_content_hints(hint: InputContentHintFlags): void;
+    set_content_purpose(purpose: InputContentPurpose): void;
+    set_cursor_location(rect: Graphene.Rect): void;
+    set_input_panel_state(state: InputPanelState): void;
+    set_surrounding(text: string, cursor: number, anchor: number): void;
+    vfunc_commit_text(text: string): void;
+    vfunc_delete_surrounding(offset: number, len: number): void;
+    vfunc_focus_in(input_method: InputMethod): void;
+    vfunc_focus_out(): void;
+    vfunc_request_surrounding(): void;
+    vfunc_set_preedit_text(preedit: string, cursor: number): void;
 }
-export namespace InputMethod {
+export module InputMethod {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         can_show_preedit: boolean;
@@ -5391,67 +5382,67 @@ export namespace InputMethod {
     }
 }
 export abstract class InputMethod extends GObject.Object {
-	static $gtype: GObject.GType<InputMethod>;
+    static $gtype: GObject.GType<InputMethod>;
 
-	constructor(properties?: Partial<InputMethod.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<InputMethod.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<InputMethod.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<InputMethod.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get can_show_preedit(): boolean;
-	set can_show_preedit(val: boolean);
-	get canShowPreedit(): boolean;
-	set canShowPreedit(val: boolean);
-	get content_hints(): InputContentHintFlags;
-	set content_hints(val: InputContentHintFlags);
-	get contentHints(): InputContentHintFlags;
-	set contentHints(val: InputContentHintFlags);
-	get content_purpose(): InputContentPurpose;
-	set content_purpose(val: InputContentPurpose);
-	get contentPurpose(): InputContentPurpose;
-	set contentPurpose(val: InputContentPurpose);
+    // Properties
+    get can_show_preedit(): boolean;
+    set can_show_preedit(val: boolean);
+    get canShowPreedit(): boolean;
+    set canShowPreedit(val: boolean);
+    get content_hints(): InputContentHintFlags;
+    set content_hints(val: InputContentHintFlags);
+    get contentHints(): InputContentHintFlags;
+    set contentHints(val: InputContentHintFlags);
+    get content_purpose(): InputContentPurpose;
+    set content_purpose(val: InputContentPurpose);
+    get contentPurpose(): InputContentPurpose;
+    set contentPurpose(val: InputContentPurpose);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'commit', callback: (_source: this, object: string) => void): number;
-	connect_after(signal: 'commit', callback: (_source: this, object: string) => void): number;
-	emit(signal: 'commit', object: string): void;
-	connect(signal: 'cursor-location-changed', callback: (_source: this, object: Graphene.Rect) => void): number;
-	connect_after(signal: 'cursor-location-changed', callback: (_source: this, object: Graphene.Rect) => void): number;
-	emit(signal: 'cursor-location-changed', object: Graphene.Rect): void;
-	connect(signal: 'delete-surrounding', callback: (_source: this, object: number, p0: number) => void): number;
-	connect_after(signal: 'delete-surrounding', callback: (_source: this, object: number, p0: number) => void): number;
-	emit(signal: 'delete-surrounding', object: number, p0: number): void;
-	connect(signal: 'input-panel-state', callback: (_source: this, object: InputPanelState) => void): number;
-	connect_after(signal: 'input-panel-state', callback: (_source: this, object: InputPanelState) => void): number;
-	emit(signal: 'input-panel-state', object: InputPanelState): void;
-	connect(signal: 'request-surrounding', callback: (_source: this) => void): number;
-	connect_after(signal: 'request-surrounding', callback: (_source: this) => void): number;
-	emit(signal: 'request-surrounding'): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "commit", callback: (_source: this, object: string) => void): number;
+    connect_after(signal: "commit", callback: (_source: this, object: string) => void): number;
+    emit(signal: "commit", object: string): void;
+    connect(signal: "cursor-location-changed", callback: (_source: this, object: Graphene.Rect) => void): number;
+    connect_after(signal: "cursor-location-changed", callback: (_source: this, object: Graphene.Rect) => void): number;
+    emit(signal: "cursor-location-changed", object: Graphene.Rect): void;
+    connect(signal: "delete-surrounding", callback: (_source: this, object: number, p0: number) => void): number;
+    connect_after(signal: "delete-surrounding", callback: (_source: this, object: number, p0: number) => void): number;
+    emit(signal: "delete-surrounding", object: number, p0: number): void;
+    connect(signal: "input-panel-state", callback: (_source: this, object: InputPanelState) => void): number;
+    connect_after(signal: "input-panel-state", callback: (_source: this, object: InputPanelState) => void): number;
+    emit(signal: "input-panel-state", object: InputPanelState): void;
+    connect(signal: "request-surrounding", callback: (_source: this) => void): number;
+    connect_after(signal: "request-surrounding", callback: (_source: this) => void): number;
+    emit(signal: "request-surrounding"): void;
 
-	// Members
+    // Members
 
-	commit(text: string): void;
-	delete_surrounding(offset: number, len: number): void;
-	focus_in(focus: InputFocus): void;
-	focus_out(): void;
-	forward_key(keyval: number, keycode: number, state: number, time_: number, press: boolean): void;
-	notify_key_event(event: Event, filtered: boolean): void;
-	request_surrounding(): void;
-	set_input_panel_state(state: InputPanelState): void;
-	set_preedit_text(preedit: string | null, cursor: number, mode: PreeditResetMode): void;
-	vfunc_filter_key_event(key: Event): boolean;
-	vfunc_focus_in(actor: InputFocus): void;
-	vfunc_focus_out(): void;
-	vfunc_reset(): void;
-	vfunc_set_cursor_location(rect: Graphene.Rect): void;
-	vfunc_set_surrounding(text: string, cursor: number, anchor: number): void;
-	vfunc_update_content_hints(hint: InputContentHintFlags): void;
-	vfunc_update_content_purpose(purpose: InputContentPurpose): void;
+    commit(text: string): void;
+    delete_surrounding(offset: number, len: number): void;
+    focus_in(focus: InputFocus): void;
+    focus_out(): void;
+    forward_key(keyval: number, keycode: number, state: number, time_: number, press: boolean): void;
+    notify_key_event(event: Event, filtered: boolean): void;
+    request_surrounding(): void;
+    set_input_panel_state(state: InputPanelState): void;
+    set_preedit_text(preedit: string | null, cursor: number, mode: PreeditResetMode): void;
+    vfunc_filter_key_event(key: Event): boolean;
+    vfunc_focus_in(actor: InputFocus): void;
+    vfunc_focus_out(): void;
+    vfunc_reset(): void;
+    vfunc_set_cursor_location(rect: Graphene.Rect): void;
+    vfunc_set_surrounding(text: string, cursor: number, anchor: number): void;
+    vfunc_update_content_hints(hint: InputContentHintFlags): void;
+    vfunc_update_content_purpose(purpose: InputContentPurpose): void;
 }
-export namespace Interval {
+export module Interval {
     export interface ConstructorProperties extends GObject.InitiallyUnowned.ConstructorProperties {
         [key: string]: any;
         final: GObject.Value;
@@ -5461,83 +5452,83 @@ export namespace Interval {
     }
 }
 export class Interval extends GObject.InitiallyUnowned implements Scriptable {
-	static $gtype: GObject.GType<Interval>;
+    static $gtype: GObject.GType<Interval>;
 
-	constructor(properties?: Partial<Interval.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Interval.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Interval.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Interval.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get final(): GObject.Value;
-	set final(val: GObject.Value);
-	get initial(): GObject.Value;
-	set initial(val: GObject.Value);
-	get value_type(): GObject.GType;
-	get valueType(): GObject.GType;
+    // Properties
+    get final(): GObject.Value;
+    set final(val: GObject.Value);
+    get initial(): GObject.Value;
+    set initial(val: GObject.Value);
+    get value_type(): GObject.GType;
+    get valueType(): GObject.GType;
 
-	// Constructors
+    // Constructors
 
-	static new_with_values(
+    static new_with_values(
         gtype: GObject.GType,
         initial?: GObject.Value | null,
         _final?: GObject.Value | null
     ): Interval;
 
-	// Members
+    // Members
 
-	clone(): Interval;
-	compute(factor: number): unknown;
-	compute_value(factor: number): [boolean, unknown];
-	get_final_value(): unknown;
-	get_initial_value(): unknown;
-	get_value_type(): GObject.GType;
-	is_valid(): boolean;
-	peek_final_value(): unknown;
-	peek_initial_value(): unknown;
-	set_final(value: GObject.Value | any): void;
-	set_initial(value: GObject.Value | any): void;
-	validate(pspec: GObject.ParamSpec): boolean;
-	vfunc_compute_value(factor: number): [boolean, unknown];
-	vfunc_validate(pspec: GObject.ParamSpec): boolean;
+    clone(): Interval;
+    compute(factor: number): unknown;
+    compute_value(factor: number): [boolean, unknown];
+    get_final_value(): unknown;
+    get_initial_value(): unknown;
+    get_value_type(): GObject.GType;
+    is_valid(): boolean;
+    peek_final_value(): unknown;
+    peek_initial_value(): unknown;
+    set_final(value: GObject.Value | any): void;
+    set_initial(value: GObject.Value | any): void;
+    validate(pspec: GObject.ParamSpec): boolean;
+    vfunc_compute_value(factor: number): [boolean, unknown];
+    vfunc_validate(pspec: GObject.ParamSpec): boolean;
 
-	// Implemented Members
+    // Implemented Members
 
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace KeyframeTransition {
+export module KeyframeTransition {
     export interface ConstructorProperties extends PropertyTransition.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class KeyframeTransition extends PropertyTransition implements Scriptable {
-	static $gtype: GObject.GType<KeyframeTransition>;
+    static $gtype: GObject.GType<KeyframeTransition>;
 
-	constructor(properties?: Partial<KeyframeTransition.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<KeyframeTransition.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<KeyframeTransition.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<KeyframeTransition.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](property_name: string): KeyframeTransition;
-	// Conflicted with Clutter.PropertyTransition.new
-	static ['new'](...args: never[]): any;
+    static ["new"](property_name: string): KeyframeTransition;
+    // Conflicted with Clutter.PropertyTransition.new
+    static ["new"](...args: never[]): any;
 
-	// Members
+    // Members
 
-	clear(): void;
-	get_key_frame(index_: number): [number | null, AnimationMode | null, unknown];
-	get_n_key_frames(): number;
-	set_key_frame(index_: number, key: number, mode: AnimationMode, value: GObject.Value | any): void;
-	set_key_frames(key_frames: number[]): void;
-	set_modes(modes: AnimationMode[]): void;
-	set_values(values: GObject.Value[]): void;
+    clear(): void;
+    get_key_frame(index_: number): [number | null, AnimationMode | null, unknown];
+    get_n_key_frames(): number;
+    set_key_frame(index_: number, key: number, mode: AnimationMode, value: GObject.Value | any): void;
+    set_key_frames(key_frames: number[]): void;
+    set_modes(modes: AnimationMode[]): void;
+    set_values(values: GObject.Value[]): void;
 }
-export namespace Keymap {
+export module Keymap {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         caps_lock_state: boolean;
@@ -5547,136 +5538,135 @@ export namespace Keymap {
     }
 }
 export abstract class Keymap extends GObject.Object {
-	static $gtype: GObject.GType<Keymap>;
+    static $gtype: GObject.GType<Keymap>;
 
-	constructor(properties?: Partial<Keymap.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Keymap.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Keymap.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Keymap.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get caps_lock_state(): boolean;
-	get capsLockState(): boolean;
-	get num_lock_state(): boolean;
-	get numLockState(): boolean;
+    // Properties
+    get caps_lock_state(): boolean;
+    get capsLockState(): boolean;
+    get num_lock_state(): boolean;
+    get numLockState(): boolean;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'state-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'state-changed', callback: (_source: this) => void): number;
-	emit(signal: 'state-changed'): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "state-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "state-changed", callback: (_source: this) => void): number;
+    emit(signal: "state-changed"): void;
 
-	// Members
+    // Members
 
-	get_caps_lock_state(): boolean;
-	get_direction(): Pango.Direction;
-	get_num_lock_state(): boolean;
-	vfunc_get_direction(): Pango.Direction;
+    get_caps_lock_state(): boolean;
+    get_direction(): Pango.Direction;
+    get_num_lock_state(): boolean;
+    vfunc_get_direction(): Pango.Direction;
 }
-export namespace LayerNode {
+export module LayerNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class LayerNode extends PaintNode {
-	static $gtype: GObject.GType<LayerNode>;
+    static $gtype: GObject.GType<LayerNode>;
 
-	constructor(properties?: Partial<LayerNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<LayerNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<LayerNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<LayerNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](
+    static ["new"](
         projection: Graphene.Matrix,
         viewport: cairo.Rectangle,
         width: number,
         height: number,
         opacity: number
     ): LayerNode;
-
-	static new_to_framebuffer(framebuffer: Cogl.Framebuffer, pipeline: Cogl.Pipeline): LayerNode;
+    static new_to_framebuffer(framebuffer: Cogl.Framebuffer, pipeline: Cogl.Pipeline): LayerNode;
 }
-export namespace LayoutManager {
+export module LayoutManager {
     export interface ConstructorProperties extends GObject.InitiallyUnowned.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class LayoutManager extends GObject.InitiallyUnowned {
-	static $gtype: GObject.GType<LayoutManager>;
+    static $gtype: GObject.GType<LayoutManager>;
 
-	constructor(properties?: Partial<LayoutManager.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<LayoutManager.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<LayoutManager.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<LayoutManager.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'layout-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'layout-changed', callback: (_source: this) => void): number;
-	emit(signal: 'layout-changed'): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "layout-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "layout-changed", callback: (_source: this) => void): number;
+    emit(signal: "layout-changed"): void;
 
-	// Members
+    // Members
 
-	allocate(container: Container, allocation: ActorBox): void;
-	child_get_property(container: Container, actor: Actor, property_name: string, value: GObject.Value | any): void;
-	child_set_property(container: Container, actor: Actor, property_name: string, value: GObject.Value | any): void;
-	find_child_property(name: string): GObject.ParamSpec;
-	get_child_meta(container: Container, actor: Actor): LayoutMeta;
-	get_preferred_height(container: Container, for_width: number): [number | null, number | null];
-	get_preferred_width(container: Container, for_height: number): [number | null, number | null];
-	layout_changed(): void;
-	list_child_properties(): GObject.ParamSpec[];
-	set_container(container?: Container | null): void;
-	vfunc_allocate(container: Container, allocation: ActorBox): void;
-	vfunc_get_child_meta_type(): GObject.GType;
-	vfunc_get_preferred_height(container: Container, for_width: number): [number | null, number | null];
-	vfunc_get_preferred_width(container: Container, for_height: number): [number | null, number | null];
-	vfunc_layout_changed(): void;
-	vfunc_set_container(container?: Container | null): void;
+    allocate(container: Container, allocation: ActorBox): void;
+    child_get_property(container: Container, actor: Actor, property_name: string, value: GObject.Value | any): void;
+    child_set_property(container: Container, actor: Actor, property_name: string, value: GObject.Value | any): void;
+    find_child_property(name: string): GObject.ParamSpec;
+    get_child_meta(container: Container, actor: Actor): LayoutMeta;
+    get_preferred_height(container: Container, for_width: number): [number | null, number | null];
+    get_preferred_width(container: Container, for_height: number): [number | null, number | null];
+    layout_changed(): void;
+    list_child_properties(): GObject.ParamSpec[];
+    set_container(container?: Container | null): void;
+    vfunc_allocate(container: Container, allocation: ActorBox): void;
+    vfunc_get_child_meta_type(): GObject.GType;
+    vfunc_get_preferred_height(container: Container, for_width: number): [number | null, number | null];
+    vfunc_get_preferred_width(container: Container, for_height: number): [number | null, number | null];
+    vfunc_layout_changed(): void;
+    vfunc_set_container(container?: Container | null): void;
 }
-export namespace LayoutMeta {
+export module LayoutMeta {
     export interface ConstructorProperties extends ChildMeta.ConstructorProperties {
         [key: string]: any;
         manager: LayoutManager;
     }
 }
 export abstract class LayoutMeta extends ChildMeta {
-	static $gtype: GObject.GType<LayoutMeta>;
+    static $gtype: GObject.GType<LayoutMeta>;
 
-	constructor(properties?: Partial<LayoutMeta.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<LayoutMeta.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<LayoutMeta.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<LayoutMeta.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get manager(): LayoutManager;
+    // Properties
+    get manager(): LayoutManager;
 
-	// Members
+    // Members
 
-	get_manager(): LayoutManager;
+    get_manager(): LayoutManager;
 }
-export namespace OffscreenEffect {
+export module OffscreenEffect {
     export interface ConstructorProperties extends Effect.ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class OffscreenEffect extends Effect {
-	static $gtype: GObject.GType<OffscreenEffect>;
+    static $gtype: GObject.GType<OffscreenEffect>;
 
-	constructor(properties?: Partial<OffscreenEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<OffscreenEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<OffscreenEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<OffscreenEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	create_texture(width: number, height: number): Cogl.Handle;
-	get_pipeline(): Cogl.Pipeline | null;
-	get_target_size(): [boolean, number, number];
-	get_texture(): Cogl.Handle;
-	paint_target(node: PaintNode, paint_context: PaintContext): void;
-	vfunc_create_texture(width: number, height: number): Cogl.Handle;
-	vfunc_paint_target(node: PaintNode, paint_context: PaintContext): void;
+    create_texture(width: number, height: number): Cogl.Handle;
+    get_pipeline(): Cogl.Pipeline | null;
+    get_target_size(): [boolean, number, number];
+    get_texture(): Cogl.Handle;
+    paint_target(node: PaintNode, paint_context: PaintContext): void;
+    vfunc_create_texture(width: number, height: number): Cogl.Handle;
+    vfunc_paint_target(node: PaintNode, paint_context: PaintContext): void;
 }
-export namespace PageTurnEffect {
+export module PageTurnEffect {
     export interface ConstructorProperties extends DeformEffect.ConstructorProperties {
         [key: string]: any;
         angle: number;
@@ -5685,58 +5675,58 @@ export namespace PageTurnEffect {
     }
 }
 export class PageTurnEffect extends DeformEffect {
-	static $gtype: GObject.GType<PageTurnEffect>;
+    static $gtype: GObject.GType<PageTurnEffect>;
 
-	constructor(properties?: Partial<PageTurnEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PageTurnEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PageTurnEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PageTurnEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get angle(): number;
-	set angle(val: number);
-	get period(): number;
-	set period(val: number);
-	get radius(): number;
-	set radius(val: number);
+    // Properties
+    get angle(): number;
+    set angle(val: number);
+    get period(): number;
+    set period(val: number);
+    get radius(): number;
+    set radius(val: number);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](period: number, angle: number, radius: number): PageTurnEffect;
+    static ["new"](period: number, angle: number, radius: number): PageTurnEffect;
 
-	// Members
+    // Members
 
-	get_angle(): number;
-	get_period(): number;
-	get_radius(): number;
-	set_angle(angle: number): void;
-	set_period(period: number): void;
-	set_radius(radius: number): void;
+    get_angle(): number;
+    get_period(): number;
+    get_radius(): number;
+    set_angle(angle: number): void;
+    set_period(period: number): void;
+    set_radius(radius: number): void;
 }
-export namespace PaintNode {
+export module PaintNode {
     export interface ConstructorProperties {
         [key: string]: any;
     }
 }
 export abstract class PaintNode {
-	static $gtype: GObject.GType<PaintNode>;
+    static $gtype: GObject.GType<PaintNode>;
 
-	constructor(properties?: Partial<PaintNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PaintNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PaintNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PaintNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	add_child(child: PaintNode): void;
-	add_multitexture_rectangle(rect: ActorBox, text_coords: number, text_coords_len: number): void;
-	add_rectangle(rect: ActorBox): void;
-	add_rectangles(coords: number[]): void;
-	add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void;
-	add_texture_rectangles(coords: number[]): void;
-	get_framebuffer(): Cogl.Framebuffer;
-	paint(paint_context: PaintContext): void;
-	ref(): PaintNode;
-	set_name(name: string): void;
-	unref(): void;
+    add_child(child: PaintNode): void;
+    add_multitexture_rectangle(rect: ActorBox, text_coords: number, text_coords_len: number): void;
+    add_rectangle(rect: ActorBox): void;
+    add_rectangles(coords: number[]): void;
+    add_texture_rectangle(rect: ActorBox, x_1: number, y_1: number, x_2: number, y_2: number): void;
+    add_texture_rectangles(coords: number[]): void;
+    get_framebuffer(): Cogl.Framebuffer;
+    paint(paint_context: PaintContext): void;
+    ref(): PaintNode;
+    set_name(name: string): void;
+    unref(): void;
 }
-export namespace PanAction {
+export module PanAction {
     export interface ConstructorProperties extends GestureAction.ConstructorProperties {
         [key: string]: any;
         acceleration_factor: number;
@@ -5748,60 +5738,60 @@ export namespace PanAction {
     }
 }
 export class PanAction extends GestureAction {
-	static $gtype: GObject.GType<PanAction>;
+    static $gtype: GObject.GType<PanAction>;
 
-	constructor(properties?: Partial<PanAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PanAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PanAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PanAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get acceleration_factor(): number;
-	set acceleration_factor(val: number);
-	get accelerationFactor(): number;
-	set accelerationFactor(val: number);
-	get deceleration(): number;
-	set deceleration(val: number);
-	get interpolate(): boolean;
-	set interpolate(val: boolean);
-	get pan_axis(): PanAxis;
-	set pan_axis(val: PanAxis);
-	get panAxis(): PanAxis;
-	set panAxis(val: PanAxis);
+    // Properties
+    get acceleration_factor(): number;
+    set acceleration_factor(val: number);
+    get accelerationFactor(): number;
+    set accelerationFactor(val: number);
+    get deceleration(): number;
+    set deceleration(val: number);
+    get interpolate(): boolean;
+    set interpolate(val: boolean);
+    get pan_axis(): PanAxis;
+    set pan_axis(val: PanAxis);
+    get panAxis(): PanAxis;
+    set panAxis(val: PanAxis);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'pan', callback: (_source: this, actor: Actor, is_interpolated: boolean) => boolean): number;
-	connect_after(signal: 'pan', callback: (_source: this, actor: Actor, is_interpolated: boolean) => boolean): number;
-	emit(signal: 'pan', actor: Actor, is_interpolated: boolean): void;
-	connect(signal: 'pan-stopped', callback: (_source: this, actor: Actor) => void): number;
-	connect_after(signal: 'pan-stopped', callback: (_source: this, actor: Actor) => void): number;
-	emit(signal: 'pan-stopped', actor: Actor): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "pan", callback: (_source: this, actor: Actor, is_interpolated: boolean) => boolean): number;
+    connect_after(signal: "pan", callback: (_source: this, actor: Actor, is_interpolated: boolean) => boolean): number;
+    emit(signal: "pan", actor: Actor, is_interpolated: boolean): void;
+    connect(signal: "pan-stopped", callback: (_source: this, actor: Actor) => void): number;
+    connect_after(signal: "pan-stopped", callback: (_source: this, actor: Actor) => void): number;
+    emit(signal: "pan-stopped", actor: Actor): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): PanAction;
+    static ["new"](): PanAction;
 
-	// Members
+    // Members
 
-	get_acceleration_factor(): number;
-	get_constrained_motion_delta(point: number): [number, number | null, number | null];
-	get_deceleration(): number;
-	get_interpolate(): boolean;
-	get_interpolated_coords(): [number | null, number | null];
-	get_interpolated_delta(): [number, number | null, number | null];
-	get_motion_coords(point: number): [number | null, number | null];
-	get_motion_delta(point: number): [number, number | null, number | null];
-	get_pan_axis(): PanAxis;
-	set_acceleration_factor(factor: number): void;
-	set_deceleration(rate: number): void;
-	set_interpolate(should_interpolate: boolean): void;
-	set_pan_axis(axis: PanAxis): void;
-	vfunc_pan_stopped(actor: Actor): void;
+    get_acceleration_factor(): number;
+    get_constrained_motion_delta(point: number): [number, number | null, number | null];
+    get_deceleration(): number;
+    get_interpolate(): boolean;
+    get_interpolated_coords(): [number | null, number | null];
+    get_interpolated_delta(): [number, number | null, number | null];
+    get_motion_coords(point: number): [number | null, number | null];
+    get_motion_delta(point: number): [number, number | null, number | null];
+    get_pan_axis(): PanAxis;
+    set_acceleration_factor(factor: number): void;
+    set_deceleration(rate: number): void;
+    set_interpolate(should_interpolate: boolean): void;
+    set_pan_axis(axis: PanAxis): void;
+    vfunc_pan_stopped(actor: Actor): void;
 }
 
-export namespace Path {
+export module Path {
     export interface ConstructorProperties extends GObject.InitiallyUnowned.ConstructorProperties {
         [key: string]: any;
         description: string;
@@ -5809,48 +5799,48 @@ export namespace Path {
     }
 }
 export class Path extends GObject.InitiallyUnowned {
-	static $gtype: GObject.GType<Path>;
+    static $gtype: GObject.GType<Path>;
 
-	constructor(properties?: Partial<Path.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Path.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Path.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Path.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get description(): string;
-	set description(val: string);
-	get length(): number;
+    // Properties
+    get description(): string;
+    set description(val: string);
+    get length(): number;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): Path;
-	static new_with_description(desc: string): Path;
+    static ["new"](): Path;
+    static new_with_description(desc: string): Path;
 
-	// Members
+    // Members
 
-	add_cairo_path(cpath: cairo.Path): void;
-	add_close(): void;
-	add_curve_to(x_1: number, y_1: number, x_2: number, y_2: number, x_3: number, y_3: number): void;
-	add_line_to(x: number, y: number): void;
-	add_move_to(x: number, y: number): void;
-	add_node(node: PathNode): void;
-	add_rel_curve_to(x_1: number, y_1: number, x_2: number, y_2: number, x_3: number, y_3: number): void;
-	add_rel_line_to(x: number, y: number): void;
-	add_rel_move_to(x: number, y: number): void;
-	add_string(str: string): boolean;
-	clear(): void;
-	foreach(callback: PathCallback): void;
-	get_description(): string;
-	get_length(): number;
-	get_n_nodes(): number;
-	get_node(index_: number): PathNode;
-	get_nodes(): PathNode[];
-	get_position(progress: number): [number, Knot];
-	insert_node(index_: number, node: PathNode): void;
-	remove_node(index_: number): void;
-	replace_node(index_: number, node: PathNode): void;
-	set_description(str: string): boolean;
-	to_cairo_path(cr: cairo.Context): void;
+    add_cairo_path(cpath: cairo.Path): void;
+    add_close(): void;
+    add_curve_to(x_1: number, y_1: number, x_2: number, y_2: number, x_3: number, y_3: number): void;
+    add_line_to(x: number, y: number): void;
+    add_move_to(x: number, y: number): void;
+    add_node(node: PathNode): void;
+    add_rel_curve_to(x_1: number, y_1: number, x_2: number, y_2: number, x_3: number, y_3: number): void;
+    add_rel_line_to(x: number, y: number): void;
+    add_rel_move_to(x: number, y: number): void;
+    add_string(str: string): boolean;
+    clear(): void;
+    foreach(callback: PathCallback): void;
+    get_description(): string;
+    get_length(): number;
+    get_n_nodes(): number;
+    get_node(index_: number): PathNode;
+    get_nodes(): PathNode[];
+    get_position(progress: number): [number, Knot];
+    insert_node(index_: number, node: PathNode): void;
+    remove_node(index_: number): void;
+    replace_node(index_: number, node: PathNode): void;
+    set_description(str: string): boolean;
+    to_cairo_path(cr: cairo.Context): void;
 }
-export namespace PathConstraint {
+export module PathConstraint {
     export interface ConstructorProperties extends Constraint.ConstructorProperties {
         [key: string]: any;
         offset: number;
@@ -5858,53 +5848,53 @@ export namespace PathConstraint {
     }
 }
 export class PathConstraint extends Constraint {
-	static $gtype: GObject.GType<PathConstraint>;
+    static $gtype: GObject.GType<PathConstraint>;
 
-	constructor(properties?: Partial<PathConstraint.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PathConstraint.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PathConstraint.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PathConstraint.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get offset(): number;
-	set offset(val: number);
-	get path(): Path;
-	set path(val: Path);
+    // Properties
+    get offset(): number;
+    set offset(val: number);
+    get path(): Path;
+    set path(val: Path);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'node-reached', callback: (_source: this, actor: Actor, index: number) => void): number;
-	connect_after(signal: 'node-reached', callback: (_source: this, actor: Actor, index: number) => void): number;
-	emit(signal: 'node-reached', actor: Actor, index: number): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "node-reached", callback: (_source: this, actor: Actor, index: number) => void): number;
+    connect_after(signal: "node-reached", callback: (_source: this, actor: Actor, index: number) => void): number;
+    emit(signal: "node-reached", actor: Actor, index: number): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](path: Path | null, offset: number): PathConstraint;
+    static ["new"](path: Path | null, offset: number): PathConstraint;
 
-	// Members
+    // Members
 
-	get_offset(): number;
-	get_path(): Path;
-	set_offset(offset: number): void;
-	set_path(path?: Path | null): void;
+    get_offset(): number;
+    get_path(): Path;
+    set_offset(offset: number): void;
+    set_path(path?: Path | null): void;
 }
-export namespace PipelineNode {
+export module PipelineNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class PipelineNode extends PaintNode {
-	static $gtype: GObject.GType<PipelineNode>;
+    static $gtype: GObject.GType<PipelineNode>;
 
-	constructor(properties?: Partial<PipelineNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PipelineNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PipelineNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PipelineNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](pipeline?: Cogl.Pipeline | null): PipelineNode;
+    static ["new"](pipeline?: Cogl.Pipeline | null): PipelineNode;
 }
-export namespace PropertyTransition {
+export module PropertyTransition {
     export interface ConstructorProperties extends Transition.ConstructorProperties {
         [key: string]: any;
         property_name: string;
@@ -5912,71 +5902,71 @@ export namespace PropertyTransition {
     }
 }
 export class PropertyTransition extends Transition implements Scriptable {
-	static $gtype: GObject.GType<PropertyTransition>;
+    static $gtype: GObject.GType<PropertyTransition>;
 
-	constructor(properties?: Partial<PropertyTransition.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<PropertyTransition.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<PropertyTransition.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<PropertyTransition.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get property_name(): string;
-	set property_name(val: string);
-	get propertyName(): string;
-	set propertyName(val: string);
+    // Properties
+    get property_name(): string;
+    set property_name(val: string);
+    get propertyName(): string;
+    set propertyName(val: string);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](property_name?: string | null): PropertyTransition;
-	// Conflicted with Clutter.Timeline.new
-	static ['new'](...args: never[]): any;
-	static new_for_actor(actor: Actor, property_name?: string | null): PropertyTransition;
-	// Conflicted with Clutter.Timeline.new_for_actor
-	static new_for_actor(...args: never[]): any;
+    static ["new"](property_name?: string | null): PropertyTransition;
+    // Conflicted with Clutter.Timeline.new
+    static ["new"](...args: never[]): any;
+    static new_for_actor(actor: Actor, property_name?: string | null): PropertyTransition;
+    // Conflicted with Clutter.Timeline.new_for_actor
+    static new_for_actor(...args: never[]): any;
 
-	// Members
+    // Members
 
-	get_property_name(): string;
-	set_property_name(property_name?: string | null): void;
+    get_property_name(): string;
+    set_property_name(property_name?: string | null): void;
 }
-export namespace RootNode {
+export module RootNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class RootNode extends PaintNode {
-	static $gtype: GObject.GType<RootNode>;
+    static $gtype: GObject.GType<RootNode>;
 
-	constructor(properties?: Partial<RootNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<RootNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<RootNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<RootNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](framebuffer: Cogl.Framebuffer, clear_color: Color, clear_flags: Cogl.BufferBit): RootNode;
+    static ["new"](framebuffer: Cogl.Framebuffer, clear_color: Color, clear_flags: Cogl.BufferBit): RootNode;
 }
-export namespace RotateAction {
+export module RotateAction {
     export interface ConstructorProperties extends GestureAction.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class RotateAction extends GestureAction {
-	static $gtype: GObject.GType<RotateAction>;
+    static $gtype: GObject.GType<RotateAction>;
 
-	constructor(properties?: Partial<RotateAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<RotateAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<RotateAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<RotateAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'rotate', callback: (_source: this, actor: Actor, angle: number) => boolean): number;
-	connect_after(signal: 'rotate', callback: (_source: this, actor: Actor, angle: number) => boolean): number;
-	emit(signal: 'rotate', actor: Actor, angle: number): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "rotate", callback: (_source: this, actor: Actor, angle: number) => boolean): number;
+    connect_after(signal: "rotate", callback: (_source: this, actor: Actor, angle: number) => boolean): number;
+    emit(signal: "rotate", actor: Actor, angle: number): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): RotateAction;
+    static ["new"](): RotateAction;
 }
-export namespace Script {
+export module Script {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         filename: string;
@@ -5987,43 +5977,43 @@ export namespace Script {
     }
 }
 export class Script extends GObject.Object {
-	static $gtype: GObject.GType<Script>;
+    static $gtype: GObject.GType<Script>;
 
-	constructor(properties?: Partial<Script.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Script.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Script.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Script.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get filename(): string;
-	get filename_set(): boolean;
-	get filenameSet(): boolean;
-	get translation_domain(): string;
-	set translation_domain(val: string);
-	get translationDomain(): string;
-	set translationDomain(val: string);
+    // Properties
+    get filename(): string;
+    get filename_set(): boolean;
+    get filenameSet(): boolean;
+    get translation_domain(): string;
+    set translation_domain(val: string);
+    get translationDomain(): string;
+    set translationDomain(val: string);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): Script;
+    static ["new"](): Script;
 
-	// Members
+    // Members
 
-	add_search_paths(paths: string[]): void;
-	connect_signals(user_data?: any | null): void;
-	connect_signals_full(func: ScriptConnectFunc): void;
-	ensure_objects(): void;
-	get_object<T = GObject.Object>(name: string): T;
-	get_translation_domain(): string;
-	get_type_from_name(type_name: string): GObject.GType;
-	list_objects(): GObject.Object[];
-	load_from_data(data: string, length: number): number;
-	load_from_file(filename: string): number;
-	load_from_resource(resource_path: string): number;
-	lookup_filename(filename: string): string;
-	set_translation_domain(domain?: string | null): void;
-	unmerge_objects(merge_id: number): void;
-	vfunc_get_type_from_name(type_name: string): GObject.GType;
+    add_search_paths(paths: string[]): void;
+    connect_signals(user_data?: any | null): void;
+    connect_signals_full(func: ScriptConnectFunc): void;
+    ensure_objects(): void;
+    get_object<T = GObject.Object>(name: string): T;
+    get_translation_domain(): string;
+    get_type_from_name(type_name: string): GObject.GType;
+    list_objects(): GObject.Object[];
+    load_from_data(data: string, length: number): number;
+    load_from_file(filename: string): number;
+    load_from_resource(resource_path: string): number;
+    lookup_filename(filename: string): string;
+    set_translation_domain(domain?: string | null): void;
+    unmerge_objects(merge_id: number): void;
+    vfunc_get_type_from_name(type_name: string): GObject.GType;
 }
-export namespace ScrollActor {
+export module ScrollActor {
     export interface ConstructorProperties<A extends Actor = Actor> extends Actor.ConstructorProperties {
         [key: string]: any;
         scroll_mode: ScrollMode;
@@ -6031,70 +6021,70 @@ export namespace ScrollActor {
     }
 }
 export class ScrollActor<A extends Actor = Actor>
-	extends Actor
-	implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
+    extends Actor
+    implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
 {
-	static $gtype: GObject.GType<ScrollActor>;
+    static $gtype: GObject.GType<ScrollActor>;
 
-	constructor(properties?: Partial<ScrollActor.ConstructorProperties<A>>, ...args: any[]);
-	_init(properties?: Partial<ScrollActor.ConstructorProperties<A>>, ...args: any[]): void;
+    constructor(properties?: Partial<ScrollActor.ConstructorProperties<A>>, ...args: any[]);
+    _init(properties?: Partial<ScrollActor.ConstructorProperties<A>>, ...args: any[]): void;
 
-	// Properties
-	get scroll_mode(): ScrollMode;
-	set scroll_mode(val: ScrollMode);
-	get scrollMode(): ScrollMode;
-	set scrollMode(val: ScrollMode);
+    // Properties
+    get scroll_mode(): ScrollMode;
+    set scroll_mode(val: ScrollMode);
+    get scrollMode(): ScrollMode;
+    set scrollMode(val: ScrollMode);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): ScrollActor;
+    static ["new"](): ScrollActor;
 
-	// Members
+    // Members
 
-	get_scroll_mode(): ScrollMode;
-	scroll_to_point(point: Graphene.Point): void;
-	scroll_to_rect(rect: Graphene.Rect): void;
-	set_scroll_mode(mode: ScrollMode): void;
+    get_scroll_mode(): ScrollMode;
+    scroll_to_point(point: Graphene.Point): void;
+    scroll_to_rect(rect: Graphene.Rect): void;
+    set_scroll_mode(mode: ScrollMode): void;
 
-	// Implemented Members
+    // Implemented Members
 
-	find_property(property_name: string): GObject.ParamSpec;
-	get_actor(): Actor;
-	get_initial_state(property_name: string, value: GObject.Value | any): void;
-	interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	set_final_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_find_property(property_name: string): GObject.ParamSpec;
-	vfunc_get_actor(): Actor;
-	vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
-	add_actor(actor: A): void;
-	child_get_property(child: A, property: string, value: GObject.Value | any): void;
-	child_notify(child: A, pspec: GObject.ParamSpec): void;
-	child_set_property(child: A, property: string, value: GObject.Value | any): void;
-	create_child_meta(actor: A): void;
-	destroy_child_meta(actor: A): void;
-	find_child_by_name(child_name: string): A;
-	get_child_meta(actor: A): ChildMeta;
-	remove_actor(actor: A): void;
-	vfunc_actor_added(actor: A): void;
-	vfunc_actor_removed(actor: A): void;
-	vfunc_add(actor: A): void;
-	vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
-	vfunc_create_child_meta(actor: A): void;
-	vfunc_destroy_child_meta(actor: A): void;
-	vfunc_get_child_meta(actor: A): ChildMeta;
-	vfunc_remove(actor: A): void;
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    find_property(property_name: string): GObject.ParamSpec;
+    get_actor(): Actor;
+    get_initial_state(property_name: string, value: GObject.Value | any): void;
+    interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    set_final_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_find_property(property_name: string): GObject.ParamSpec;
+    vfunc_get_actor(): Actor;
+    vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
+    add_actor(actor: A): void;
+    child_get_property(child: A, property: string, value: GObject.Value | any): void;
+    child_notify(child: A, pspec: GObject.ParamSpec): void;
+    child_set_property(child: A, property: string, value: GObject.Value | any): void;
+    create_child_meta(actor: A): void;
+    destroy_child_meta(actor: A): void;
+    find_child_by_name(child_name: string): A;
+    get_child_meta(actor: A): ChildMeta;
+    remove_actor(actor: A): void;
+    vfunc_actor_added(actor: A): void;
+    vfunc_actor_removed(actor: A): void;
+    vfunc_add(actor: A): void;
+    vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
+    vfunc_create_child_meta(actor: A): void;
+    vfunc_destroy_child_meta(actor: A): void;
+    vfunc_get_child_meta(actor: A): ChildMeta;
+    vfunc_remove(actor: A): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace Seat {
+export module Seat {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         touch_mode: boolean;
@@ -6102,133 +6092,121 @@ export namespace Seat {
     }
 }
 export abstract class Seat extends GObject.Object {
-	static $gtype: GObject.GType<Seat>;
+    static $gtype: GObject.GType<Seat>;
 
-	constructor(properties?: Partial<Seat.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Seat.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Seat.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Seat.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get touch_mode(): boolean;
-	get touchMode(): boolean;
+    // Properties
+    get touch_mode(): boolean;
+    get touchMode(): boolean;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'device-added', callback: (_source: this, object: InputDevice) => void): number;
-	connect_after(signal: 'device-added', callback: (_source: this, object: InputDevice) => void): number;
-	emit(signal: 'device-added', object: InputDevice): void;
-	connect(signal: 'device-removed', callback: (_source: this, object: InputDevice) => void): number;
-	connect_after(signal: 'device-removed', callback: (_source: this, object: InputDevice) => void): number;
-	emit(signal: 'device-removed', object: InputDevice): void;
-	connect(signal: 'is-unfocus-inhibited-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'is-unfocus-inhibited-changed', callback: (_source: this) => void): number;
-	emit(signal: 'is-unfocus-inhibited-changed'): void;
-	connect(
-        signal: 'kbd-a11y-flags-changed',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "device-added", callback: (_source: this, object: InputDevice) => void): number;
+    connect_after(signal: "device-added", callback: (_source: this, object: InputDevice) => void): number;
+    emit(signal: "device-added", object: InputDevice): void;
+    connect(signal: "device-removed", callback: (_source: this, object: InputDevice) => void): number;
+    connect_after(signal: "device-removed", callback: (_source: this, object: InputDevice) => void): number;
+    emit(signal: "device-removed", object: InputDevice): void;
+    connect(signal: "is-unfocus-inhibited-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "is-unfocus-inhibited-changed", callback: (_source: this) => void): number;
+    emit(signal: "is-unfocus-inhibited-changed"): void;
+    connect(
+        signal: "kbd-a11y-flags-changed",
         callback: (_source: this, settings_flags: number, changed_mask: number) => void
     ): number;
-
-	connect_after(
-        signal: 'kbd-a11y-flags-changed',
+    connect_after(
+        signal: "kbd-a11y-flags-changed",
         callback: (_source: this, settings_flags: number, changed_mask: number) => void
     ): number;
-
-	emit(signal: 'kbd-a11y-flags-changed', settings_flags: number, changed_mask: number): void;
-	connect(
-        signal: 'kbd-a11y-mods-state-changed',
+    emit(signal: "kbd-a11y-flags-changed", settings_flags: number, changed_mask: number): void;
+    connect(
+        signal: "kbd-a11y-mods-state-changed",
         callback: (_source: this, latched_mask: number, locked_mask: number) => void
     ): number;
-
-	connect_after(
-        signal: 'kbd-a11y-mods-state-changed',
+    connect_after(
+        signal: "kbd-a11y-mods-state-changed",
         callback: (_source: this, latched_mask: number, locked_mask: number) => void
     ): number;
-
-	emit(signal: 'kbd-a11y-mods-state-changed', latched_mask: number, locked_mask: number): void;
-	connect(
-        signal: 'ptr-a11y-dwell-click-type-changed',
+    emit(signal: "kbd-a11y-mods-state-changed", latched_mask: number, locked_mask: number): void;
+    connect(
+        signal: "ptr-a11y-dwell-click-type-changed",
         callback: (_source: this, click_type: PointerA11yDwellClickType) => void
     ): number;
-
-	connect_after(
-        signal: 'ptr-a11y-dwell-click-type-changed',
+    connect_after(
+        signal: "ptr-a11y-dwell-click-type-changed",
         callback: (_source: this, click_type: PointerA11yDwellClickType) => void
     ): number;
-
-	emit(signal: 'ptr-a11y-dwell-click-type-changed', click_type: PointerA11yDwellClickType): void;
-	connect(
-        signal: 'ptr-a11y-timeout-started',
+    emit(signal: "ptr-a11y-dwell-click-type-changed", click_type: PointerA11yDwellClickType): void;
+    connect(
+        signal: "ptr-a11y-timeout-started",
         callback: (_source: this, device: InputDevice, timeout_type: PointerA11yTimeoutType, delay: number) => void
     ): number;
-
-	connect_after(
-        signal: 'ptr-a11y-timeout-started',
+    connect_after(
+        signal: "ptr-a11y-timeout-started",
         callback: (_source: this, device: InputDevice, timeout_type: PointerA11yTimeoutType, delay: number) => void
     ): number;
-
-	emit(
-        signal: 'ptr-a11y-timeout-started',
+    emit(
+        signal: "ptr-a11y-timeout-started",
         device: InputDevice,
         timeout_type: PointerA11yTimeoutType,
         delay: number
     ): void;
-
-	connect(
-        signal: 'ptr-a11y-timeout-stopped',
+    connect(
+        signal: "ptr-a11y-timeout-stopped",
         callback: (_source: this, device: InputDevice, timeout_type: PointerA11yTimeoutType, clicked: boolean) => void
     ): number;
-
-	connect_after(
-        signal: 'ptr-a11y-timeout-stopped',
+    connect_after(
+        signal: "ptr-a11y-timeout-stopped",
         callback: (_source: this, device: InputDevice, timeout_type: PointerA11yTimeoutType, clicked: boolean) => void
     ): number;
-
-	emit(
-        signal: 'ptr-a11y-timeout-stopped',
+    emit(
+        signal: "ptr-a11y-timeout-stopped",
         device: InputDevice,
         timeout_type: PointerA11yTimeoutType,
         clicked: boolean
     ): void;
 
-	// Members
+    // Members
 
-	bell_notify(): void;
-	create_virtual_device(device_type: InputDeviceType): VirtualInputDevice;
-	ensure_a11y_state(): void;
-	get_keyboard(): InputDevice;
-	get_keymap(): Keymap;
-	get_pointer(): InputDevice;
-	get_pointer_a11y_settings(settings: PointerA11ySettings): void;
-	get_touch_mode(): boolean;
-	handle_event_post(event: Event): boolean;
-	inhibit_unfocus(): void;
-	is_unfocus_inhibited(): boolean;
-	list_devices(): InputDevice[];
-	query_state(device: InputDevice, sequence: EventSequence, coords: Graphene.Point, modifiers: ModifierType): boolean;
-	set_pointer_a11y_dwell_click_type(click_type: PointerA11yDwellClickType): void;
-	set_pointer_a11y_settings(settings: PointerA11ySettings): void;
-	uninhibit_unfocus(): void;
-	warp_pointer(x: number, y: number): void;
-	vfunc_bell_notify(): void;
-	vfunc_create_virtual_device(device_type: InputDeviceType): VirtualInputDevice;
-	vfunc_get_keyboard(): InputDevice;
-	vfunc_get_keymap(): Keymap;
-	vfunc_get_pointer(): InputDevice;
-	vfunc_grab(time: number): GrabState;
-	vfunc_handle_event_post(event: Event): boolean;
-	vfunc_query_state(
+    bell_notify(): void;
+    create_virtual_device(device_type: InputDeviceType): VirtualInputDevice;
+    ensure_a11y_state(): void;
+    get_keyboard(): InputDevice;
+    get_keymap(): Keymap;
+    get_pointer(): InputDevice;
+    get_pointer_a11y_settings(settings: PointerA11ySettings): void;
+    get_touch_mode(): boolean;
+    handle_event_post(event: Event): boolean;
+    inhibit_unfocus(): void;
+    is_unfocus_inhibited(): boolean;
+    list_devices(): InputDevice[];
+    query_state(device: InputDevice, sequence: EventSequence, coords: Graphene.Point, modifiers: ModifierType): boolean;
+    set_pointer_a11y_dwell_click_type(click_type: PointerA11yDwellClickType): void;
+    set_pointer_a11y_settings(settings: PointerA11ySettings): void;
+    uninhibit_unfocus(): void;
+    warp_pointer(x: number, y: number): void;
+    vfunc_bell_notify(): void;
+    vfunc_create_virtual_device(device_type: InputDeviceType): VirtualInputDevice;
+    vfunc_get_keyboard(): InputDevice;
+    vfunc_get_keymap(): Keymap;
+    vfunc_get_pointer(): InputDevice;
+    vfunc_grab(time: number): GrabState;
+    vfunc_handle_event_post(event: Event): boolean;
+    vfunc_query_state(
         device: InputDevice,
         sequence: EventSequence,
         coords: Graphene.Point,
         modifiers: ModifierType
     ): boolean;
-
-	vfunc_ungrab(time: number): void;
-	vfunc_warp_pointer(x: number, y: number): void;
+    vfunc_ungrab(time: number): void;
+    vfunc_warp_pointer(x: number, y: number): void;
 }
-export namespace Settings {
+export module Settings {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         backend: Backend;
@@ -6261,67 +6239,67 @@ export namespace Settings {
     }
 }
 export class Settings extends GObject.Object {
-	static $gtype: GObject.GType<Settings>;
+    static $gtype: GObject.GType<Settings>;
 
-	constructor(properties?: Partial<Settings.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Settings.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Settings.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Settings.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	set backend(val: Backend);
-	get dnd_drag_threshold(): number;
-	set dnd_drag_threshold(val: number);
-	get dndDragThreshold(): number;
-	set dndDragThreshold(val: number);
-	get double_click_distance(): number;
-	set double_click_distance(val: number);
-	get doubleClickDistance(): number;
-	set doubleClickDistance(val: number);
-	get double_click_time(): number;
-	set double_click_time(val: number);
-	get doubleClickTime(): number;
-	set doubleClickTime(val: number);
-	get font_antialias(): number;
-	set font_antialias(val: number);
-	get fontAntialias(): number;
-	set fontAntialias(val: number);
-	get font_dpi(): number;
-	set font_dpi(val: number);
-	get fontDpi(): number;
-	set fontDpi(val: number);
-	get font_hint_style(): string;
-	set font_hint_style(val: string);
-	get fontHintStyle(): string;
-	set fontHintStyle(val: string);
-	get font_hinting(): number;
-	set font_hinting(val: number);
-	get fontHinting(): number;
-	set fontHinting(val: number);
-	get font_name(): string;
-	set font_name(val: string);
-	get fontName(): string;
-	set fontName(val: string);
-	get font_subpixel_order(): string;
-	set font_subpixel_order(val: string);
-	get fontSubpixelOrder(): string;
-	set fontSubpixelOrder(val: string);
-	set fontconfig_timestamp(val: number);
-	set fontconfigTimestamp(val: number);
-	get long_press_duration(): number;
-	set long_press_duration(val: number);
-	get longPressDuration(): number;
-	set longPressDuration(val: number);
-	get password_hint_time(): number;
-	set password_hint_time(val: number);
-	get passwordHintTime(): number;
-	set passwordHintTime(val: number);
-	set unscaled_font_dpi(val: number);
-	set unscaledFontDpi(val: number);
+    // Properties
+    set backend(val: Backend);
+    get dnd_drag_threshold(): number;
+    set dnd_drag_threshold(val: number);
+    get dndDragThreshold(): number;
+    set dndDragThreshold(val: number);
+    get double_click_distance(): number;
+    set double_click_distance(val: number);
+    get doubleClickDistance(): number;
+    set doubleClickDistance(val: number);
+    get double_click_time(): number;
+    set double_click_time(val: number);
+    get doubleClickTime(): number;
+    set doubleClickTime(val: number);
+    get font_antialias(): number;
+    set font_antialias(val: number);
+    get fontAntialias(): number;
+    set fontAntialias(val: number);
+    get font_dpi(): number;
+    set font_dpi(val: number);
+    get fontDpi(): number;
+    set fontDpi(val: number);
+    get font_hint_style(): string;
+    set font_hint_style(val: string);
+    get fontHintStyle(): string;
+    set fontHintStyle(val: string);
+    get font_hinting(): number;
+    set font_hinting(val: number);
+    get fontHinting(): number;
+    set fontHinting(val: number);
+    get font_name(): string;
+    set font_name(val: string);
+    get fontName(): string;
+    set fontName(val: string);
+    get font_subpixel_order(): string;
+    set font_subpixel_order(val: string);
+    get fontSubpixelOrder(): string;
+    set fontSubpixelOrder(val: string);
+    set fontconfig_timestamp(val: number);
+    set fontconfigTimestamp(val: number);
+    get long_press_duration(): number;
+    set long_press_duration(val: number);
+    get longPressDuration(): number;
+    set longPressDuration(val: number);
+    get password_hint_time(): number;
+    set password_hint_time(val: number);
+    get passwordHintTime(): number;
+    set passwordHintTime(val: number);
+    set unscaled_font_dpi(val: number);
+    set unscaledFontDpi(val: number);
 
-	// Members
+    // Members
 
-	static get_default(): Settings;
+    static get_default(): Settings;
 }
-export namespace ShaderEffect {
+export module ShaderEffect {
     export interface ConstructorProperties extends OffscreenEffect.ConstructorProperties {
         [key: string]: any;
         shader_type: ShaderType;
@@ -6329,61 +6307,61 @@ export namespace ShaderEffect {
     }
 }
 export class ShaderEffect extends OffscreenEffect {
-	static $gtype: GObject.GType<ShaderEffect>;
+    static $gtype: GObject.GType<ShaderEffect>;
 
-	constructor(properties?: Partial<ShaderEffect.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ShaderEffect.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ShaderEffect.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ShaderEffect.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	set shader_type(val: ShaderType);
-	set shaderType(val: ShaderType);
+    // Properties
+    set shader_type(val: ShaderType);
+    set shaderType(val: ShaderType);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](shader_type: ShaderType): ShaderEffect;
+    static ["new"](shader_type: ShaderType): ShaderEffect;
 
-	// Members
+    // Members
 
-	get_program(): Cogl.Handle;
-	get_shader(): Cogl.Handle;
-	set_shader_source(source: string): boolean;
-	set_uniform_value(name: string, value: GObject.Value | any): void;
-	vfunc_get_static_shader_source(): string;
+    get_program(): Cogl.Handle;
+    get_shader(): Cogl.Handle;
+    set_shader_source(source: string): boolean;
+    set_uniform_value(name: string, value: GObject.Value | any): void;
+    vfunc_get_static_shader_source(): string;
 }
-export namespace ShaderFloat {
+export module ShaderFloat {
     export interface ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ShaderFloat {
-	static $gtype: GObject.GType<ShaderFloat>;
+    static $gtype: GObject.GType<ShaderFloat>;
 
-	constructor(properties?: Partial<ShaderFloat.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ShaderFloat.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ShaderFloat.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ShaderFloat.ConstructorProperties>, ...args: any[]): void;
 }
-export namespace ShaderInt {
+export module ShaderInt {
     export interface ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ShaderInt {
-	static $gtype: GObject.GType<ShaderInt>;
+    static $gtype: GObject.GType<ShaderInt>;
 
-	constructor(properties?: Partial<ShaderInt.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ShaderInt.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ShaderInt.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ShaderInt.ConstructorProperties>, ...args: any[]): void;
 }
-export namespace ShaderMatrix {
+export module ShaderMatrix {
     export interface ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ShaderMatrix {
-	static $gtype: GObject.GType<ShaderMatrix>;
+    static $gtype: GObject.GType<ShaderMatrix>;
 
-	constructor(properties?: Partial<ShaderMatrix.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ShaderMatrix.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ShaderMatrix.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ShaderMatrix.ConstructorProperties>, ...args: any[]): void;
 }
-export namespace SnapConstraint {
+export module SnapConstraint {
     export interface ConstructorProperties extends Constraint.ConstructorProperties {
         [key: string]: any;
         from_edge: SnapEdge;
@@ -6395,39 +6373,39 @@ export namespace SnapConstraint {
     }
 }
 export class SnapConstraint extends Constraint {
-	static $gtype: GObject.GType<SnapConstraint>;
+    static $gtype: GObject.GType<SnapConstraint>;
 
-	constructor(properties?: Partial<SnapConstraint.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<SnapConstraint.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<SnapConstraint.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<SnapConstraint.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get from_edge(): SnapEdge;
-	set from_edge(val: SnapEdge);
-	get fromEdge(): SnapEdge;
-	set fromEdge(val: SnapEdge);
-	get offset(): number;
-	set offset(val: number);
-	get source(): Actor;
-	set source(val: Actor);
-	get to_edge(): SnapEdge;
-	set to_edge(val: SnapEdge);
-	get toEdge(): SnapEdge;
-	set toEdge(val: SnapEdge);
+    // Properties
+    get from_edge(): SnapEdge;
+    set from_edge(val: SnapEdge);
+    get fromEdge(): SnapEdge;
+    set fromEdge(val: SnapEdge);
+    get offset(): number;
+    set offset(val: number);
+    get source(): Actor;
+    set source(val: Actor);
+    get to_edge(): SnapEdge;
+    set to_edge(val: SnapEdge);
+    get toEdge(): SnapEdge;
+    set toEdge(val: SnapEdge);
 
-	// Constructors
+    // Constructors
 
-	static ['new'](source: Actor | null, from_edge: SnapEdge, to_edge: SnapEdge, offset: number): SnapConstraint;
+    static ["new"](source: Actor | null, from_edge: SnapEdge, to_edge: SnapEdge, offset: number): SnapConstraint;
 
-	// Members
+    // Members
 
-	get_edges(): [SnapEdge, SnapEdge];
-	get_offset(): number;
-	get_source(): Actor;
-	set_edges(from_edge: SnapEdge, to_edge: SnapEdge): void;
-	set_offset(offset: number): void;
-	set_source(source?: Actor | null): void;
+    get_edges(): [SnapEdge, SnapEdge];
+    get_offset(): number;
+    get_source(): Actor;
+    set_edges(from_edge: SnapEdge, to_edge: SnapEdge): void;
+    set_offset(offset: number): void;
+    set_source(source?: Actor | null): void;
 }
-export namespace Stage {
+export module Stage {
     export interface ConstructorProperties<A extends Actor = Actor> extends Actor.ConstructorProperties {
         [key: string]: any;
         key_focus: Actor;
@@ -6437,85 +6415,82 @@ export namespace Stage {
     }
 }
 export class Stage<A extends Actor = Actor>
-	extends Actor
-	implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
+    extends Actor
+    implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
 {
-	static $gtype: GObject.GType<Stage>;
+    static $gtype: GObject.GType<Stage>;
 
-	constructor(properties?: Partial<Stage.ConstructorProperties<A>>, ...args: any[]);
-	_init(properties?: Partial<Stage.ConstructorProperties<A>>, ...args: any[]): void;
+    constructor(properties?: Partial<Stage.ConstructorProperties<A>>, ...args: any[]);
+    _init(properties?: Partial<Stage.ConstructorProperties<A>>, ...args: any[]): void;
 
-	// Properties
-	get key_focus(): Actor;
-	set key_focus(val: Actor);
-	get keyFocus(): Actor;
-	set keyFocus(val: Actor);
-	get perspective(): Perspective;
-	get title(): string;
-	set title(val: string);
+    // Properties
+    get key_focus(): Actor;
+    set key_focus(val: Actor);
+    get keyFocus(): Actor;
+    set keyFocus(val: Actor);
+    get perspective(): Perspective;
+    get title(): string;
+    set title(val: string);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'activate', callback: (_source: this) => void): number;
-	connect_after(signal: 'activate', callback: (_source: this) => void): number;
-	emit(signal: 'activate'): void;
-	connect(signal: 'after-paint', callback: (_source: this, view: StageView) => void): number;
-	connect_after(signal: 'after-paint', callback: (_source: this, view: StageView) => void): number;
-	emit(signal: 'after-paint', view: StageView): void;
-	connect(signal: 'after-update', callback: (_source: this, view: StageView) => void): number;
-	connect_after(signal: 'after-update', callback: (_source: this, view: StageView) => void): number;
-	emit(signal: 'after-update', view: StageView): void;
-	connect(signal: 'before-paint', callback: (_source: this, view: StageView) => void): number;
-	connect_after(signal: 'before-paint', callback: (_source: this, view: StageView) => void): number;
-	emit(signal: 'before-paint', view: StageView): void;
-	connect(signal: 'before-update', callback: (_source: this, view: StageView) => void): number;
-	connect_after(signal: 'before-update', callback: (_source: this, view: StageView) => void): number;
-	emit(signal: 'before-update', view: StageView): void;
-	connect(signal: 'deactivate', callback: (_source: this) => void): number;
-	connect_after(signal: 'deactivate', callback: (_source: this) => void): number;
-	emit(signal: 'deactivate'): void;
-	connect(signal: 'gl-video-memory-purged', callback: (_source: this) => void): number;
-	connect_after(signal: 'gl-video-memory-purged', callback: (_source: this) => void): number;
-	emit(signal: 'gl-video-memory-purged'): void;
-	connect(
-        signal: 'paint-view',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "activate", callback: (_source: this) => void): number;
+    connect_after(signal: "activate", callback: (_source: this) => void): number;
+    emit(signal: "activate"): void;
+    connect(signal: "after-paint", callback: (_source: this, view: StageView) => void): number;
+    connect_after(signal: "after-paint", callback: (_source: this, view: StageView) => void): number;
+    emit(signal: "after-paint", view: StageView): void;
+    connect(signal: "after-update", callback: (_source: this, view: StageView) => void): number;
+    connect_after(signal: "after-update", callback: (_source: this, view: StageView) => void): number;
+    emit(signal: "after-update", view: StageView): void;
+    connect(signal: "before-paint", callback: (_source: this, view: StageView) => void): number;
+    connect_after(signal: "before-paint", callback: (_source: this, view: StageView) => void): number;
+    emit(signal: "before-paint", view: StageView): void;
+    connect(signal: "before-update", callback: (_source: this, view: StageView) => void): number;
+    connect_after(signal: "before-update", callback: (_source: this, view: StageView) => void): number;
+    emit(signal: "before-update", view: StageView): void;
+    connect(signal: "deactivate", callback: (_source: this) => void): number;
+    connect_after(signal: "deactivate", callback: (_source: this) => void): number;
+    emit(signal: "deactivate"): void;
+    connect(signal: "gl-video-memory-purged", callback: (_source: this) => void): number;
+    connect_after(signal: "gl-video-memory-purged", callback: (_source: this) => void): number;
+    emit(signal: "gl-video-memory-purged"): void;
+    connect(
+        signal: "paint-view",
         callback: (_source: this, view: StageView, redraw_clip: cairo.Region) => void
     ): number;
-
-	connect_after(
-        signal: 'paint-view',
+    connect_after(
+        signal: "paint-view",
         callback: (_source: this, view: StageView, redraw_clip: cairo.Region) => void
     ): number;
-
-	emit(signal: 'paint-view', view: StageView, redraw_clip: cairo.Region): void;
-	connect(signal: 'presented', callback: (_source: this, view: StageView, frame_info: any | null) => void): number;
-	connect_after(
-        signal: 'presented',
+    emit(signal: "paint-view", view: StageView, redraw_clip: cairo.Region): void;
+    connect(signal: "presented", callback: (_source: this, view: StageView, frame_info: any | null) => void): number;
+    connect_after(
+        signal: "presented",
         callback: (_source: this, view: StageView, frame_info: any | null) => void
     ): number;
+    emit(signal: "presented", view: StageView, frame_info: any | null): void;
 
-	emit(signal: 'presented', view: StageView, frame_info: any | null): void;
+    // Members
 
-	// Members
-
-	capture_view_into(view: StageView, rect: cairo.RectangleInt, data: number, stride: number): void;
-	clear_stage_views(): void;
-	ensure_viewport(): void;
-	get_actor_at_pos(pick_mode: PickMode, x: number, y: number): Actor;
-	get_capture_final_size(rect: cairo.RectangleInt): [boolean, number | null, number | null, number | null];
-	get_device_actor(device: InputDevice, sequence?: EventSequence | null): Actor;
-	get_event_actor(event: Event): Actor;
-	get_frame_counter(): number;
-	get_grab_actor(): Actor;
-	get_key_focus(): Actor;
-	get_minimum_size(width: number, height: number): void;
-	get_perspective(): Perspective | null;
-	get_title(): string;
-	grab(actor: Actor): Grab;
-	paint_to_buffer(
+    capture_view_into(view: StageView, rect: cairo.RectangleInt, data: number, stride: number): void;
+    clear_stage_views(): void;
+    ensure_viewport(): void;
+    get_actor_at_pos(pick_mode: PickMode, x: number, y: number): Actor;
+    get_capture_final_size(rect: cairo.RectangleInt): [boolean, number | null, number | null, number | null];
+    get_device_actor(device: InputDevice, sequence?: EventSequence | null): Actor;
+    get_event_actor(event: Event): Actor;
+    get_frame_counter(): number;
+    get_grab_actor(): Actor;
+    get_key_focus(): Actor;
+    get_minimum_size(width: number, height: number): void;
+    get_perspective(): Perspective | null;
+    get_title(): string;
+    grab(actor: Actor): Grab;
+    paint_to_buffer(
         rect: cairo.RectangleInt,
         scale: number,
         data: Uint8Array | string,
@@ -6523,22 +6498,20 @@ export class Stage<A extends Actor = Actor>
         format: Cogl.PixelFormat,
         paint_flags: PaintFlag
     ): boolean;
-
-	paint_to_content(rect: cairo.RectangleInt, scale: number, paint_flags: PaintFlag): Content;
-	paint_to_framebuffer(
+    paint_to_content(rect: cairo.RectangleInt, scale: number, paint_flags: PaintFlag): Content;
+    paint_to_framebuffer(
         framebuffer: Cogl.Framebuffer,
         rect: cairo.RectangleInt,
         scale: number,
         paint_flags: PaintFlag
     ): void;
-
-	read_pixels(x: number, y: number, width: number, height: number): Uint8Array;
-	repick_device(device: InputDevice): void;
-	schedule_update(): void;
-	set_key_focus(actor?: Actor | null): void;
-	set_minimum_size(width: number, height: number): void;
-	set_title(title: string): void;
-	update_device(
+    read_pixels(x: number, y: number, width: number, height: number): Uint8Array;
+    repick_device(device: InputDevice): void;
+    schedule_update(): void;
+    set_key_focus(actor?: Actor | null): void;
+    set_minimum_size(width: number, height: number): void;
+    set_title(title: string): void;
+    update_device(
         device: InputDevice,
         sequence: EventSequence,
         point: Graphene.Point,
@@ -6547,51 +6520,50 @@ export class Stage<A extends Actor = Actor>
         region: cairo.Region,
         emit_crossing: boolean
     ): void;
+    vfunc_activate(): void;
+    vfunc_before_paint(view: StageView): void;
+    vfunc_deactivate(): void;
+    vfunc_paint_view(view: StageView, redraw_clip: cairo.Region): void;
 
-	vfunc_activate(): void;
-	vfunc_before_paint(view: StageView): void;
-	vfunc_deactivate(): void;
-	vfunc_paint_view(view: StageView, redraw_clip: cairo.Region): void;
+    // Implemented Members
 
-	// Implemented Members
-
-	find_property(property_name: string): GObject.ParamSpec;
-	get_actor(): Actor;
-	get_initial_state(property_name: string, value: GObject.Value | any): void;
-	interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	set_final_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_find_property(property_name: string): GObject.ParamSpec;
-	vfunc_get_actor(): Actor;
-	vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
-	add_actor(actor: A): void;
-	child_get_property(child: A, property: string, value: GObject.Value | any): void;
-	child_notify(child: A, pspec: GObject.ParamSpec): void;
-	child_set_property(child: A, property: string, value: GObject.Value | any): void;
-	create_child_meta(actor: A): void;
-	destroy_child_meta(actor: A): void;
-	find_child_by_name(child_name: string): A;
-	get_child_meta(actor: A): ChildMeta;
-	remove_actor(actor: A): void;
-	vfunc_actor_added(actor: A): void;
-	vfunc_actor_removed(actor: A): void;
-	vfunc_add(actor: A): void;
-	vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
-	vfunc_create_child_meta(actor: A): void;
-	vfunc_destroy_child_meta(actor: A): void;
-	vfunc_get_child_meta(actor: A): ChildMeta;
-	vfunc_remove(actor: A): void;
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    find_property(property_name: string): GObject.ParamSpec;
+    get_actor(): Actor;
+    get_initial_state(property_name: string, value: GObject.Value | any): void;
+    interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    set_final_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_find_property(property_name: string): GObject.ParamSpec;
+    vfunc_get_actor(): Actor;
+    vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
+    add_actor(actor: A): void;
+    child_get_property(child: A, property: string, value: GObject.Value | any): void;
+    child_notify(child: A, pspec: GObject.ParamSpec): void;
+    child_set_property(child: A, property: string, value: GObject.Value | any): void;
+    create_child_meta(actor: A): void;
+    destroy_child_meta(actor: A): void;
+    find_child_by_name(child_name: string): A;
+    get_child_meta(actor: A): ChildMeta;
+    remove_actor(actor: A): void;
+    vfunc_actor_added(actor: A): void;
+    vfunc_actor_removed(actor: A): void;
+    vfunc_add(actor: A): void;
+    vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
+    vfunc_create_child_meta(actor: A): void;
+    vfunc_destroy_child_meta(actor: A): void;
+    vfunc_get_child_meta(actor: A): ChildMeta;
+    vfunc_remove(actor: A): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace StageManager {
+export module StageManager {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         default_stage: Stage;
@@ -6599,37 +6571,37 @@ export namespace StageManager {
     }
 }
 export class StageManager extends GObject.Object {
-	static $gtype: GObject.GType<StageManager>;
+    static $gtype: GObject.GType<StageManager>;
 
-	constructor(properties?: Partial<StageManager.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<StageManager.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<StageManager.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<StageManager.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get default_stage(): Stage;
-	get defaultStage(): Stage;
+    // Properties
+    get default_stage(): Stage;
+    get defaultStage(): Stage;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'stage-added', callback: (_source: this, stage: Stage) => void): number;
-	connect_after(signal: 'stage-added', callback: (_source: this, stage: Stage) => void): number;
-	emit(signal: 'stage-added', stage: Stage): void;
-	connect(signal: 'stage-removed', callback: (_source: this, stage: Stage) => void): number;
-	connect_after(signal: 'stage-removed', callback: (_source: this, stage: Stage) => void): number;
-	emit(signal: 'stage-removed', stage: Stage): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "stage-added", callback: (_source: this, stage: Stage) => void): number;
+    connect_after(signal: "stage-added", callback: (_source: this, stage: Stage) => void): number;
+    emit(signal: "stage-added", stage: Stage): void;
+    connect(signal: "stage-removed", callback: (_source: this, stage: Stage) => void): number;
+    connect_after(signal: "stage-removed", callback: (_source: this, stage: Stage) => void): number;
+    emit(signal: "stage-removed", stage: Stage): void;
 
-	// Members
+    // Members
 
-	get_default_stage(): Stage;
-	list_stages(): Stage[];
-	peek_stages(): Stage[];
-	vfunc_stage_added(stage: Stage): void;
-	vfunc_stage_removed(stage: Stage): void;
-	static get_default(): StageManager;
+    get_default_stage(): Stage;
+    list_stages(): Stage[];
+    peek_stages(): Stage[];
+    vfunc_stage_added(stage: Stage): void;
+    vfunc_stage_removed(stage: Stage): void;
+    static get_default(): StageManager;
 }
-export namespace StageView {
+export module StageView {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         framebuffer: Cogl.Framebuffer;
@@ -6647,114 +6619,113 @@ export namespace StageView {
     }
 }
 export class StageView extends GObject.Object {
-	static $gtype: GObject.GType<StageView>;
+    static $gtype: GObject.GType<StageView>;
 
-	constructor(properties?: Partial<StageView.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<StageView.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<StageView.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<StageView.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get framebuffer(): Cogl.Framebuffer;
-	set framebuffer(val: Cogl.Framebuffer);
-	get layout(): cairo.RectangleInt;
-	set layout(val: cairo.RectangleInt);
-	get name(): string;
-	get offscreen(): Cogl.Offscreen;
-	get refresh_rate(): number;
-	set refresh_rate(val: number);
-	get refreshRate(): number;
-	set refreshRate(val: number);
-	get scale(): number;
-	set scale(val: number);
-	get stage(): Stage;
-	get use_shadowfb(): boolean;
-	get useShadowfb(): boolean;
-	get vblank_duration_us(): number;
-	get vblankDurationUs(): number;
+    // Properties
+    get framebuffer(): Cogl.Framebuffer;
+    set framebuffer(val: Cogl.Framebuffer);
+    get layout(): cairo.RectangleInt;
+    set layout(val: cairo.RectangleInt);
+    get name(): string;
+    get offscreen(): Cogl.Offscreen;
+    get refresh_rate(): number;
+    set refresh_rate(val: number);
+    get refreshRate(): number;
+    set refreshRate(val: number);
+    get scale(): number;
+    set scale(val: number);
+    get stage(): Stage;
+    get use_shadowfb(): boolean;
+    get useShadowfb(): boolean;
+    get vblank_duration_us(): number;
+    get vblankDurationUs(): number;
 
-	// Members
+    // Members
 
-	assign_next_scanout(scanout: Cogl.Scanout): void;
-	destroy(): void;
-	get_framebuffer(): Cogl.Framebuffer;
-	get_layout(rect: cairo.RectangleInt): void;
-	get_offscreen_transformation_matrix(matrix: Graphene.Matrix): void;
-	get_onscreen(): Cogl.Framebuffer;
-	get_refresh_rate(): number;
-	get_scale(): number;
-	invalidate_offscreen_blit_pipeline(): void;
-	vfunc_get_offscreen_transformation_matrix(matrix: Graphene.Matrix): void;
-	vfunc_setup_offscreen_blit_pipeline(pipeline: Cogl.Pipeline): void;
-	vfunc_transform_rect_to_onscreen(
+    assign_next_scanout(scanout: Cogl.Scanout): void;
+    destroy(): void;
+    get_framebuffer(): Cogl.Framebuffer;
+    get_layout(rect: cairo.RectangleInt): void;
+    get_offscreen_transformation_matrix(matrix: Graphene.Matrix): void;
+    get_onscreen(): Cogl.Framebuffer;
+    get_refresh_rate(): number;
+    get_scale(): number;
+    invalidate_offscreen_blit_pipeline(): void;
+    vfunc_get_offscreen_transformation_matrix(matrix: Graphene.Matrix): void;
+    vfunc_setup_offscreen_blit_pipeline(pipeline: Cogl.Pipeline): void;
+    vfunc_transform_rect_to_onscreen(
         src_rect: cairo.RectangleInt,
         dst_width: number,
         dst_height: number,
         dst_rect: cairo.RectangleInt
     ): void;
 }
-export namespace SwipeAction {
+export module SwipeAction {
     export interface ConstructorProperties extends GestureAction.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class SwipeAction extends GestureAction {
-	static $gtype: GObject.GType<SwipeAction>;
+    static $gtype: GObject.GType<SwipeAction>;
 
-	constructor(properties?: Partial<SwipeAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<SwipeAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<SwipeAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<SwipeAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'swept', callback: (_source: this, actor: Actor, direction: SwipeDirection) => void): number;
-	connect_after(signal: 'swept', callback: (_source: this, actor: Actor, direction: SwipeDirection) => void): number;
-	emit(signal: 'swept', actor: Actor, direction: SwipeDirection): void;
-	connect(signal: 'swipe', callback: (_source: this, actor: Actor, direction: SwipeDirection) => boolean): number;
-	connect_after(
-        signal: 'swipe',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "swept", callback: (_source: this, actor: Actor, direction: SwipeDirection) => void): number;
+    connect_after(signal: "swept", callback: (_source: this, actor: Actor, direction: SwipeDirection) => void): number;
+    emit(signal: "swept", actor: Actor, direction: SwipeDirection): void;
+    connect(signal: "swipe", callback: (_source: this, actor: Actor, direction: SwipeDirection) => boolean): number;
+    connect_after(
+        signal: "swipe",
         callback: (_source: this, actor: Actor, direction: SwipeDirection) => boolean
     ): number;
+    emit(signal: "swipe", actor: Actor, direction: SwipeDirection): void;
 
-	emit(signal: 'swipe', actor: Actor, direction: SwipeDirection): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): SwipeAction;
 
-	static ['new'](): SwipeAction;
+    // Members
 
-	// Members
-
-	vfunc_swept(actor: Actor, direction: SwipeDirection): void;
+    vfunc_swept(actor: Actor, direction: SwipeDirection): void;
 }
-export namespace TapAction {
+export module TapAction {
     export interface ConstructorProperties extends GestureAction.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TapAction extends GestureAction {
-	static $gtype: GObject.GType<TapAction>;
+    static $gtype: GObject.GType<TapAction>;
 
-	constructor(properties?: Partial<TapAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TapAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TapAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TapAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'tap', callback: (_source: this, actor: Actor) => void): number;
-	connect_after(signal: 'tap', callback: (_source: this, actor: Actor) => void): number;
-	emit(signal: 'tap', actor: Actor): void;
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "tap", callback: (_source: this, actor: Actor) => void): number;
+    connect_after(signal: "tap", callback: (_source: this, actor: Actor) => void): number;
+    emit(signal: "tap", actor: Actor): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): TapAction;
+    static ["new"](): TapAction;
 
-	// Members
+    // Members
 
-	vfunc_tap(actor: Actor): boolean;
+    vfunc_tap(actor: Actor): boolean;
 }
-export namespace Text {
+export module Text {
     export interface ConstructorProperties<A extends Actor = Actor> extends Actor.ConstructorProperties {
         [key: string]: any;
         activatable: boolean;
@@ -6812,274 +6783,272 @@ export namespace Text {
     }
 }
 export class Text<A extends Actor = Actor>
-	extends Actor
-	implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
+    extends Actor
+    implements Atk.ImplementorIface, Animatable, Container<A>, Scriptable
 {
-	static $gtype: GObject.GType<Text>;
+    static $gtype: GObject.GType<Text>;
 
-	constructor(properties?: Partial<Text.ConstructorProperties<A>>, ...args: any[]);
-	_init(properties?: Partial<Text.ConstructorProperties<A>>, ...args: any[]): void;
+    constructor(properties?: Partial<Text.ConstructorProperties<A>>, ...args: any[]);
+    _init(properties?: Partial<Text.ConstructorProperties<A>>, ...args: any[]): void;
 
-	// Properties
-	get activatable(): boolean;
-	set activatable(val: boolean);
-	get attributes(): Pango.AttrList;
-	set attributes(val: Pango.AttrList);
-	get buffer(): TextBuffer;
-	set buffer(val: TextBuffer);
-	get color(): Color;
-	set color(val: Color);
-	get cursor_color(): Color;
-	set cursor_color(val: Color);
-	get cursorColor(): Color;
-	set cursorColor(val: Color);
-	get cursor_color_set(): boolean;
-	get cursorColorSet(): boolean;
-	get cursor_position(): number;
-	set cursor_position(val: number);
-	get cursorPosition(): number;
-	set cursorPosition(val: number);
-	get cursor_size(): number;
-	set cursor_size(val: number);
-	get cursorSize(): number;
-	set cursorSize(val: number);
-	get cursor_visible(): boolean;
-	set cursor_visible(val: boolean);
-	get cursorVisible(): boolean;
-	set cursorVisible(val: boolean);
-	get editable(): boolean;
-	set editable(val: boolean);
-	get ellipsize(): Pango.EllipsizeMode;
-	set ellipsize(val: Pango.EllipsizeMode);
-	get font_description(): Pango.FontDescription;
-	set font_description(val: Pango.FontDescription);
-	get fontDescription(): Pango.FontDescription;
-	set fontDescription(val: Pango.FontDescription);
-	get font_name(): string;
-	set font_name(val: string);
-	get fontName(): string;
-	set fontName(val: string);
-	get input_hints(): InputContentHintFlags;
-	set input_hints(val: InputContentHintFlags);
-	get inputHints(): InputContentHintFlags;
-	set inputHints(val: InputContentHintFlags);
-	get input_purpose(): InputContentPurpose;
-	set input_purpose(val: InputContentPurpose);
-	get inputPurpose(): InputContentPurpose;
-	set inputPurpose(val: InputContentPurpose);
-	get justify(): boolean;
-	set justify(val: boolean);
-	get line_alignment(): Pango.Alignment;
-	set line_alignment(val: Pango.Alignment);
-	get lineAlignment(): Pango.Alignment;
-	set lineAlignment(val: Pango.Alignment);
-	get line_wrap(): boolean;
-	set line_wrap(val: boolean);
-	get lineWrap(): boolean;
-	set lineWrap(val: boolean);
-	get line_wrap_mode(): Pango.WrapMode;
-	set line_wrap_mode(val: Pango.WrapMode);
-	get lineWrapMode(): Pango.WrapMode;
-	set lineWrapMode(val: Pango.WrapMode);
-	get max_length(): number;
-	set max_length(val: number);
-	get maxLength(): number;
-	set maxLength(val: number);
-	get password_char(): number;
-	set password_char(val: number);
-	get passwordChar(): number;
-	set passwordChar(val: number);
-	// This accessor conflicts with another accessor's type in a parent class or interface.
-	// @ts-expect-error
-	get position(): number;
-	// This accessor conflicts with another accessor's type in a parent class or interface.
-	// @ts-expect-error
-	set position(val: number);
-	get selectable(): boolean;
-	set selectable(val: boolean);
-	get selected_text_color(): Color;
-	set selected_text_color(val: Color);
-	get selectedTextColor(): Color;
-	set selectedTextColor(val: Color);
-	get selected_text_color_set(): boolean;
-	get selectedTextColorSet(): boolean;
-	get selection_bound(): number;
-	set selection_bound(val: number);
-	get selectionBound(): number;
-	set selectionBound(val: number);
-	get selection_color(): Color;
-	set selection_color(val: Color);
-	get selectionColor(): Color;
-	set selectionColor(val: Color);
-	get selection_color_set(): boolean;
-	get selectionColorSet(): boolean;
-	get single_line_mode(): boolean;
-	set single_line_mode(val: boolean);
-	get singleLineMode(): boolean;
-	set singleLineMode(val: boolean);
-	get text(): string;
-	set text(val: string);
-	get use_markup(): boolean;
-	set use_markup(val: boolean);
-	get useMarkup(): boolean;
-	set useMarkup(val: boolean);
+    // Properties
+    get activatable(): boolean;
+    set activatable(val: boolean);
+    get attributes(): Pango.AttrList;
+    set attributes(val: Pango.AttrList);
+    get buffer(): TextBuffer;
+    set buffer(val: TextBuffer);
+    get color(): Color;
+    set color(val: Color);
+    get cursor_color(): Color;
+    set cursor_color(val: Color);
+    get cursorColor(): Color;
+    set cursorColor(val: Color);
+    get cursor_color_set(): boolean;
+    get cursorColorSet(): boolean;
+    get cursor_position(): number;
+    set cursor_position(val: number);
+    get cursorPosition(): number;
+    set cursorPosition(val: number);
+    get cursor_size(): number;
+    set cursor_size(val: number);
+    get cursorSize(): number;
+    set cursorSize(val: number);
+    get cursor_visible(): boolean;
+    set cursor_visible(val: boolean);
+    get cursorVisible(): boolean;
+    set cursorVisible(val: boolean);
+    get editable(): boolean;
+    set editable(val: boolean);
+    get ellipsize(): Pango.EllipsizeMode;
+    set ellipsize(val: Pango.EllipsizeMode);
+    get font_description(): Pango.FontDescription;
+    set font_description(val: Pango.FontDescription);
+    get fontDescription(): Pango.FontDescription;
+    set fontDescription(val: Pango.FontDescription);
+    get font_name(): string;
+    set font_name(val: string);
+    get fontName(): string;
+    set fontName(val: string);
+    get input_hints(): InputContentHintFlags;
+    set input_hints(val: InputContentHintFlags);
+    get inputHints(): InputContentHintFlags;
+    set inputHints(val: InputContentHintFlags);
+    get input_purpose(): InputContentPurpose;
+    set input_purpose(val: InputContentPurpose);
+    get inputPurpose(): InputContentPurpose;
+    set inputPurpose(val: InputContentPurpose);
+    get justify(): boolean;
+    set justify(val: boolean);
+    get line_alignment(): Pango.Alignment;
+    set line_alignment(val: Pango.Alignment);
+    get lineAlignment(): Pango.Alignment;
+    set lineAlignment(val: Pango.Alignment);
+    get line_wrap(): boolean;
+    set line_wrap(val: boolean);
+    get lineWrap(): boolean;
+    set lineWrap(val: boolean);
+    get line_wrap_mode(): Pango.WrapMode;
+    set line_wrap_mode(val: Pango.WrapMode);
+    get lineWrapMode(): Pango.WrapMode;
+    set lineWrapMode(val: Pango.WrapMode);
+    get max_length(): number;
+    set max_length(val: number);
+    get maxLength(): number;
+    set maxLength(val: number);
+    get password_char(): number;
+    set password_char(val: number);
+    get passwordChar(): number;
+    set passwordChar(val: number);
+    // This accessor conflicts with another accessor's type in a parent class or interface.
+    // @ts-expect-error
+    get position(): number;
+    // This accessor conflicts with another accessor's type in a parent class or interface.
+    // @ts-expect-error
+    set position(val: number);
+    get selectable(): boolean;
+    set selectable(val: boolean);
+    get selected_text_color(): Color;
+    set selected_text_color(val: Color);
+    get selectedTextColor(): Color;
+    set selectedTextColor(val: Color);
+    get selected_text_color_set(): boolean;
+    get selectedTextColorSet(): boolean;
+    get selection_bound(): number;
+    set selection_bound(val: number);
+    get selectionBound(): number;
+    set selectionBound(val: number);
+    get selection_color(): Color;
+    set selection_color(val: Color);
+    get selectionColor(): Color;
+    set selectionColor(val: Color);
+    get selection_color_set(): boolean;
+    get selectionColorSet(): boolean;
+    get single_line_mode(): boolean;
+    set single_line_mode(val: boolean);
+    get singleLineMode(): boolean;
+    set singleLineMode(val: boolean);
+    get text(): string;
+    set text(val: string);
+    get use_markup(): boolean;
+    set use_markup(val: boolean);
+    get useMarkup(): boolean;
+    set useMarkup(val: boolean);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'activate', callback: (_source: this) => void): number;
-	connect_after(signal: 'activate', callback: (_source: this) => void): number;
-	emit(signal: 'activate'): void;
-	connect(signal: 'cursor-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'cursor-changed', callback: (_source: this) => void): number;
-	emit(signal: 'cursor-changed'): void;
-	connect(signal: 'cursor-event', callback: (_source: this, rect: Graphene.Rect) => void): number;
-	connect_after(signal: 'cursor-event', callback: (_source: this, rect: Graphene.Rect) => void): number;
-	emit(signal: 'cursor-event', rect: Graphene.Rect): void;
-	connect(signal: 'delete-text', callback: (_source: this, start_pos: number, end_pos: number) => void): number;
-	connect_after(signal: 'delete-text', callback: (_source: this, start_pos: number, end_pos: number) => void): number;
-	emit(signal: 'delete-text', start_pos: number, end_pos: number): void;
-	connect(
-        signal: 'insert-text',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "activate", callback: (_source: this) => void): number;
+    connect_after(signal: "activate", callback: (_source: this) => void): number;
+    emit(signal: "activate"): void;
+    connect(signal: "cursor-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "cursor-changed", callback: (_source: this) => void): number;
+    emit(signal: "cursor-changed"): void;
+    connect(signal: "cursor-event", callback: (_source: this, rect: Graphene.Rect) => void): number;
+    connect_after(signal: "cursor-event", callback: (_source: this, rect: Graphene.Rect) => void): number;
+    emit(signal: "cursor-event", rect: Graphene.Rect): void;
+    connect(signal: "delete-text", callback: (_source: this, start_pos: number, end_pos: number) => void): number;
+    connect_after(signal: "delete-text", callback: (_source: this, start_pos: number, end_pos: number) => void): number;
+    emit(signal: "delete-text", start_pos: number, end_pos: number): void;
+    connect(
+        signal: "insert-text",
         callback: (_source: this, new_text: string, new_text_length: number, position: any | null) => void
     ): number;
-
-	connect_after(
-        signal: 'insert-text',
+    connect_after(
+        signal: "insert-text",
         callback: (_source: this, new_text: string, new_text_length: number, position: any | null) => void
     ): number;
+    emit(signal: "insert-text", new_text: string, new_text_length: number, position: any | null): void;
+    connect(signal: "text-changed", callback: (_source: this) => void): number;
+    connect_after(signal: "text-changed", callback: (_source: this) => void): number;
+    emit(signal: "text-changed"): void;
 
-	emit(signal: 'insert-text', new_text: string, new_text_length: number, position: any | null): void;
-	connect(signal: 'text-changed', callback: (_source: this) => void): number;
-	connect_after(signal: 'text-changed', callback: (_source: this) => void): number;
-	emit(signal: 'text-changed'): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): Text;
+    static new_full(font_name: string, text: string, color: Color): Text;
+    static new_with_buffer(buffer: TextBuffer): Text;
+    static new_with_text(font_name: string | null, text: string): Text;
 
-	static ['new'](): Text;
-	static new_full(font_name: string, text: string, color: Color): Text;
-	static new_with_buffer(buffer: TextBuffer): Text;
-	static new_with_text(font_name: string | null, text: string): Text;
+    // Members
 
-	// Members
+    activate(): boolean;
+    coords_to_position(x: number, y: number): number;
+    delete_chars(n_chars: number): void;
+    delete_selection(): boolean;
+    delete_text(start_pos: number, end_pos: number): void;
+    get_activatable(): boolean;
+    get_attributes(): Pango.AttrList;
+    get_buffer(): TextBuffer;
+    get_chars(start_pos: number, end_pos: number): string;
+    get_color(): Color;
+    get_cursor_color(): Color;
+    get_cursor_position(): number;
+    get_cursor_rect(): Graphene.Rect;
+    get_cursor_size(): number;
+    get_cursor_visible(): boolean;
+    get_editable(): boolean;
+    get_ellipsize(): Pango.EllipsizeMode;
+    get_font_description(): Pango.FontDescription;
+    get_font_name(): string;
+    get_input_hints(): InputContentHintFlags;
+    get_input_purpose(): InputContentPurpose;
+    get_justify(): boolean;
+    get_layout(): Pango.Layout;
+    get_layout_offsets(): [number, number];
+    get_line_alignment(): Pango.Alignment;
+    get_line_wrap(): boolean;
+    get_line_wrap_mode(): Pango.WrapMode;
+    get_max_length(): number;
+    get_password_char(): number;
+    get_selectable(): boolean;
+    get_selected_text_color(): Color;
+    get_selection(): string;
+    get_selection_bound(): number;
+    get_selection_color(): Color;
+    get_single_line_mode(): boolean;
+    get_text(): string;
+    get_use_markup(): boolean;
+    has_preedit(): boolean;
+    insert_text(text: string, position: number): void;
+    insert_unichar(wc: number): void;
+    position_to_coords(position: number): [boolean, number, number, number];
+    set_activatable(activatable: boolean): void;
+    set_attributes(attrs?: Pango.AttrList | null): void;
+    set_buffer(buffer: TextBuffer): void;
+    set_color(color: Color): void;
+    set_cursor_color(color?: Color | null): void;
+    set_cursor_position(position: number): void;
+    set_cursor_size(size: number): void;
+    set_cursor_visible(cursor_visible: boolean): void;
+    set_editable(editable: boolean): void;
+    set_ellipsize(mode: Pango.EllipsizeMode): void;
+    set_font_description(font_desc: Pango.FontDescription): void;
+    set_font_name(font_name?: string | null): void;
+    set_input_hints(hints: InputContentHintFlags): void;
+    set_input_purpose(purpose: InputContentPurpose): void;
+    set_justify(justify: boolean): void;
+    set_line_alignment(alignment: Pango.Alignment): void;
+    set_line_wrap(line_wrap: boolean): void;
+    set_line_wrap_mode(wrap_mode: Pango.WrapMode): void;
+    set_markup(markup?: string | null): void;
+    set_max_length(max: number): void;
+    set_password_char(wc: number): void;
+    set_preedit_string(preedit_str: string | null, preedit_attrs: Pango.AttrList | null, cursor_pos: number): void;
+    set_selectable(selectable: boolean): void;
+    set_selected_text_color(color?: Color | null): void;
+    set_selection(start_pos: number, end_pos: number): void;
+    set_selection_bound(selection_bound: number): void;
+    set_selection_color(color?: Color | null): void;
+    set_single_line_mode(single_line: boolean): void;
+    set_text(text?: string | null): void;
+    set_use_markup(setting: boolean): void;
+    vfunc_activate(): void;
+    vfunc_cursor_changed(): void;
+    vfunc_cursor_event(rect: Graphene.Rect): void;
+    vfunc_text_changed(): void;
 
-	activate(): boolean;
-	coords_to_position(x: number, y: number): number;
-	delete_chars(n_chars: number): void;
-	delete_selection(): boolean;
-	delete_text(start_pos: number, end_pos: number): void;
-	get_activatable(): boolean;
-	get_attributes(): Pango.AttrList;
-	get_buffer(): TextBuffer;
-	get_chars(start_pos: number, end_pos: number): string;
-	get_color(): Color;
-	get_cursor_color(): Color;
-	get_cursor_position(): number;
-	get_cursor_rect(): Graphene.Rect;
-	get_cursor_size(): number;
-	get_cursor_visible(): boolean;
-	get_editable(): boolean;
-	get_ellipsize(): Pango.EllipsizeMode;
-	get_font_description(): Pango.FontDescription;
-	get_font_name(): string;
-	get_input_hints(): InputContentHintFlags;
-	get_input_purpose(): InputContentPurpose;
-	get_justify(): boolean;
-	get_layout(): Pango.Layout;
-	get_layout_offsets(): [number, number];
-	get_line_alignment(): Pango.Alignment;
-	get_line_wrap(): boolean;
-	get_line_wrap_mode(): Pango.WrapMode;
-	get_max_length(): number;
-	get_password_char(): number;
-	get_selectable(): boolean;
-	get_selected_text_color(): Color;
-	get_selection(): string;
-	get_selection_bound(): number;
-	get_selection_color(): Color;
-	get_single_line_mode(): boolean;
-	get_text(): string;
-	get_use_markup(): boolean;
-	has_preedit(): boolean;
-	insert_text(text: string, position: number): void;
-	insert_unichar(wc: number): void;
-	position_to_coords(position: number): [boolean, number, number, number];
-	set_activatable(activatable: boolean): void;
-	set_attributes(attrs?: Pango.AttrList | null): void;
-	set_buffer(buffer: TextBuffer): void;
-	set_color(color: Color): void;
-	set_cursor_color(color?: Color | null): void;
-	set_cursor_position(position: number): void;
-	set_cursor_size(size: number): void;
-	set_cursor_visible(cursor_visible: boolean): void;
-	set_editable(editable: boolean): void;
-	set_ellipsize(mode: Pango.EllipsizeMode): void;
-	set_font_description(font_desc: Pango.FontDescription): void;
-	set_font_name(font_name?: string | null): void;
-	set_input_hints(hints: InputContentHintFlags): void;
-	set_input_purpose(purpose: InputContentPurpose): void;
-	set_justify(justify: boolean): void;
-	set_line_alignment(alignment: Pango.Alignment): void;
-	set_line_wrap(line_wrap: boolean): void;
-	set_line_wrap_mode(wrap_mode: Pango.WrapMode): void;
-	set_markup(markup?: string | null): void;
-	set_max_length(max: number): void;
-	set_password_char(wc: number): void;
-	set_preedit_string(preedit_str: string | null, preedit_attrs: Pango.AttrList | null, cursor_pos: number): void;
-	set_selectable(selectable: boolean): void;
-	set_selected_text_color(color?: Color | null): void;
-	set_selection(start_pos: number, end_pos: number): void;
-	set_selection_bound(selection_bound: number): void;
-	set_selection_color(color?: Color | null): void;
-	set_single_line_mode(single_line: boolean): void;
-	set_text(text?: string | null): void;
-	set_use_markup(setting: boolean): void;
-	vfunc_activate(): void;
-	vfunc_cursor_changed(): void;
-	vfunc_cursor_event(rect: Graphene.Rect): void;
-	vfunc_text_changed(): void;
+    // Implemented Members
 
-	// Implemented Members
-
-	find_property(property_name: string): GObject.ParamSpec;
-	get_actor(): Actor;
-	get_initial_state(property_name: string, value: GObject.Value | any): void;
-	interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	set_final_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_find_property(property_name: string): GObject.ParamSpec;
-	vfunc_get_actor(): Actor;
-	vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
-	vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
-	vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
-	add_actor(actor: A): void;
-	child_get_property(child: A, property: string, value: GObject.Value | any): void;
-	child_notify(child: A, pspec: GObject.ParamSpec): void;
-	child_set_property(child: A, property: string, value: GObject.Value | any): void;
-	create_child_meta(actor: A): void;
-	destroy_child_meta(actor: A): void;
-	find_child_by_name(child_name: string): A;
-	get_child_meta(actor: A): ChildMeta;
-	remove_actor(actor: A): void;
-	vfunc_actor_added(actor: A): void;
-	vfunc_actor_removed(actor: A): void;
-	vfunc_add(actor: A): void;
-	vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
-	vfunc_create_child_meta(actor: A): void;
-	vfunc_destroy_child_meta(actor: A): void;
-	vfunc_get_child_meta(actor: A): ChildMeta;
-	vfunc_remove(actor: A): void;
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    find_property(property_name: string): GObject.ParamSpec;
+    get_actor(): Actor;
+    get_initial_state(property_name: string, value: GObject.Value | any): void;
+    interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    set_final_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_find_property(property_name: string): GObject.ParamSpec;
+    vfunc_get_actor(): Actor;
+    vfunc_get_initial_state(property_name: string, value: GObject.Value | any): void;
+    vfunc_interpolate_value(property_name: string, interval: Interval, progress: number): [boolean, unknown];
+    vfunc_set_final_state(property_name: string, value: GObject.Value | any): void;
+    add_actor(actor: A): void;
+    child_get_property(child: A, property: string, value: GObject.Value | any): void;
+    child_notify(child: A, pspec: GObject.ParamSpec): void;
+    child_set_property(child: A, property: string, value: GObject.Value | any): void;
+    create_child_meta(actor: A): void;
+    destroy_child_meta(actor: A): void;
+    find_child_by_name(child_name: string): A;
+    get_child_meta(actor: A): ChildMeta;
+    remove_actor(actor: A): void;
+    vfunc_actor_added(actor: A): void;
+    vfunc_actor_removed(actor: A): void;
+    vfunc_add(actor: A): void;
+    vfunc_child_notify(child: A, pspec: GObject.ParamSpec): void;
+    vfunc_create_child_meta(actor: A): void;
+    vfunc_destroy_child_meta(actor: A): void;
+    vfunc_get_child_meta(actor: A): ChildMeta;
+    vfunc_remove(actor: A): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace TextBuffer {
+export module TextBuffer {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         length: number;
@@ -7089,130 +7058,127 @@ export namespace TextBuffer {
     }
 }
 export class TextBuffer extends GObject.Object {
-	static $gtype: GObject.GType<TextBuffer>;
+    static $gtype: GObject.GType<TextBuffer>;
 
-	constructor(properties?: Partial<TextBuffer.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TextBuffer.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TextBuffer.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TextBuffer.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get length(): number;
-	get max_length(): number;
-	set max_length(val: number);
-	get maxLength(): number;
-	set maxLength(val: number);
-	get text(): string;
+    // Properties
+    get length(): number;
+    get max_length(): number;
+    set max_length(val: number);
+    get maxLength(): number;
+    set maxLength(val: number);
+    get text(): string;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'deleted-text', callback: (_source: this, position: number, n_chars: number) => void): number;
-	connect_after(signal: 'deleted-text', callback: (_source: this, position: number, n_chars: number) => void): number;
-	emit(signal: 'deleted-text', position: number, n_chars: number): void;
-	connect(
-        signal: 'inserted-text',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "deleted-text", callback: (_source: this, position: number, n_chars: number) => void): number;
+    connect_after(signal: "deleted-text", callback: (_source: this, position: number, n_chars: number) => void): number;
+    emit(signal: "deleted-text", position: number, n_chars: number): void;
+    connect(
+        signal: "inserted-text",
         callback: (_source: this, position: number, chars: string, n_chars: number) => void
     ): number;
-
-	connect_after(
-        signal: 'inserted-text',
+    connect_after(
+        signal: "inserted-text",
         callback: (_source: this, position: number, chars: string, n_chars: number) => void
     ): number;
+    emit(signal: "inserted-text", position: number, chars: string, n_chars: number): void;
 
-	emit(signal: 'inserted-text', position: number, chars: string, n_chars: number): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): TextBuffer;
+    static new_with_text(text: string | null, text_len: number): TextBuffer;
 
-	static ['new'](): TextBuffer;
-	static new_with_text(text: string | null, text_len: number): TextBuffer;
+    // Members
 
-	// Members
-
-	delete_text(position: number, n_chars: number): number;
-	emit_deleted_text(position: number, n_chars: number): void;
-	emit_inserted_text(position: number, chars: string, n_chars: number): void;
-	get_bytes(): number;
-	get_length(): number;
-	get_max_length(): number;
-	get_text(): string;
-	insert_text(position: number, chars: string, n_chars: number): number;
-	set_max_length(max_length: number): void;
-	set_text(chars: string, n_chars: number): void;
-	vfunc_delete_text(position: number, n_chars: number): number;
-	vfunc_deleted_text(position: number, n_chars: number): void;
-	vfunc_get_length(): number;
-	vfunc_get_text(n_bytes: number): string;
-	vfunc_insert_text(position: number, chars: string, n_chars: number): number;
-	vfunc_inserted_text(position: number, chars: string, n_chars: number): void;
+    delete_text(position: number, n_chars: number): number;
+    emit_deleted_text(position: number, n_chars: number): void;
+    emit_inserted_text(position: number, chars: string, n_chars: number): void;
+    get_bytes(): number;
+    get_length(): number;
+    get_max_length(): number;
+    get_text(): string;
+    insert_text(position: number, chars: string, n_chars: number): number;
+    set_max_length(max_length: number): void;
+    set_text(chars: string, n_chars: number): void;
+    vfunc_delete_text(position: number, n_chars: number): number;
+    vfunc_deleted_text(position: number, n_chars: number): void;
+    vfunc_get_length(): number;
+    vfunc_get_text(n_bytes: number): string;
+    vfunc_insert_text(position: number, chars: string, n_chars: number): number;
+    vfunc_inserted_text(position: number, chars: string, n_chars: number): void;
 }
-export namespace TextNode {
+export module TextNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TextNode extends PaintNode {
-	static $gtype: GObject.GType<TextNode>;
+    static $gtype: GObject.GType<TextNode>;
 
-	constructor(properties?: Partial<TextNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TextNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TextNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TextNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](layout?: Pango.Layout | null, color?: Color | null): TextNode;
+    static ["new"](layout?: Pango.Layout | null, color?: Color | null): TextNode;
 }
-export namespace TextureContent {
+export module TextureContent {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TextureContent extends GObject.Object implements Content {
-	static $gtype: GObject.GType<TextureContent>;
+    static $gtype: GObject.GType<TextureContent>;
 
-	constructor(properties?: Partial<TextureContent.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TextureContent.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TextureContent.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TextureContent.ConstructorProperties>, ...args: any[]): void;
 
-	// Members
+    // Members
 
-	get_texture(): Cogl.Texture;
-	static new_from_texture(texture: Cogl.Texture, clip?: cairo.RectangleInt | null): Content;
+    get_texture(): Cogl.Texture;
+    static new_from_texture(texture: Cogl.Texture, clip?: cairo.RectangleInt | null): Content;
 
-	// Implemented Members
+    // Implemented Members
 
-	get_preferred_size(): [boolean, number | null, number | null];
-	invalidate(): void;
-	invalidate_size(): void;
-	vfunc_attached(actor: Actor): void;
-	vfunc_detached(actor: Actor): void;
-	vfunc_get_preferred_size(): [boolean, number | null, number | null];
-	vfunc_invalidate(): void;
-	vfunc_invalidate_size(): void;
-	vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
+    get_preferred_size(): [boolean, number | null, number | null];
+    invalidate(): void;
+    invalidate_size(): void;
+    vfunc_attached(actor: Actor): void;
+    vfunc_detached(actor: Actor): void;
+    vfunc_get_preferred_size(): [boolean, number | null, number | null];
+    vfunc_invalidate(): void;
+    vfunc_invalidate_size(): void;
+    vfunc_paint_content(actor: Actor, node: PaintNode, paint_context: PaintContext): void;
 }
-export namespace TextureNode {
+export module TextureNode {
     export interface ConstructorProperties extends PipelineNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TextureNode extends PipelineNode {
-	static $gtype: GObject.GType<TextureNode>;
+    static $gtype: GObject.GType<TextureNode>;
 
-	constructor(properties?: Partial<TextureNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TextureNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TextureNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TextureNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](
+    static ["new"](
         texture: Cogl.Texture,
         color: Color | null,
         min_filter: ScalingFilter,
         mag_filter: ScalingFilter
     ): TextureNode;
-
-	// Conflicted with Clutter.PipelineNode.new
-	static ['new'](...args: never[]): any;
+    // Conflicted with Clutter.PipelineNode.new
+    static ["new"](...args: never[]): any;
 }
-export namespace Timeline {
+export module Timeline {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         actor: Actor;
@@ -7230,145 +7196,144 @@ export namespace Timeline {
     }
 }
 export class Timeline extends GObject.Object implements Scriptable {
-	static $gtype: GObject.GType<Timeline>;
+    static $gtype: GObject.GType<Timeline>;
 
-	constructor(properties?: Partial<Timeline.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Timeline.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Timeline.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Timeline.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get actor(): Actor;
-	set actor(val: Actor);
-	get auto_reverse(): boolean;
-	set auto_reverse(val: boolean);
-	get autoReverse(): boolean;
-	set autoReverse(val: boolean);
-	get delay(): number;
-	set delay(val: number);
-	get direction(): TimelineDirection;
-	set direction(val: TimelineDirection);
-	get duration(): number;
-	set duration(val: number);
-	get frame_clock(): FrameClock;
-	set frame_clock(val: FrameClock);
-	get frameClock(): FrameClock;
-	set frameClock(val: FrameClock);
-	get progress_mode(): AnimationMode;
-	set progress_mode(val: AnimationMode);
-	get progressMode(): AnimationMode;
-	set progressMode(val: AnimationMode);
-	get repeat_count(): number;
-	set repeat_count(val: number);
-	get repeatCount(): number;
-	set repeatCount(val: number);
+    // Properties
+    get actor(): Actor;
+    set actor(val: Actor);
+    get auto_reverse(): boolean;
+    set auto_reverse(val: boolean);
+    get autoReverse(): boolean;
+    set autoReverse(val: boolean);
+    get delay(): number;
+    set delay(val: number);
+    get direction(): TimelineDirection;
+    set direction(val: TimelineDirection);
+    get duration(): number;
+    set duration(val: number);
+    get frame_clock(): FrameClock;
+    set frame_clock(val: FrameClock);
+    get frameClock(): FrameClock;
+    set frameClock(val: FrameClock);
+    get progress_mode(): AnimationMode;
+    set progress_mode(val: AnimationMode);
+    get progressMode(): AnimationMode;
+    set progressMode(val: AnimationMode);
+    get repeat_count(): number;
+    set repeat_count(val: number);
+    get repeatCount(): number;
+    set repeatCount(val: number);
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(signal: 'completed', callback: (_source: this) => void): number;
-	connect_after(signal: 'completed', callback: (_source: this) => void): number;
-	emit(signal: 'completed'): void;
-	connect(signal: 'marker-reached', callback: (_source: this, marker_name: string, msecs: number) => void): number;
-	connect_after(
-        signal: 'marker-reached',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(signal: "completed", callback: (_source: this) => void): number;
+    connect_after(signal: "completed", callback: (_source: this) => void): number;
+    emit(signal: "completed"): void;
+    connect(signal: "marker-reached", callback: (_source: this, marker_name: string, msecs: number) => void): number;
+    connect_after(
+        signal: "marker-reached",
         callback: (_source: this, marker_name: string, msecs: number) => void
     ): number;
+    emit(signal: "marker-reached", marker_name: string, msecs: number): void;
+    connect(signal: "new-frame", callback: (_source: this, msecs: number) => void): number;
+    connect_after(signal: "new-frame", callback: (_source: this, msecs: number) => void): number;
+    emit(signal: "new-frame", msecs: number): void;
+    connect(signal: "paused", callback: (_source: this) => void): number;
+    connect_after(signal: "paused", callback: (_source: this) => void): number;
+    emit(signal: "paused"): void;
+    connect(signal: "started", callback: (_source: this) => void): number;
+    connect_after(signal: "started", callback: (_source: this) => void): number;
+    emit(signal: "started"): void;
+    connect(signal: "stopped", callback: (_source: this, is_finished: boolean) => void): number;
+    connect_after(signal: "stopped", callback: (_source: this, is_finished: boolean) => void): number;
+    emit(signal: "stopped", is_finished: boolean): void;
 
-	emit(signal: 'marker-reached', marker_name: string, msecs: number): void;
-	connect(signal: 'new-frame', callback: (_source: this, msecs: number) => void): number;
-	connect_after(signal: 'new-frame', callback: (_source: this, msecs: number) => void): number;
-	emit(signal: 'new-frame', msecs: number): void;
-	connect(signal: 'paused', callback: (_source: this) => void): number;
-	connect_after(signal: 'paused', callback: (_source: this) => void): number;
-	emit(signal: 'paused'): void;
-	connect(signal: 'started', callback: (_source: this) => void): number;
-	connect_after(signal: 'started', callback: (_source: this) => void): number;
-	emit(signal: 'started'): void;
-	connect(signal: 'stopped', callback: (_source: this, is_finished: boolean) => void): number;
-	connect_after(signal: 'stopped', callback: (_source: this, is_finished: boolean) => void): number;
-	emit(signal: 'stopped', is_finished: boolean): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](duration_ms: number): Timeline;
+    static new_for_actor(actor: Actor, duration_ms: number): Timeline;
+    static new_for_frame_clock(frame_clock: FrameClock, duration_ms: number): Timeline;
 
-	static ['new'](duration_ms: number): Timeline;
-	static new_for_actor(actor: Actor, duration_ms: number): Timeline;
-	static new_for_frame_clock(frame_clock: FrameClock, duration_ms: number): Timeline;
+    // Members
 
-	// Members
+    add_marker(marker_name: string, progress: number): void;
+    add_marker_at_time(marker_name: string, msecs: number): void;
+    advance(msecs: number): void;
+    advance_to_marker(marker_name: string): void;
+    get_actor(): Actor;
+    get_auto_reverse(): boolean;
+    get_cubic_bezier_progress(): [boolean, Graphene.Point, Graphene.Point];
+    get_current_repeat(): number;
+    get_delay(): number;
+    get_delta(): number;
+    get_direction(): TimelineDirection;
+    get_duration(): number;
+    get_duration_hint(): number;
+    get_elapsed_time(): number;
+    get_progress(): number;
+    get_progress_mode(): AnimationMode;
+    get_repeat_count(): number;
+    get_step_progress(): [boolean, number, StepMode];
+    has_marker(marker_name: string): boolean;
+    is_playing(): boolean;
+    list_markers(msecs: number): string[];
+    pause(): void;
+    remove_marker(marker_name: string): void;
+    rewind(): void;
+    set_actor(actor?: Actor | null): void;
+    set_auto_reverse(reverse: boolean): void;
+    set_cubic_bezier_progress(c_1: Graphene.Point, c_2: Graphene.Point): void;
+    set_delay(msecs: number): void;
+    set_direction(direction: TimelineDirection): void;
+    set_duration(msecs: number): void;
+    set_frame_clock(frame_clock: FrameClock): void;
+    set_progress_func(func?: TimelineProgressFunc | null): void;
+    set_progress_mode(mode: AnimationMode): void;
+    set_repeat_count(count: number): void;
+    set_step_progress(n_steps: number, step_mode: StepMode): void;
+    skip(msecs: number): void;
+    start(): void;
+    stop(): void;
+    vfunc_completed(): void;
+    vfunc_marker_reached(marker_name: string, msecs: number): void;
+    vfunc_new_frame(msecs: number): void;
+    vfunc_paused(): void;
+    vfunc_started(): void;
+    vfunc_stopped(is_finished: boolean): void;
 
-	add_marker(marker_name: string, progress: number): void;
-	add_marker_at_time(marker_name: string, msecs: number): void;
-	advance(msecs: number): void;
-	advance_to_marker(marker_name: string): void;
-	get_actor(): Actor;
-	get_auto_reverse(): boolean;
-	get_cubic_bezier_progress(): [boolean, Graphene.Point, Graphene.Point];
-	get_current_repeat(): number;
-	get_delay(): number;
-	get_delta(): number;
-	get_direction(): TimelineDirection;
-	get_duration(): number;
-	get_duration_hint(): number;
-	get_elapsed_time(): number;
-	get_progress(): number;
-	get_progress_mode(): AnimationMode;
-	get_repeat_count(): number;
-	get_step_progress(): [boolean, number, StepMode];
-	has_marker(marker_name: string): boolean;
-	is_playing(): boolean;
-	list_markers(msecs: number): string[];
-	pause(): void;
-	remove_marker(marker_name: string): void;
-	rewind(): void;
-	set_actor(actor?: Actor | null): void;
-	set_auto_reverse(reverse: boolean): void;
-	set_cubic_bezier_progress(c_1: Graphene.Point, c_2: Graphene.Point): void;
-	set_delay(msecs: number): void;
-	set_direction(direction: TimelineDirection): void;
-	set_duration(msecs: number): void;
-	set_frame_clock(frame_clock: FrameClock): void;
-	set_progress_func(func?: TimelineProgressFunc | null): void;
-	set_progress_mode(mode: AnimationMode): void;
-	set_repeat_count(count: number): void;
-	set_step_progress(n_steps: number, step_mode: StepMode): void;
-	skip(msecs: number): void;
-	start(): void;
-	stop(): void;
-	vfunc_completed(): void;
-	vfunc_marker_reached(marker_name: string, msecs: number): void;
-	vfunc_new_frame(msecs: number): void;
-	vfunc_paused(): void;
-	vfunc_started(): void;
-	vfunc_stopped(is_finished: boolean): void;
+    // Implemented Members
 
-	// Implemented Members
-
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace TransformNode {
+export module TransformNode {
     export interface ConstructorProperties extends PaintNode.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TransformNode extends PaintNode {
-	static $gtype: GObject.GType<TransformNode>;
+    static $gtype: GObject.GType<TransformNode>;
 
-	constructor(properties?: Partial<TransformNode.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TransformNode.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TransformNode.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TransformNode.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](projection: Graphene.Matrix): TransformNode;
+    static ["new"](projection: Graphene.Matrix): TransformNode;
 }
-export namespace Transition {
+export module Transition {
     export interface ConstructorProperties extends Timeline.ConstructorProperties {
         [key: string]: any;
         animatable: Animatable;
@@ -7378,68 +7343,68 @@ export namespace Transition {
     }
 }
 export abstract class Transition extends Timeline implements Scriptable {
-	static $gtype: GObject.GType<Transition>;
+    static $gtype: GObject.GType<Transition>;
 
-	constructor(properties?: Partial<Transition.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<Transition.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<Transition.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<Transition.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get animatable(): Animatable;
-	set animatable(val: Animatable);
-	get interval(): Interval;
-	set interval(val: Interval);
-	get remove_on_complete(): boolean;
-	set remove_on_complete(val: boolean);
-	get removeOnComplete(): boolean;
-	set removeOnComplete(val: boolean);
+    // Properties
+    get animatable(): Animatable;
+    set animatable(val: Animatable);
+    get interval(): Interval;
+    set interval(val: Interval);
+    get remove_on_complete(): boolean;
+    set remove_on_complete(val: boolean);
+    get removeOnComplete(): boolean;
+    set removeOnComplete(val: boolean);
 
-	// Members
+    // Members
 
-	get_animatable(): Animatable;
-	get_interval(): Interval;
-	get_remove_on_complete(): boolean;
-	set_animatable(animatable?: Animatable | null): void;
-	set_from(value: GObject.Value | any): void;
-	set_interval(interval?: Interval | null): void;
-	set_remove_on_complete(remove_complete: boolean): void;
-	set_to(value: GObject.Value | any): void;
-	vfunc_attached(animatable: Animatable): void;
-	vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void;
-	vfunc_detached(animatable: Animatable): void;
+    get_animatable(): Animatable;
+    get_interval(): Interval;
+    get_remove_on_complete(): boolean;
+    set_animatable(animatable?: Animatable | null): void;
+    set_from(value: GObject.Value | any): void;
+    set_interval(interval?: Interval | null): void;
+    set_remove_on_complete(remove_complete: boolean): void;
+    set_to(value: GObject.Value | any): void;
+    vfunc_attached(animatable: Animatable): void;
+    vfunc_compute_value(animatable: Animatable, interval: Interval, progress: number): void;
+    vfunc_detached(animatable: Animatable): void;
 
-	// Implemented Members
+    // Implemented Members
 
-	get_id(): string;
-	parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	set_id(id_: string): void;
-	vfunc_get_id(): string;
-	vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
-	vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
-	vfunc_set_id(id_: string): void;
+    get_id(): string;
+    parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    set_id(id_: string): void;
+    vfunc_get_id(): string;
+    vfunc_parse_custom_node(script: Script, value: GObject.Value | any, name: string, node: Json.Node): boolean;
+    vfunc_set_custom_property(script: Script, name: string, value: GObject.Value | any): void;
+    vfunc_set_id(id_: string): void;
 }
-export namespace TransitionGroup {
+export module TransitionGroup {
     export interface ConstructorProperties extends Transition.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class TransitionGroup extends Transition implements Scriptable {
-	static $gtype: GObject.GType<TransitionGroup>;
+    static $gtype: GObject.GType<TransitionGroup>;
 
-	constructor(properties?: Partial<TransitionGroup.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<TransitionGroup.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<TransitionGroup.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<TransitionGroup.ConstructorProperties>, ...args: any[]): void;
 
-	// Constructors
+    // Constructors
 
-	static ['new'](): TransitionGroup;
+    static ["new"](): TransitionGroup;
 
-	// Members
+    // Members
 
-	add_transition(transition: Transition): void;
-	remove_all(): void;
-	remove_transition(transition: Transition): void;
+    add_transition(transition: Transition): void;
+    remove_all(): void;
+    remove_transition(transition: Transition): void;
 }
-export namespace VirtualInputDevice {
+export module VirtualInputDevice {
     export interface ConstructorProperties extends GObject.Object.ConstructorProperties {
         [key: string]: any;
         device_type: InputDeviceType;
@@ -7448,98 +7413,94 @@ export namespace VirtualInputDevice {
     }
 }
 export class VirtualInputDevice extends GObject.Object {
-	static $gtype: GObject.GType<VirtualInputDevice>;
+    static $gtype: GObject.GType<VirtualInputDevice>;
 
-	constructor(properties?: Partial<VirtualInputDevice.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<VirtualInputDevice.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<VirtualInputDevice.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<VirtualInputDevice.ConstructorProperties>, ...args: any[]): void;
 
-	// Properties
-	get device_type(): InputDeviceType;
-	get deviceType(): InputDeviceType;
-	get seat(): Seat;
+    // Properties
+    get device_type(): InputDeviceType;
+    get deviceType(): InputDeviceType;
+    get seat(): Seat;
 
-	// Members
+    // Members
 
-	get_device_type(): number;
-	get_seat(): Seat;
-	notify_absolute_motion(time_us: number, x: number, y: number): void;
-	notify_button(time_us: number, button: number, button_state: ButtonState): void;
-	notify_discrete_scroll(time_us: number, direction: ScrollDirection, scroll_source: ScrollSource): void;
-	notify_key(time_us: number, key: number, key_state: KeyState): void;
-	notify_keyval(time_us: number, keyval: number, key_state: KeyState): void;
-	notify_relative_motion(time_us: number, dx: number, dy: number): void;
-	notify_scroll_continuous(
+    get_device_type(): number;
+    get_seat(): Seat;
+    notify_absolute_motion(time_us: number, x: number, y: number): void;
+    notify_button(time_us: number, button: number, button_state: ButtonState): void;
+    notify_discrete_scroll(time_us: number, direction: ScrollDirection, scroll_source: ScrollSource): void;
+    notify_key(time_us: number, key: number, key_state: KeyState): void;
+    notify_keyval(time_us: number, keyval: number, key_state: KeyState): void;
+    notify_relative_motion(time_us: number, dx: number, dy: number): void;
+    notify_scroll_continuous(
         time_us: number,
         dx: number,
         dy: number,
         scroll_source: ScrollSource,
         finish_flags: ScrollFinishFlags
     ): void;
-
-	notify_touch_down(time_us: number, slot: number, x: number, y: number): void;
-	notify_touch_motion(time_us: number, slot: number, x: number, y: number): void;
-	notify_touch_up(time_us: number, slot: number): void;
-	vfunc_notify_absolute_motion(time_us: number, x: number, y: number): void;
-	vfunc_notify_button(time_us: number, button: number, button_state: ButtonState): void;
-	vfunc_notify_discrete_scroll(time_us: number, direction: ScrollDirection, scroll_source: ScrollSource): void;
-	vfunc_notify_key(time_us: number, key: number, key_state: KeyState): void;
-	vfunc_notify_keyval(time_us: number, keyval: number, key_state: KeyState): void;
-	vfunc_notify_relative_motion(time_us: number, dx: number, dy: number): void;
-	vfunc_notify_scroll_continuous(
+    notify_touch_down(time_us: number, slot: number, x: number, y: number): void;
+    notify_touch_motion(time_us: number, slot: number, x: number, y: number): void;
+    notify_touch_up(time_us: number, slot: number): void;
+    vfunc_notify_absolute_motion(time_us: number, x: number, y: number): void;
+    vfunc_notify_button(time_us: number, button: number, button_state: ButtonState): void;
+    vfunc_notify_discrete_scroll(time_us: number, direction: ScrollDirection, scroll_source: ScrollSource): void;
+    vfunc_notify_key(time_us: number, key: number, key_state: KeyState): void;
+    vfunc_notify_keyval(time_us: number, keyval: number, key_state: KeyState): void;
+    vfunc_notify_relative_motion(time_us: number, dx: number, dy: number): void;
+    vfunc_notify_scroll_continuous(
         time_us: number,
         dx: number,
         dy: number,
         scroll_source: ScrollSource,
         finish_flags: ScrollFinishFlags
     ): void;
-
-	vfunc_notify_touch_down(time_us: number, slot: number, x: number, y: number): void;
-	vfunc_notify_touch_motion(time_us: number, slot: number, x: number, y: number): void;
-	vfunc_notify_touch_up(time_us: number, slot: number): void;
+    vfunc_notify_touch_down(time_us: number, slot: number, x: number, y: number): void;
+    vfunc_notify_touch_motion(time_us: number, slot: number, x: number, y: number): void;
+    vfunc_notify_touch_up(time_us: number, slot: number): void;
 }
-export namespace ZoomAction {
+export module ZoomAction {
     export interface ConstructorProperties extends GestureAction.ConstructorProperties {
         [key: string]: any;
     }
 }
 export class ZoomAction extends GestureAction {
-	static $gtype: GObject.GType<ZoomAction>;
+    static $gtype: GObject.GType<ZoomAction>;
 
-	constructor(properties?: Partial<ZoomAction.ConstructorProperties>, ...args: any[]);
-	_init(properties?: Partial<ZoomAction.ConstructorProperties>, ...args: any[]): void;
+    constructor(properties?: Partial<ZoomAction.ConstructorProperties>, ...args: any[]);
+    _init(properties?: Partial<ZoomAction.ConstructorProperties>, ...args: any[]): void;
 
-	// Signals
+    // Signals
 
-	connect(id: string, callback: (...args: any[]) => any): number;
-	connect_after(id: string, callback: (...args: any[]) => any): number;
-	emit(id: string, ...args: any[]): void;
-	connect(
-        signal: 'zoom',
+    connect(id: string, callback: (...args: any[]) => any): number;
+    connect_after(id: string, callback: (...args: any[]) => any): number;
+    emit(id: string, ...args: any[]): void;
+    connect(
+        signal: "zoom",
         callback: (_source: this, actor: Actor, focal_point: Graphene.Point, factor: number) => boolean
     ): number;
-
-	connect_after(
-        signal: 'zoom',
+    connect_after(
+        signal: "zoom",
         callback: (_source: this, actor: Actor, focal_point: Graphene.Point, factor: number) => boolean
     ): number;
+    emit(signal: "zoom", actor: Actor, focal_point: Graphene.Point, factor: number): void;
 
-	emit(signal: 'zoom', actor: Actor, focal_point: Graphene.Point, factor: number): void;
+    // Constructors
 
-	// Constructors
+    static ["new"](): ZoomAction;
 
-	static ['new'](): ZoomAction;
+    // Members
 
-	// Members
-
-	get_focal_point(): Graphene.Point;
-	get_transformed_focal_point(): Graphene.Point;
+    get_focal_point(): Graphene.Point;
+    get_transformed_focal_point(): Graphene.Point;
 }
 
 export class ActorBox {
-	static $gtype: GObject.GType<ActorBox>;
+    static $gtype: GObject.GType<ActorBox>;
 
-	constructor(x_1: number, y_1: number, x_2: number, y_2: number);
-	constructor(
+    constructor(x_1: number, y_1: number, x_2: number, y_2: number);
+    constructor(
         properties?: Partial<{
             x1?: number;
             y1?: number;
@@ -7547,47 +7508,46 @@ export class ActorBox {
             y2?: number;
         }>
     );
+    constructor(copy: ActorBox);
 
-	constructor(copy: ActorBox);
+    // Fields
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
 
-	// Fields
-	x1: number;
-	y1: number;
-	x2: number;
-	y2: number;
+    // Constructors
+    static ["new"](x_1: number, y_1: number, x_2: number, y_2: number): ActorBox;
 
-	// Constructors
-	static ['new'](x_1: number, y_1: number, x_2: number, y_2: number): ActorBox;
-
-	// Members
-	clamp_to_pixel(): void;
-	contains(x: number, y: number): boolean;
-	copy(): ActorBox;
-	equal(box_b: ActorBox): boolean;
-	free(): void;
-	from_vertices(verts: Graphene.Point3D[]): void;
-	get_area(): number;
-	get_height(): number;
-	get_origin(): [number | null, number | null];
-	get_size(): [number | null, number | null];
-	get_width(): number;
-	get_x(): number;
-	get_y(): number;
-	init(x_1: number, y_1: number, x_2: number, y_2: number): ActorBox;
-	init_rect(x: number, y: number, width: number, height: number): void;
-	interpolate(_final: ActorBox, progress: number): ActorBox;
-	is_initialized(): boolean;
-	scale(scale: number): void;
-	set_origin(x: number, y: number): void;
-	set_size(width: number, height: number): void;
-	union(b: ActorBox): ActorBox;
-	static alloc(): ActorBox;
+    // Members
+    clamp_to_pixel(): void;
+    contains(x: number, y: number): boolean;
+    copy(): ActorBox;
+    equal(box_b: ActorBox): boolean;
+    free(): void;
+    from_vertices(verts: Graphene.Point3D[]): void;
+    get_area(): number;
+    get_height(): number;
+    get_origin(): [number | null, number | null];
+    get_size(): [number | null, number | null];
+    get_width(): number;
+    get_x(): number;
+    get_y(): number;
+    init(x_1: number, y_1: number, x_2: number, y_2: number): ActorBox;
+    init_rect(x: number, y: number, width: number, height: number): void;
+    interpolate(_final: ActorBox, progress: number): ActorBox;
+    is_initialized(): boolean;
+    scale(scale: number): void;
+    set_origin(x: number, y: number): void;
+    set_size(width: number, height: number): void;
+    union(b: ActorBox): ActorBox;
+    static alloc(): ActorBox;
 }
 
 export class ActorIter {
-	static $gtype: GObject.GType<ActorIter>;
+    static $gtype: GObject.GType<ActorIter>;
 
-	constructor(
+    constructor(
         properties?: Partial<{
             dummy1?: any;
             dummy2?: any;
@@ -7596,106 +7556,105 @@ export class ActorIter {
             dummy5?: any;
         }>
     );
+    constructor(copy: ActorIter);
 
-	constructor(copy: ActorIter);
+    // Fields
+    dummy1: any;
+    dummy2: any;
+    dummy3: any;
+    dummy4: number;
+    dummy5: any;
 
-	// Fields
-	dummy1: any;
-	dummy2: any;
-	dummy3: any;
-	dummy4: number;
-	dummy5: any;
-
-	// Members
-	destroy(): void;
-	init(root: Actor): void;
-	is_valid(): boolean;
-	next(): [boolean, Actor | null];
-	prev(): [boolean, Actor | null];
-	remove(): void;
+    // Members
+    destroy(): void;
+    init(root: Actor): void;
+    is_valid(): boolean;
+    next(): [boolean, Actor | null];
+    prev(): [boolean, Actor | null];
+    remove(): void;
 }
 
 export class ActorMetaPrivate {
-	static $gtype: GObject.GType<ActorMetaPrivate>;
+    static $gtype: GObject.GType<ActorMetaPrivate>;
 
-	constructor(copy: ActorMetaPrivate);
+    constructor(copy: ActorMetaPrivate);
 }
 
 export class ActorPrivate {
-	static $gtype: GObject.GType<ActorPrivate>;
+    static $gtype: GObject.GType<ActorPrivate>;
 
-	constructor(copy: ActorPrivate);
+    constructor(copy: ActorPrivate);
 }
 
 export class AnyEvent {
-	static $gtype: GObject.GType<AnyEvent>;
+    static $gtype: GObject.GType<AnyEvent>;
 
-	constructor(copy: AnyEvent);
+    constructor(copy: AnyEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
 }
 
 export class BinLayoutPrivate {
-	static $gtype: GObject.GType<BinLayoutPrivate>;
+    static $gtype: GObject.GType<BinLayoutPrivate>;
 
-	constructor(copy: BinLayoutPrivate);
+    constructor(copy: BinLayoutPrivate);
 }
 
 export class BoxLayoutPrivate {
-	static $gtype: GObject.GType<BoxLayoutPrivate>;
+    static $gtype: GObject.GType<BoxLayoutPrivate>;
 
-	constructor(copy: BoxLayoutPrivate);
+    constructor(copy: BoxLayoutPrivate);
 }
 
 export class ButtonEvent {
-	static $gtype: GObject.GType<ButtonEvent>;
+    static $gtype: GObject.GType<ButtonEvent>;
 
-	constructor(copy: ButtonEvent);
+    constructor(copy: ButtonEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	x: number;
-	y: number;
-	modifier_state: ModifierType;
-	button: number;
-	axes: number;
-	evdev_code: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    x: number;
+    y: number;
+    modifier_state: ModifierType;
+    button: number;
+    axes: number;
+    evdev_code: number;
 }
 
 export class CanvasPrivate {
-	static $gtype: GObject.GType<CanvasPrivate>;
+    static $gtype: GObject.GType<CanvasPrivate>;
 
-	constructor(copy: CanvasPrivate);
+    constructor(copy: CanvasPrivate);
 }
 
 export class Capture {
-	static $gtype: GObject.GType<Capture>;
+    static $gtype: GObject.GType<Capture>;
 
-	constructor(copy: Capture);
+    constructor(copy: Capture);
 }
 
 export class ClickActionPrivate {
-	static $gtype: GObject.GType<ClickActionPrivate>;
+    static $gtype: GObject.GType<ClickActionPrivate>;
 
-	constructor(copy: ClickActionPrivate);
+    constructor(copy: ClickActionPrivate);
 }
 
 export class ClonePrivate {
-	static $gtype: GObject.GType<ClonePrivate>;
+    static $gtype: GObject.GType<ClonePrivate>;
 
-	constructor(copy: ClonePrivate);
+    constructor(copy: ClonePrivate);
 }
 
 export class Color {
-	static $gtype: GObject.GType<Color>;
+    static $gtype: GObject.GType<Color>;
 
-	constructor();
-	constructor(
+    constructor();
+    constructor(
         properties?: Partial<{
             red?: number;
             green?: number;
@@ -7703,204 +7662,202 @@ export class Color {
             alpha?: number;
         }>
     );
+    constructor(copy: Color);
 
-	constructor(copy: Color);
+    // Fields
+    red: number;
+    green: number;
+    blue: number;
+    alpha: number;
 
-	// Fields
-	red: number;
-	green: number;
-	blue: number;
-	alpha: number;
+    // Constructors
+    static alloc(): Color;
+    static ["new"](red: number, green: number, blue: number, alpha: number): Color;
 
-	// Constructors
-	static alloc(): Color;
-	static ['new'](red: number, green: number, blue: number, alpha: number): Color;
-
-	// Members
-	add(b: Color): Color;
-	copy(): Color;
-	darken(): Color;
-	equal(v2: Color): boolean;
-	free(): void;
-	hash(): number;
-	init(red: number, green: number, blue: number, alpha: number): Color;
-	interpolate(_final: Color, progress: number): Color;
-	lighten(): Color;
-	shade(factor: number): Color;
-	subtract(b: Color): Color;
-	to_hls(): [number, number, number];
-	to_pixel(): number;
-	to_string(): string;
-	static from_hls(hue: number, luminance: number, saturation: number): Color;
-	static from_pixel(pixel: number): Color;
-	static from_string(str: string): [boolean, Color];
-	static get_static(color: StaticColor): Color;
+    // Members
+    add(b: Color): Color;
+    copy(): Color;
+    darken(): Color;
+    equal(v2: Color): boolean;
+    free(): void;
+    hash(): number;
+    init(red: number, green: number, blue: number, alpha: number): Color;
+    interpolate(_final: Color, progress: number): Color;
+    lighten(): Color;
+    shade(factor: number): Color;
+    subtract(b: Color): Color;
+    to_hls(): [number, number, number];
+    to_pixel(): number;
+    to_string(): string;
+    static from_hls(hue: number, luminance: number, saturation: number): Color;
+    static from_pixel(pixel: number): Color;
+    static from_string(str: string): [boolean, Color];
+    static get_static(color: StaticColor): Color;
 }
 
 export class Context {
-	static $gtype: GObject.GType<Context>;
+    static $gtype: GObject.GType<Context>;
 
-	constructor(copy: Context);
+    constructor(copy: Context);
 
-	// Members
-	get_backend(): Backend;
+    // Members
+    get_backend(): Backend;
 }
 
 export class CrossingEvent {
-	static $gtype: GObject.GType<CrossingEvent>;
+    static $gtype: GObject.GType<CrossingEvent>;
 
-	constructor(copy: CrossingEvent);
+    constructor(copy: CrossingEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	x: number;
-	y: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    x: number;
+    y: number;
 }
 
 export class DeformEffectPrivate {
-	static $gtype: GObject.GType<DeformEffectPrivate>;
+    static $gtype: GObject.GType<DeformEffectPrivate>;
 
-	constructor(copy: DeformEffectPrivate);
+    constructor(copy: DeformEffectPrivate);
 }
 
 export class DeviceEvent {
-	static $gtype: GObject.GType<DeviceEvent>;
+    static $gtype: GObject.GType<DeviceEvent>;
 
-	constructor(copy: DeviceEvent);
+    constructor(copy: DeviceEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
 }
 
 export class EventSequence {
-	static $gtype: GObject.GType<EventSequence>;
+    static $gtype: GObject.GType<EventSequence>;
 
-	constructor(copy: EventSequence);
+    constructor(copy: EventSequence);
 
-	// Members
-	get_slot(): number;
+    // Members
+    get_slot(): number;
 }
 
 export class FlowLayoutPrivate {
-	static $gtype: GObject.GType<FlowLayoutPrivate>;
+    static $gtype: GObject.GType<FlowLayoutPrivate>;
 
-	constructor(copy: FlowLayoutPrivate);
+    constructor(copy: FlowLayoutPrivate);
 }
 
 export class Frame {
-	static $gtype: GObject.GType<Frame>;
+    static $gtype: GObject.GType<Frame>;
 
-	constructor(copy: Frame);
+    constructor(copy: Frame);
 
-	// Members
-	has_result(): boolean;
-	set_result(result: FrameResult): void;
+    // Members
+    has_result(): boolean;
+    set_result(result: FrameResult): void;
 }
 
 export class GestureActionPrivate {
-	static $gtype: GObject.GType<GestureActionPrivate>;
+    static $gtype: GObject.GType<GestureActionPrivate>;
 
-	constructor(copy: GestureActionPrivate);
+    constructor(copy: GestureActionPrivate);
 }
 
 export class Grab {
-	static $gtype: GObject.GType<Grab>;
+    static $gtype: GObject.GType<Grab>;
 
-	constructor(copy: Grab);
+    constructor(copy: Grab);
 
-	// Members
-	dismiss(): void;
-	get_seat_state(): GrabState;
-	ref(): Grab;
-	unref(): void;
+    // Members
+    dismiss(): void;
+    get_seat_state(): GrabState;
+    ref(): Grab;
+    unref(): void;
 }
 
 export class GridLayoutPrivate {
-	static $gtype: GObject.GType<GridLayoutPrivate>;
+    static $gtype: GObject.GType<GridLayoutPrivate>;
 
-	constructor(copy: GridLayoutPrivate);
+    constructor(copy: GridLayoutPrivate);
 }
 
 export class IMEvent {
-	static $gtype: GObject.GType<IMEvent>;
+    static $gtype: GObject.GType<IMEvent>;
 
-	constructor(copy: IMEvent);
+    constructor(copy: IMEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	text: string;
-	offset: number;
-	len: number;
-	mode: PreeditResetMode;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    text: string;
+    offset: number;
+    len: number;
+    mode: PreeditResetMode;
 }
 
 export class ImagePrivate {
-	static $gtype: GObject.GType<ImagePrivate>;
+    static $gtype: GObject.GType<ImagePrivate>;
 
-	constructor(copy: ImagePrivate);
+    constructor(copy: ImagePrivate);
 }
 
 export class IntervalPrivate {
-	static $gtype: GObject.GType<IntervalPrivate>;
+    static $gtype: GObject.GType<IntervalPrivate>;
 
-	constructor(copy: IntervalPrivate);
+    constructor(copy: IntervalPrivate);
 }
 
 export class KeyEvent {
-	static $gtype: GObject.GType<KeyEvent>;
+    static $gtype: GObject.GType<KeyEvent>;
 
-	constructor(copy: KeyEvent);
+    constructor(copy: KeyEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	modifier_state: ModifierType;
-	keyval: number;
-	hardware_keycode: number;
-	unicode_value: number;
-	evdev_code: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    modifier_state: ModifierType;
+    keyval: number;
+    hardware_keycode: number;
+    unicode_value: number;
+    evdev_code: number;
 }
 
 export class KeyframeTransitionPrivate {
-	static $gtype: GObject.GType<KeyframeTransitionPrivate>;
+    static $gtype: GObject.GType<KeyframeTransitionPrivate>;
 
-	constructor(copy: KeyframeTransitionPrivate);
+    constructor(copy: KeyframeTransitionPrivate);
 }
 
 export class Knot {
-	static $gtype: GObject.GType<Knot>;
+    static $gtype: GObject.GType<Knot>;
 
-	constructor(
+    constructor(
         properties?: Partial<{
             x?: number;
             y?: number;
         }>
     );
+    constructor(copy: Knot);
 
-	constructor(copy: Knot);
+    // Fields
+    x: number;
+    y: number;
 
-	// Fields
-	x: number;
-	y: number;
-
-	// Members
-	copy(): Knot;
-	equal(knot_b: Knot): boolean;
-	free(): void;
+    // Members
+    copy(): Knot;
+    equal(knot_b: Knot): boolean;
+    free(): void;
 }
 
 export class Margin {
-	static $gtype: GObject.GType<Margin>;
+    static $gtype: GObject.GType<Margin>;
 
-	constructor();
-	constructor(
+    constructor();
+    constructor(
         properties?: Partial<{
             left?: number;
             right?: number;
@@ -7908,167 +7865,166 @@ export class Margin {
             bottom?: number;
         }>
     );
+    constructor(copy: Margin);
 
-	constructor(copy: Margin);
+    // Fields
+    left: number;
+    right: number;
+    top: number;
+    bottom: number;
 
-	// Fields
-	left: number;
-	right: number;
-	top: number;
-	bottom: number;
+    // Constructors
+    static ["new"](): Margin;
 
-	// Constructors
-	static ['new'](): Margin;
-
-	// Members
-	copy(): Margin;
-	free(): void;
+    // Members
+    copy(): Margin;
+    free(): void;
 }
 
 export class MotionEvent {
-	static $gtype: GObject.GType<MotionEvent>;
+    static $gtype: GObject.GType<MotionEvent>;
 
-	constructor(copy: MotionEvent);
+    constructor(copy: MotionEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	x: number;
-	y: number;
-	modifier_state: ModifierType;
-	axes: number;
-	time_us: number;
-	dx: number;
-	dy: number;
-	dx_unaccel: number;
-	dy_unaccel: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    x: number;
+    y: number;
+    modifier_state: ModifierType;
+    axes: number;
+    time_us: number;
+    dx: number;
+    dy: number;
+    dx_unaccel: number;
+    dy_unaccel: number;
 }
 
 export class OffscreenEffectPrivate {
-	static $gtype: GObject.GType<OffscreenEffectPrivate>;
+    static $gtype: GObject.GType<OffscreenEffectPrivate>;
 
-	constructor(copy: OffscreenEffectPrivate);
+    constructor(copy: OffscreenEffectPrivate);
 }
 
 export class PadButtonEvent {
-	static $gtype: GObject.GType<PadButtonEvent>;
+    static $gtype: GObject.GType<PadButtonEvent>;
 
-	constructor(copy: PadButtonEvent);
+    constructor(copy: PadButtonEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	button: number;
-	group: number;
-	mode: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    button: number;
+    group: number;
+    mode: number;
 }
 
 export class PadRingEvent {
-	static $gtype: GObject.GType<PadRingEvent>;
+    static $gtype: GObject.GType<PadRingEvent>;
 
-	constructor(copy: PadRingEvent);
+    constructor(copy: PadRingEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	ring_source: InputDevicePadSource;
-	ring_number: number;
-	group: number;
-	angle: number;
-	mode: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    ring_source: InputDevicePadSource;
+    ring_number: number;
+    group: number;
+    angle: number;
+    mode: number;
 }
 
 export class PadStripEvent {
-	static $gtype: GObject.GType<PadStripEvent>;
+    static $gtype: GObject.GType<PadStripEvent>;
 
-	constructor(copy: PadStripEvent);
+    constructor(copy: PadStripEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	strip_source: InputDevicePadSource;
-	strip_number: number;
-	group: number;
-	value: number;
-	mode: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    strip_source: InputDevicePadSource;
+    strip_number: number;
+    group: number;
+    value: number;
+    mode: number;
 }
 
 export class PaintContext {
-	static $gtype: GObject.GType<PaintContext>;
+    static $gtype: GObject.GType<PaintContext>;
 
-	constructor(copy: PaintContext);
+    constructor(copy: PaintContext);
 
-	// Members
-	destroy(): void;
-	get_framebuffer(): Cogl.Framebuffer;
-	get_redraw_clip(): cairo.Region;
-	pop_framebuffer(): void;
-	push_framebuffer(framebuffer: Cogl.Framebuffer): void;
-	ref(): PaintContext;
-	unref(): void;
+    // Members
+    destroy(): void;
+    get_framebuffer(): Cogl.Framebuffer;
+    get_redraw_clip(): cairo.Region;
+    pop_framebuffer(): void;
+    push_framebuffer(framebuffer: Cogl.Framebuffer): void;
+    ref(): PaintContext;
+    unref(): void;
 }
 
 export class PaintNodePrivate {
-	static $gtype: GObject.GType<PaintNodePrivate>;
+    static $gtype: GObject.GType<PaintNodePrivate>;
 
-	constructor(copy: PaintNodePrivate);
+    constructor(copy: PaintNodePrivate);
 }
 
 export class PaintVolume {
-	static $gtype: GObject.GType<PaintVolume>;
+    static $gtype: GObject.GType<PaintVolume>;
 
-	constructor(copy: PaintVolume);
+    constructor(copy: PaintVolume);
 
-	// Members
-	copy(): PaintVolume;
-	free(): void;
-	get_depth(): number;
-	get_height(): number;
-	get_origin(): Graphene.Point3D;
-	get_width(): number;
-	set_depth(depth: number): void;
-	set_from_allocation(actor: Actor): boolean;
-	set_height(height: number): void;
-	set_origin(origin: Graphene.Point3D): void;
-	set_width(width: number): void;
-	union(another_pv: PaintVolume): void;
-	union_box(box: ActorBox): void;
+    // Members
+    copy(): PaintVolume;
+    free(): void;
+    get_depth(): number;
+    get_height(): number;
+    get_origin(): Graphene.Point3D;
+    get_width(): number;
+    set_depth(depth: number): void;
+    set_from_allocation(actor: Actor): boolean;
+    set_height(height: number): void;
+    set_origin(origin: Graphene.Point3D): void;
+    set_width(width: number): void;
+    union(another_pv: PaintVolume): void;
+    union_box(box: ActorBox): void;
 }
 
 export class PanActionPrivate {
-	static $gtype: GObject.GType<PanActionPrivate>;
+    static $gtype: GObject.GType<PanActionPrivate>;
 
-	constructor(copy: PanActionPrivate);
+    constructor(copy: PanActionPrivate);
 }
 
 export class PathNode {
-	static $gtype: GObject.GType<PathNode>;
+    static $gtype: GObject.GType<PathNode>;
 
-	constructor(copy: PathNode);
+    constructor(copy: PathNode);
 
-	// Fields
-	type: PathNodeType;
+    // Fields
+    type: PathNodeType;
 
-	// Members
-	copy(): PathNode;
-	equal(node_b: PathNode): boolean;
-	free(): void;
+    // Members
+    copy(): PathNode;
+    equal(node_b: PathNode): boolean;
+    free(): void;
 }
 
 export class PathPrivate {
-	static $gtype: GObject.GType<PathPrivate>;
+    static $gtype: GObject.GType<PathPrivate>;
 
-	constructor(copy: PathPrivate);
+    constructor(copy: PathPrivate);
 }
 
 export class Perspective {
-	static $gtype: GObject.GType<Perspective>;
+    static $gtype: GObject.GType<Perspective>;
 
-	constructor(
+    constructor(
         properties?: Partial<{
             fovy?: number;
             aspect?: number;
@@ -8076,348 +8032,346 @@ export class Perspective {
             z_far?: number;
         }>
     );
+    constructor(copy: Perspective);
 
-	constructor(copy: Perspective);
-
-	// Fields
-	fovy: number;
-	aspect: number;
-	z_near: number;
-	z_far: number;
+    // Fields
+    fovy: number;
+    aspect: number;
+    z_near: number;
+    z_far: number;
 }
 
 export class PickContext {
-	static $gtype: GObject.GType<PickContext>;
+    static $gtype: GObject.GType<PickContext>;
 
-	constructor(copy: PickContext);
+    constructor(copy: PickContext);
 
-	// Members
-	destroy(): void;
-	get_transform(): Graphene.Matrix;
-	log_overlap(actor: Actor): void;
-	log_pick(box: ActorBox, actor: Actor): void;
-	pop_clip(): void;
-	pop_transform(): void;
-	push_clip(box: ActorBox): void;
-	push_transform(transform: Graphene.Matrix): void;
-	ref(): PickContext;
-	unref(): void;
+    // Members
+    destroy(): void;
+    get_transform(): Graphene.Matrix;
+    log_overlap(actor: Actor): void;
+    log_pick(box: ActorBox, actor: Actor): void;
+    pop_clip(): void;
+    pop_transform(): void;
+    push_clip(box: ActorBox): void;
+    push_transform(transform: Graphene.Matrix): void;
+    ref(): PickContext;
+    unref(): void;
 }
 
 export class PointerA11ySettings {
-	static $gtype: GObject.GType<PointerA11ySettings>;
+    static $gtype: GObject.GType<PointerA11ySettings>;
 
-	constructor(copy: PointerA11ySettings);
+    constructor(copy: PointerA11ySettings);
 
-	// Fields
-	controls: PointerA11yFlags;
-	dwell_click_type: PointerA11yDwellClickType;
-	dwell_mode: PointerA11yDwellMode;
-	dwell_gesture_single: PointerA11yDwellDirection;
-	dwell_gesture_double: PointerA11yDwellDirection;
-	dwell_gesture_drag: PointerA11yDwellDirection;
-	dwell_gesture_secondary: PointerA11yDwellDirection;
-	secondary_click_delay: number;
-	dwell_delay: number;
-	dwell_threshold: number;
+    // Fields
+    controls: PointerA11yFlags;
+    dwell_click_type: PointerA11yDwellClickType;
+    dwell_mode: PointerA11yDwellMode;
+    dwell_gesture_single: PointerA11yDwellDirection;
+    dwell_gesture_double: PointerA11yDwellDirection;
+    dwell_gesture_drag: PointerA11yDwellDirection;
+    dwell_gesture_secondary: PointerA11yDwellDirection;
+    secondary_click_delay: number;
+    dwell_delay: number;
+    dwell_threshold: number;
 }
 
 export class PropertyTransitionPrivate {
-	static $gtype: GObject.GType<PropertyTransitionPrivate>;
+    static $gtype: GObject.GType<PropertyTransitionPrivate>;
 
-	constructor(copy: PropertyTransitionPrivate);
+    constructor(copy: PropertyTransitionPrivate);
 }
 
 export class ProximityEvent {
-	static $gtype: GObject.GType<ProximityEvent>;
+    static $gtype: GObject.GType<ProximityEvent>;
 
-	constructor(copy: ProximityEvent);
+    constructor(copy: ProximityEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
 }
 
 export class RotateActionPrivate {
-	static $gtype: GObject.GType<RotateActionPrivate>;
+    static $gtype: GObject.GType<RotateActionPrivate>;
 
-	constructor(copy: RotateActionPrivate);
+    constructor(copy: RotateActionPrivate);
 }
 
 export class ScriptPrivate {
-	static $gtype: GObject.GType<ScriptPrivate>;
+    static $gtype: GObject.GType<ScriptPrivate>;
 
-	constructor(copy: ScriptPrivate);
+    constructor(copy: ScriptPrivate);
 }
 
 export class ScrollActorPrivate {
-	static $gtype: GObject.GType<ScrollActorPrivate>;
+    static $gtype: GObject.GType<ScrollActorPrivate>;
 
-	constructor(copy: ScrollActorPrivate);
+    constructor(copy: ScrollActorPrivate);
 }
 
 export class ScrollEvent {
-	static $gtype: GObject.GType<ScrollEvent>;
+    static $gtype: GObject.GType<ScrollEvent>;
 
-	constructor(copy: ScrollEvent);
+    constructor(copy: ScrollEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	x: number;
-	y: number;
-	direction: ScrollDirection;
-	modifier_state: ModifierType;
-	axes: number;
-	scroll_source: ScrollSource;
-	finish_flags: ScrollFinishFlags;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    x: number;
+    y: number;
+    direction: ScrollDirection;
+    modifier_state: ModifierType;
+    axes: number;
+    scroll_source: ScrollSource;
+    finish_flags: ScrollFinishFlags;
 }
 
 export class Shader {
-	static $gtype: GObject.GType<Shader>;
+    static $gtype: GObject.GType<Shader>;
 
-	constructor(copy: Shader);
+    constructor(copy: Shader);
 }
 
 export class ShaderEffectPrivate {
-	static $gtype: GObject.GType<ShaderEffectPrivate>;
+    static $gtype: GObject.GType<ShaderEffectPrivate>;
 
-	constructor(copy: ShaderEffectPrivate);
+    constructor(copy: ShaderEffectPrivate);
 }
 
 export class StagePrivate {
-	static $gtype: GObject.GType<StagePrivate>;
+    static $gtype: GObject.GType<StagePrivate>;
 
-	constructor(copy: StagePrivate);
+    constructor(copy: StagePrivate);
 }
 
 export class SwipeActionPrivate {
-	static $gtype: GObject.GType<SwipeActionPrivate>;
+    static $gtype: GObject.GType<SwipeActionPrivate>;
 
-	constructor(copy: SwipeActionPrivate);
+    constructor(copy: SwipeActionPrivate);
 }
 
 export class TapActionPrivate {
-	static $gtype: GObject.GType<TapActionPrivate>;
+    static $gtype: GObject.GType<TapActionPrivate>;
 
-	constructor(copy: TapActionPrivate);
+    constructor(copy: TapActionPrivate);
 }
 
 export class TextBufferPrivate {
-	static $gtype: GObject.GType<TextBufferPrivate>;
+    static $gtype: GObject.GType<TextBufferPrivate>;
 
-	constructor(copy: TextBufferPrivate);
+    constructor(copy: TextBufferPrivate);
 }
 
 export class TextPrivate {
-	static $gtype: GObject.GType<TextPrivate>;
+    static $gtype: GObject.GType<TextPrivate>;
 
-	constructor(copy: TextPrivate);
+    constructor(copy: TextPrivate);
 }
 
 export class TimelinePrivate {
-	static $gtype: GObject.GType<TimelinePrivate>;
+    static $gtype: GObject.GType<TimelinePrivate>;
 
-	constructor(copy: TimelinePrivate);
+    constructor(copy: TimelinePrivate);
 }
 
 export class TouchEvent {
-	static $gtype: GObject.GType<TouchEvent>;
+    static $gtype: GObject.GType<TouchEvent>;
 
-	constructor(copy: TouchEvent);
+    constructor(copy: TouchEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	x: number;
-	y: number;
-	modifier_state: ModifierType;
-	axes: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    x: number;
+    y: number;
+    modifier_state: ModifierType;
+    axes: number;
 }
 
 export class TouchpadHoldEvent {
-	static $gtype: GObject.GType<TouchpadHoldEvent>;
+    static $gtype: GObject.GType<TouchpadHoldEvent>;
 
-	constructor(copy: TouchpadHoldEvent);
+    constructor(copy: TouchpadHoldEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	phase: TouchpadGesturePhase;
-	n_fingers: number;
-	x: number;
-	y: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    phase: TouchpadGesturePhase;
+    n_fingers: number;
+    x: number;
+    y: number;
 }
 
 export class TouchpadPinchEvent {
-	static $gtype: GObject.GType<TouchpadPinchEvent>;
+    static $gtype: GObject.GType<TouchpadPinchEvent>;
 
-	constructor(copy: TouchpadPinchEvent);
+    constructor(copy: TouchpadPinchEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	phase: TouchpadGesturePhase;
-	x: number;
-	y: number;
-	dx: number;
-	dy: number;
-	dx_unaccel: number;
-	dy_unaccel: number;
-	angle_delta: number;
-	scale: number;
-	n_fingers: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    phase: TouchpadGesturePhase;
+    x: number;
+    y: number;
+    dx: number;
+    dy: number;
+    dx_unaccel: number;
+    dy_unaccel: number;
+    angle_delta: number;
+    scale: number;
+    n_fingers: number;
 }
 
 export class TouchpadSwipeEvent {
-	static $gtype: GObject.GType<TouchpadSwipeEvent>;
+    static $gtype: GObject.GType<TouchpadSwipeEvent>;
 
-	constructor(copy: TouchpadSwipeEvent);
+    constructor(copy: TouchpadSwipeEvent);
 
-	// Fields
-	type: EventType;
-	time: number;
-	flags: EventFlags;
-	phase: TouchpadGesturePhase;
-	n_fingers: number;
-	x: number;
-	y: number;
-	dx: number;
-	dy: number;
-	dx_unaccel: number;
-	dy_unaccel: number;
+    // Fields
+    type: EventType;
+    time: number;
+    flags: EventFlags;
+    phase: TouchpadGesturePhase;
+    n_fingers: number;
+    x: number;
+    y: number;
+    dx: number;
+    dy: number;
+    dx_unaccel: number;
+    dy_unaccel: number;
 }
 
 export class TransitionGroupPrivate {
-	static $gtype: GObject.GType<TransitionGroupPrivate>;
+    static $gtype: GObject.GType<TransitionGroupPrivate>;
 
-	constructor(copy: TransitionGroupPrivate);
+    constructor(copy: TransitionGroupPrivate);
 }
 
 export class TransitionPrivate {
-	static $gtype: GObject.GType<TransitionPrivate>;
+    static $gtype: GObject.GType<TransitionPrivate>;
 
-	constructor(copy: TransitionPrivate);
+    constructor(copy: TransitionPrivate);
 }
 
 export class Units {
-	static $gtype: GObject.GType<Units>;
+    static $gtype: GObject.GType<Units>;
 
-	constructor(copy: Units);
+    constructor(copy: Units);
 
-	// Fields
-	unit_type: UnitType;
-	value: number;
-	pixels: number;
-	pixels_set: number;
-	serial: number;
+    // Fields
+    unit_type: UnitType;
+    value: number;
+    pixels: number;
+    pixels_set: number;
+    serial: number;
 
-	// Members
-	copy(): Units;
-	free(): void;
-	get_unit_type(): UnitType;
-	get_unit_value(): number;
-	to_pixels(): number;
-	to_string(): string;
-	static from_cm(cm: number): Units;
-	static from_em(em: number): Units;
-	static from_em_for_font(font_name: string | null, em: number): Units;
-	static from_mm(mm: number): Units;
-	static from_pixels(px: number): Units;
-	static from_pt(pt: number): Units;
-	static from_string(str: string): [boolean, Units];
+    // Members
+    copy(): Units;
+    free(): void;
+    get_unit_type(): UnitType;
+    get_unit_value(): number;
+    to_pixels(): number;
+    to_string(): string;
+    static from_cm(cm: number): Units;
+    static from_em(em: number): Units;
+    static from_em_for_font(font_name: string | null, em: number): Units;
+    static from_mm(mm: number): Units;
+    static from_pixels(px: number): Units;
+    static from_pt(pt: number): Units;
+    static from_string(str: string): [boolean, Units];
 }
 
 export class ZoomActionPrivate {
-	static $gtype: GObject.GType<ZoomActionPrivate>;
+    static $gtype: GObject.GType<ZoomActionPrivate>;
 
-	constructor(copy: ZoomActionPrivate);
+    constructor(copy: ZoomActionPrivate);
 }
 
 export class Event {
-	static $gtype: GObject.GType<Event>;
+    static $gtype: GObject.GType<Event>;
 
-	constructor(type: EventType);
-	constructor(copy: Event);
+    constructor(type: EventType);
+    constructor(copy: Event);
 
-	// Constructors
-	static ['new'](type: EventType): Event;
+    // Constructors
+    static ["new"](type: EventType): Event;
 
-	// Members
-	copy(): Event;
-	free(): void;
-	get_angle(target: Event): number;
-	get_axes(): [number, number];
-	get_button(): number;
-	get_coords(): [number, number];
-	get_device(): InputDevice;
-	get_device_tool(): InputDeviceTool;
-	get_device_type(): InputDeviceType;
-	get_distance(target: Event): number;
-	get_event_code(): number;
-	get_event_sequence(): EventSequence;
-	get_flags(): EventFlags;
-	get_gesture_motion_delta(): [number | null, number | null];
-	get_gesture_motion_delta_unaccelerated(): [number | null, number | null];
-	get_gesture_phase(): TouchpadGesturePhase;
-	get_gesture_pinch_angle_delta(): number;
-	get_gesture_pinch_scale(): number;
-	get_key_code(): number;
-	get_key_symbol(): number;
-	get_key_unicode(): number;
-	get_mode_group(): number;
-	get_pad_event_details(): [boolean, number | null, number | null, number | null];
-	get_position(position: Graphene.Point): void;
-	get_related(): Actor;
-	get_relative_motion(dx: number, dy: number, dx_unaccel: number, dy_unaccel: number): boolean;
-	get_scroll_delta(): [number, number];
-	get_scroll_direction(): ScrollDirection;
-	get_scroll_finish_flags(): ScrollFinishFlags;
-	get_scroll_source(): ScrollSource;
-	get_source(): Actor;
-	get_source_device(): InputDevice;
-	get_stage(): Stage;
-	get_state(): ModifierType;
-	get_state_full(): [
+    // Members
+    copy(): Event;
+    free(): void;
+    get_angle(target: Event): number;
+    get_axes(): [number, number];
+    get_button(): number;
+    get_coords(): [number, number];
+    get_device(): InputDevice;
+    get_device_tool(): InputDeviceTool;
+    get_device_type(): InputDeviceType;
+    get_distance(target: Event): number;
+    get_event_code(): number;
+    get_event_sequence(): EventSequence;
+    get_flags(): EventFlags;
+    get_gesture_motion_delta(): [number | null, number | null];
+    get_gesture_motion_delta_unaccelerated(): [number | null, number | null];
+    get_gesture_phase(): TouchpadGesturePhase;
+    get_gesture_pinch_angle_delta(): number;
+    get_gesture_pinch_scale(): number;
+    get_key_code(): number;
+    get_key_symbol(): number;
+    get_key_unicode(): number;
+    get_mode_group(): number;
+    get_pad_event_details(): [boolean, number | null, number | null, number | null];
+    get_position(position: Graphene.Point): void;
+    get_related(): Actor;
+    get_relative_motion(dx: number, dy: number, dx_unaccel: number, dy_unaccel: number): boolean;
+    get_scroll_delta(): [number, number];
+    get_scroll_direction(): ScrollDirection;
+    get_scroll_finish_flags(): ScrollFinishFlags;
+    get_scroll_source(): ScrollSource;
+    get_source(): Actor;
+    get_source_device(): InputDevice;
+    get_stage(): Stage;
+    get_state(): ModifierType;
+    get_state_full(): [
         ModifierType | null,
         ModifierType | null,
         ModifierType | null,
         ModifierType | null,
         ModifierType | null
     ];
-
-	get_time(): number;
-	get_time_us(): number;
-	get_touchpad_gesture_finger_count(): number;
-	has_control_modifier(): boolean;
-	has_shift_modifier(): boolean;
-	is_pointer_emulated(): boolean;
-	put(): void;
-	set_button(button: number): void;
-	set_coords(x: number, y: number): void;
-	set_device(device?: InputDevice | null): void;
-	set_device_tool(tool?: InputDeviceTool | null): void;
-	set_flags(flags: EventFlags): void;
-	set_key_code(key_code: number): void;
-	set_key_symbol(key_sym: number): void;
-	set_key_unicode(key_unicode: number): void;
-	set_related(actor?: Actor | null): void;
-	set_scroll_delta(dx: number, dy: number): void;
-	set_scroll_direction(direction: ScrollDirection): void;
-	set_source(actor?: Actor | null): void;
-	set_source_device(device?: InputDevice | null): void;
-	set_stage(stage?: Stage | null): void;
-	set_state(state: ModifierType): void;
-	set_time(time_: number): void;
-	type(): EventType;
-	static add_filter(stage: Stage | null, func: EventFilterFunc): number;
-	static get(): Event;
-	static remove_filter(id: number): void;
+    get_time(): number;
+    get_time_us(): number;
+    get_touchpad_gesture_finger_count(): number;
+    has_control_modifier(): boolean;
+    has_shift_modifier(): boolean;
+    is_pointer_emulated(): boolean;
+    put(): void;
+    set_button(button: number): void;
+    set_coords(x: number, y: number): void;
+    set_device(device?: InputDevice | null): void;
+    set_device_tool(tool?: InputDeviceTool | null): void;
+    set_flags(flags: EventFlags): void;
+    set_key_code(key_code: number): void;
+    set_key_symbol(key_sym: number): void;
+    set_key_unicode(key_unicode: number): void;
+    set_related(actor?: Actor | null): void;
+    set_scroll_delta(dx: number, dy: number): void;
+    set_scroll_direction(direction: ScrollDirection): void;
+    set_source(actor?: Actor | null): void;
+    set_source_device(device?: InputDevice | null): void;
+    set_stage(stage?: Stage | null): void;
+    set_state(state: ModifierType): void;
+    set_time(time_: number): void;
+    type(): EventType;
+    static add_filter(stage: Stage | null, func: EventFilterFunc): number;
+    static get(): Event;
+    static remove_filter(id: number): void;
 }
 
 export interface AnimatableNamespace {

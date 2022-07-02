@@ -89,7 +89,7 @@ class MonitorGroup {
 		this._container.insert_child_below(clone, null);
 	}
 
-	private static _getDestPoint(clone: Clutter.Clone, destCorner: Corner): Point {
+	private _getDestPoint(clone: Clutter.Clone, destCorner: Corner): Point {
 		const destY = destCorner.y;
 		const cloneRelXCenter = Math.round(clone.width / 2);
 		switch (destCorner.position) {
@@ -108,13 +108,13 @@ class MonitorGroup {
 		}
 	}
 
-	private static _calculateDist(p: Point, q: Point) {
+	private _calculateDist(p: Point, q: Point) {
 		return Math.abs(p.x - q.x) + Math.abs(p.y - q.y);
 	}
 
 	private _assignCorner(actorClone: WindowActorClone, corner: Corner) {
 		const { clone } = actorClone;
-		const destPoint = MonitorGroup._getDestPoint(clone, corner);
+		const destPoint = this._getDestPoint(clone, corner);
 		actorClone.translation = {
 			start: { x: clone.x, y: clone.y },
 			end: { x: destPoint.x, y: destPoint.y },
@@ -138,7 +138,7 @@ class MonitorGroup {
 		this._corners.forEach(corner => {
 			windowActorsClones.forEach(actorClone => {
 				distanceMetrics.push({
-					value: MonitorGroup._calculateDist(actorClone.clone, MonitorGroup._getDestPoint(actorClone.clone, corner)),
+					value: this._calculateDist(actorClone.clone, this._getDestPoint(actorClone.clone, corner)),
 					actorClone,
 					corner,
 				});

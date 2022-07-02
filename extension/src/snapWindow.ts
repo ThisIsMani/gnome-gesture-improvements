@@ -75,11 +75,11 @@ const TilePreview = registerClass(
 
 			this._window = window;
 			this._fullscreenBox = global.display.get_monitor_geometry(window.get_monitor());
-			this._maximizeBox = TilePreview.getMaximizedBox(window);
-			this._normalBox = TilePreview.getNormalBox(window);
+			this._maximizeBox = this.getMaximizedBox(window);
+			this._normalBox = this.getNormalBox(window);
 			this._leftSnapBox = this._maximizeBox.copy();
 			this._rightSnapBox = this._maximizeBox.copy();
-			this._minimizeBox = TilePreview.getMinimizedBox(this._window, this._maximizeBox);
+			this._minimizeBox = this.getMinimizedBox(this._window, this._maximizeBox);
 
 			this._leftSnapBox.width /= 2;
 			this._rightSnapBox.width /= 2;
@@ -231,7 +231,7 @@ const TilePreview = registerClass(
 			return this._adjustment;
 		}
 
-		private static getMinimizedBox(window: Meta.Window, monitorWorkArea: Meta.Rectangle) {
+		private getMinimizedBox(window: Meta.Window, monitorWorkArea: Meta.Rectangle) {
 			const [has_icon, icon_geometry] = window.get_icon_geometry();
 			if (has_icon)
 				return icon_geometry;
@@ -242,7 +242,7 @@ const TilePreview = registerClass(
 			return rect;
 		}
 
-		private static getNormalBox(window: Meta.Window) {
+		private getNormalBox(window: Meta.Window) {
 			const normalBox = window.get_frame_rect();
 			if (window.get_maximized() !== Meta.MaximizeFlags.BOTH)
 				return normalBox;
@@ -258,7 +258,7 @@ const TilePreview = registerClass(
 			return normalBox;
 		}
 
-		private static getMaximizedBox(window: Meta.Window) {
+		private getMaximizedBox(window: Meta.Window) {
 			const monitor = window.get_monitor();
 			const maximizedBox = Main.layoutManager.getWorkAreaForMonitor(monitor);
 			if (!window.is_fullscreen())
